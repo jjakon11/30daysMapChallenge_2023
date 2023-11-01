@@ -36,7 +36,7 @@ Climatedt1 <- Climatedt %>%
 # Climate station
 ```{r}
 CSplot <- ggplot()+
-  geom_polygon(Taiwan1, mapping=aes(x = long, y = lat, group=group), fill="#344e41", colour="Black", size=1.2)+
+  geom_polygon(Taiwan1, mapping=aes(x = long, y = lat, group=group), fill="#344e41", colour="Black", size=0.8)+
   geom_point(Climatedt1, mapping=aes(x=longitude, y=latitude, size=Auto, color=Auto) )+  
   coord_sf(xlim = c(118, 122.5), ylim = c(21.5, 26.5), expand = FALSE, crs=4326)+
   scale_color_manual(guide = "legend", name="Station Types",
@@ -47,6 +47,8 @@ CSplot <- ggplot()+
                   size=3, color="grey50", parse = TRUE)+
   geom_text_repel(mapping=aes(x=119.2, y=24.5, label="italic('T a i w a n  T r a i t')"), 
                   size=3.5, color="grey50", parse = TRUE, angle = 50)+
+  geom_text_repel(mapping=aes(x=118, y=21.6, label="X:~italic('@jjakon11')"), 
+                  size=2, color="grey50", parse = TRUE)+
   annotation_north_arrow(location = "tr", which_north = "true",   #放置指北針
                          pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"), 
                          height = unit(1.0, "cm"), width = unit(1.0, "cm") , 
