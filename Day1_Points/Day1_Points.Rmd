@@ -1,0 +1,65 @@
+---
+title: "Day1_points"
+author: "Chen-Chia Ku"
+date: "2023-11-01"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# library input
+```{r}
+library(ggplot2)
+library(dplyr)
+library(raster)
+library(rgeos) #gunion
+library(ggspatial) #annotation_north_arrow
+library(ggrepel)
+library(ggpubr)
+
+```
+
+# Data input
+```{r}
+Climatedt <- read.csv("D:/Drive/6_Rworld/30daysMapChallenge_2023/Day1_Points/TaiwanClimateStationAll_202003.csv", fileEncoding = "Big5")
+
+taiwan_shp <- rgdal::readOGR(file.choose(), use_iconv = TRUE, encoding = "UTF-8")
+
+head(Climatedt)
+```
+
+
+```{r}
+Climatedt1 <- Climatedt %>%
+  mutate(Auto=factor(Auto, levels=c(1,0)))
+```
+
+# Climate station
+```{r}
+CSplot <- ggplot()+
+  geom_polygon(Taiwan1, mapping=aes(x = long, y = lat, group=group), fill="#344e41", colour="Black", size=1.2)+
+  geom_point(Climatedt1, mapping=aes(x=longitude, y=latitude, size=Auto, color=Auto) )+  
+  coord_sf(xlim = c(118, 122.5), ylim = c(21.5, 26.5), expand = FALSE, crs=4326)+
+  scale_color_manual(guide = "legend", name="Station Types",
+                     breaks=c(1, 0),values=c("#e9edc9", "#dda15e"),labels=c("Auto station","Bureau station"))+
+  scale_size_manual(values=c(0.9,2.2),name="Station Types",
+                    breaks=c(1, 0),labels=c("Auto station","Bureau station"))+
+  geom_text_repel(mapping=aes(x=122.4, y=22.8, label="italic('Pacific Ocean')"), 
+                  size=3, color="grey50", parse = TRUE)+
+  geom_text_repel(mapping=aes(x=119.2, y=24.5, label="italic('T a i w a n  T r a i t')"), 
+                  size=3.5, color="grey50", parse = TRUE, angle = 50)+
+  annotation_north_arrow(location = "tr", which_north = "true",   #放置指北針
+                         pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"), 
+                         height = unit(1.0, "cm"), width = unit(1.0, "cm") , 
+                         style = north_arrow_fancy_orienteering(text_col = 'grey10', 
+                                                                line_col = 'grey10',
+                                                                fill = 'grey10'))+
+  theme(panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+        panel.background = element_rect(fill = "grey97"),
+        strip.background = element_rect(fill="black", size=1.0, color="black"))+
+  xlab("Longitude")+
+  ylab("Latitude")+
+  ggtitle("Taiwan's Climate Station Map")
+
+ggexport(CSplot, filename = "Taiwan CS map.png", width =6000, height =5400, res =900 )
+
+```
