@@ -1,0 +1,512 @@
+theme(#panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+panel.background = element_rect(fill = "#003b4f"),
+panel.grid = element_blank(),
+plot.margin = margin(0, 0, 0, 0, "cm"),
+axis.text.x = element_text(vjust = 8),
+axis.text.y = element_text(angle = 270, vjust = 10),
+#axis.text.x = element_blank(),
+#axis.text.y = element_blank(),
+axis.ticks.x = element_blank(),
+axis.title.x = element_blank(),
+legend.position="none")
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =6000, height =5400, res =900 )
+RiverTaiwan <- ggplot()+
+geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.65)+
+geom_sf(data=Tributary_shp, color="#9dffff",size=0.1)+
+geom_sf(data=River_shp, color="#00ffff", fill="#00ffff", size=0.5)+
+annotation_north_arrow(location = "tr", which_north = "true",   #放置指北針
+pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"),
+height = unit(1.0, "cm"), width = unit(1.0, "cm") ,
+style = north_arrow_fancy_orienteering(text_col = 'grey10',
+line_col = 'grey10',
+fill = 'grey10'))+
+coord_sf(xlim = c(119.8, 122.8), ylim = c(21.8, 25.5), expand = FALSE, crs=4326)+
+theme(#panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+panel.background = element_rect(fill = "#003b4f"),
+panel.grid = element_blank(),
+plot.margin = margin(0, 0, 0, 0, "cm"),
+axis.text.x = element_text(vjust = 8),
+axis.text.y = element_text(angle = 270, vjust = 10),
+#axis.text.x = element_blank(),
+#axis.text.y = element_blank(),
+axis.ticks.x = element_blank(),
+axis.title.x = element_blank(),
+axis.title.y = element_blank(),
+legend.position="none")
+RiverTaiwan <- ggplot()+
+geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.65)+
+geom_sf(data=Tributary_shp, color="#9dffff",size=0.1)+
+geom_sf(data=River_shp, color="#00ffff", fill="#00ffff", size=0.5)+
+annotation_north_arrow(location = "tr", which_north = "true",   #放置指北針
+pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"),
+height = unit(1.0, "cm"), width = unit(1.0, "cm") ,
+style = north_arrow_fancy_orienteering(text_col = 'grey10',
+line_col = 'grey10',
+fill = 'grey10'))+
+coord_sf(xlim = c(119.8, 122.8), ylim = c(21.8, 25.5), expand = FALSE, crs=4326)+
+theme(#panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+panel.background = element_rect(fill = "#003b4f"),
+panel.grid = element_blank(),
+plot.margin = margin(0, 0, 0, 0, "cm"),
+axis.text.x = element_text(vjust = 8),
+axis.text.y = element_text(angle = 270, vjust = 10, hjust=0.5),
+#axis.text.x = element_blank(),
+#axis.text.y = element_blank(),
+axis.ticks.x = element_blank(),
+axis.title.x = element_blank(),
+axis.title.y = element_blank(),
+legend.position="none")
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =6000, height =5400, res =900 )
+RiverTaiwan <- ggplot()+
+geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.65)+
+geom_sf(data=Tributary_shp, color="#9dffff",size=0.1)+
+geom_sf(data=River_shp, color="#00ffff", fill="#00ffff", size=0.5)+
+annotation_north_arrow(location = "tr", which_north = "true",   #放置指北針
+pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"),
+height = unit(1.0, "cm"), width = unit(1.0, "cm") ,
+style = north_arrow_fancy_orienteering(text_col = 'grey10',
+line_col = 'grey10',
+fill = 'grey10'))+
+coord_sf(xlim = c(119.8, 122.8), ylim = c(21.8, 25.5), expand = FALSE, crs=4326)+
+theme(#panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+panel.background = element_rect(fill = "#003b4f"),
+panel.grid = element_blank(),
+plot.margin = margin(0, 0, 0, 0, "cm"),
+axis.text.x = element_text(vjust = 8),
+axis.text.y = element_text(angle = 270, vjust = 10, hjust=0.5),
+#axis.text.x = element_blank(),
+#axis.text.y = element_blank(),
+axis.ticks.x = element_blank(),
+axis.title.x = element_blank(),
+axis.ticks.x = element_blank(),
+axis.title.y = element_blank(),
+legend.position="none")
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =6000, height =5400, res =900 )
+RiverTaiwan <- ggplot()+
+geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.65)+
+geom_sf(data=Tributary_shp, color="#9dffff",size=0.1)+
+geom_sf(data=River_shp, color="#00ffff", fill="#00ffff", size=0.5)+
+annotation_north_arrow(location = "tr", which_north = "true",   #放置指北針
+pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"),
+height = unit(1.0, "cm"), width = unit(1.0, "cm") ,
+style = north_arrow_fancy_orienteering(text_col = 'grey10',
+line_col = 'grey10',
+fill = 'grey10'))+
+coord_sf(xlim = c(119.8, 122.8), ylim = c(21.8, 25.5), expand = FALSE, crs=4326)+
+theme(#panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+panel.background = element_rect(fill = "#003b4f"),
+panel.grid = element_blank(),
+plot.margin = margin(0, 0, 0, 0, "cm"),
+axis.text.x = element_text(vjust = 8),
+axis.text.y = element_text(angle = 270, vjust = 10, hjust=0.5),
+#axis.text.x = element_blank(),
+#axis.text.y = element_blank(),
+axis.ticks.x = element_blank(),
+axis.title.x = element_blank(),
+axis.ticks.y = element_blank(),
+axis.title.y = element_blank(),
+legend.position="none")
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =6000, height =5400, res =900 )
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =5300, res =900 )
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =5500, res =900 )
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =5800, res =900 )
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6500, res =900 )
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =7000, res =900 )
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6900, res =900 )
+RiverTaiwan <- ggplot()+
+geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.65)+
+geom_sf(data=Tributary_shp, color="#9dffff",size=0.1)+
+geom_sf(data=River_shp, color="#00ffff", fill="#00ffff", size=0.5)+
+annotation_north_arrow(location = "tr", which_north = "true",   #放置指北針
+pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"),
+height = unit(1.0, "cm"), width = unit(1.0, "cm") ,
+style = north_arrow_fancy_orienteering(text_col = 'grey10',
+line_col = 'grey10',
+fill = 'grey10'))+
+coord_sf(xlim = c(119.8, 122.8), ylim = c(21.8, 25.5), expand = FALSE, crs=4326)+
+theme(#panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+panel.background = element_rect(fill = "#003b4f"),
+panel.grid = element_blank(),
+plot.margin = margin(0, 0, 0, 0, "cm"),
+axis.text.x = element_text(vjust = 8, size=0.8),
+axis.text.y = element_text(angle = 270, vjust = 10, hjust=0.5, size=0.8),
+#axis.text.x = element_blank(),
+#axis.text.y = element_blank(),
+axis.ticks.x = element_blank(),
+axis.title.x = element_blank(),
+axis.ticks.y = element_blank(),
+axis.title.y = element_blank(),
+legend.position="none")
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6800, res =900 )
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6700, res =900 )
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6600, res =900 )
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6660, res =900 )
+RiverTaiwan <- ggplot()+
+geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.65)+
+geom_sf(data=Tributary_shp, color="#9dffff",size=0.1)+
+geom_sf(data=River_shp, color="#00ffff", fill="#00ffff", size=0.5)+
+annotation_north_arrow(location = "tr", which_north = "true",   #放置指北針
+pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"),
+height = unit(1.0, "cm"), width = unit(1.0, "cm") ,
+style = north_arrow_fancy_orienteering(text_col = 'grey10',
+line_col = 'grey10',
+fill = 'grey10'))+
+coord_sf(xlim = c(119.8, 122.8), ylim = c(21.8, 25.5), expand = FALSE, crs=4326)+
+theme(#panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+panel.background = element_rect(fill = "#003b4f"),
+panel.grid = element_blank(),
+plot.margin = margin(0, 0, -1, -1, "cm"),
+axis.text.x = element_text(vjust = 8, size=30),
+axis.text.y = element_text(angle = 270, vjust = 10, hjust=0.5, size=30),
+#axis.text.x = element_blank(),
+#axis.text.y = element_blank(),
+axis.ticks.x = element_blank(),
+axis.title.x = element_blank(),
+axis.ticks.y = element_blank(),
+axis.title.y = element_blank(),
+legend.position="none")
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6700, res =900 )
+RiverTaiwan <- ggplot()+
+geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.65)+
+geom_sf(data=Tributary_shp, color="#9dffff",size=0.1)+
+geom_sf(data=River_shp, color="#00ffff", fill="#00ffff", size=0.5)+
+annotation_north_arrow(location = "tr", which_north = "true",   #放置指北針
+pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"),
+height = unit(1.0, "cm"), width = unit(1.0, "cm") ,
+style = north_arrow_fancy_orienteering(text_col = 'grey10',
+line_col = 'grey10',
+fill = 'grey10'))+
+coord_sf(xlim = c(119.8, 122.8), ylim = c(21.8, 25.5), expand = FALSE, crs=4326)+
+theme(#panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+panel.background = element_rect(fill = "#003b4f"),
+panel.grid = element_blank(),
+plot.margin = margin(0, 0, -1, -1, "cm"),
+axis.text.x = element_text(vjust = 8, size=10),
+axis.text.y = element_text(angle = 270, vjust = 10, hjust=0.5, size=10),
+#axis.text.x = element_blank(),
+#axis.text.y = element_blank(),
+axis.ticks.x = element_blank(),
+axis.title.x = element_blank(),
+axis.ticks.y = element_blank(),
+axis.title.y = element_blank(),
+legend.position="none")
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6700, res =900 )
+RiverTaiwan <- ggplot()+
+geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.65)+
+geom_sf(data=Tributary_shp, color="#9dffff",size=0.1)+
+geom_sf(data=River_shp, color="#00ffff", fill="#00ffff", size=0.5)+
+annotation_north_arrow(location = "tr", which_north = "true",   #放置指北針
+pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"),
+height = unit(1.0, "cm"), width = unit(1.0, "cm") ,
+style = north_arrow_fancy_orienteering(text_col = 'grey10',
+line_col = 'grey10',
+fill = 'grey10'))+
+coord_sf(xlim = c(119.8, 122.8), ylim = c(21.8, 25.5), expand = FALSE, crs=4326)+
+theme(#panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+panel.background = element_rect(fill = "#003b4f"),
+panel.grid = element_blank(),
+plot.margin = margin(0, 0, 0, 0, "cm"),
+axis.text.x = element_text(vjust = 8, size=10),
+axis.text.y = element_text(angle = 270, vjust = 10, hjust=0.5, size=10),
+#axis.text.x = element_blank(),
+#axis.text.y = element_blank(),
+axis.ticks.x = element_blank(),
+axis.title.x = element_blank(),
+axis.ticks.y = element_blank(),
+axis.title.y = element_blank(),
+legend.position="none")
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6700, res =900 )
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6680, res =900 )
+RiverTaiwan <- ggplot()+
+geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.65)+
+geom_sf(data=Tributary_shp, color="#9dffff",size=0.1)+
+geom_sf(data=River_shp, color="#00ffff", fill="#00ffff", size=0.5)+
+annotation_north_arrow(location = "tr", which_north = "true",   #放置指北針
+pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"),
+height = unit(1.0, "cm"), width = unit(1.0, "cm") ,
+style = north_arrow_fancy_orienteering(text_col = 'grey10',
+line_col = 'grey10',
+fill = 'grey10'))+
+coord_sf(xlim = c(119.8, 122.8), ylim = c(21.8, 25.5), expand = FALSE, crs=4326)+
+theme(#panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+panel.background = element_rect(fill = "#003b4f"),
+panel.grid = element_blank(),
+plot.margin = margin(0, 0, -0.5, -0.5, "cm"),
+axis.text.x = element_text(vjust = 8, size=8),
+axis.text.y = element_text(angle = 270, vjust = 10, hjust=0.5, size=8),
+#axis.text.x = element_blank(),
+#axis.text.y = element_blank(),
+axis.ticks.x = element_blank(),
+axis.title.x = element_blank(),
+axis.ticks.y = element_blank(),
+axis.title.y = element_blank(),
+legend.position="none")
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6680, res =900 )
+RiverTaiwan <- ggplot()+
+geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.65)+
+geom_sf(data=Tributary_shp, color="#9dffff",size=0.1)+
+geom_sf(data=River_shp, color="#00ffff", fill="#00ffff", size=0.5)+
+annotation_north_arrow(location = "tr", which_north = "true",   #放置指北針
+pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"),
+height = unit(1.0, "cm"), width = unit(1.0, "cm") ,
+style = north_arrow_fancy_orienteering(text_col = 'grey10',
+line_col = 'grey10',
+fill = 'grey10'))+
+coord_sf(xlim = c(119.8, 122.8), ylim = c(21.8, 25.5), expand = FALSE, crs=4326)+
+theme(#panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+panel.background = element_rect(fill = "#003b4f"),
+panel.grid = element_blank(),
+plot.margin = margin(0, 0, -0.3, -0.3, "cm"),
+axis.text.x = element_text(vjust = 8, size=8),
+axis.text.y = element_text(angle = 270, vjust = 10, hjust=0.5, size=8),
+#axis.text.x = element_blank(),
+#axis.text.y = element_blank(),
+axis.ticks.x = element_blank(),
+axis.title.x = element_blank(),
+axis.ticks.y = element_blank(),
+axis.title.y = element_blank(),
+legend.position="none")
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6680, res =900 )
+RiverTaiwan <- ggplot()+
+geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.65)+
+geom_sf(data=Tributary_shp, color="#9dffff",size=0.1)+
+geom_sf(data=River_shp, color="#00ffff", fill="#00ffff", size=0.5)+
+annotation_north_arrow(location = "tr", which_north = "true",   #放置指北針
+pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"),
+height = unit(1.0, "cm"), width = unit(1.0, "cm") ,
+style = north_arrow_fancy_orienteering(text_col = 'grey10',
+line_col = 'grey10',
+fill = 'grey10'))+
+coord_sf(xlim = c(119.8, 122.8), ylim = c(21.8, 25.5), expand = FALSE, crs=4326)+
+theme(#panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+panel.background = element_rect(fill = "#003b4f"),
+panel.grid = element_blank(),
+plot.margin = margin(0, 0, -0.4, -0.4, "cm"),
+axis.text.x = element_text(vjust = 8, size=8),
+axis.text.y = element_text(angle = 270, vjust = 10, hjust=0.5, size=8),
+#axis.text.x = element_blank(),
+#axis.text.y = element_blank(),
+axis.ticks.x = element_blank(),
+axis.title.x = element_blank(),
+axis.ticks.y = element_blank(),
+axis.title.y = element_blank(),
+legend.position="none")
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6680, res =900 )
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6675, res =900 )
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6670, res =900 )
+RiverTaiwan <- ggplot()+
+geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.65)+
+geom_sf(data=Tributary_shp, color="#9dffff",size=0.1)+
+geom_sf(data=River_shp, color="#00ffff", fill="#00ffff", size=0.5)+
+geom_text(mapping=aes(x=122, y=23, label="TAIWAN"), size=20)+
+annotation_north_arrow(location = "tr", which_north = "true",   #放置指北針
+pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"),
+height = unit(1.0, "cm"), width = unit(1.0, "cm") ,
+style = north_arrow_fancy_orienteering(text_col = 'grey10',
+line_col = 'grey10',
+fill = 'grey10'))+
+coord_sf(xlim = c(119.8, 122.8), ylim = c(21.8, 25.5), expand = FALSE, crs=4326)+
+theme(#panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+panel.background = element_rect(fill = "#003b4f"),
+panel.grid = element_blank(),
+plot.margin = margin(0, 0, -0.4, -0.4, "cm"),
+axis.text.x = element_text(vjust = 8, size=8),
+axis.text.y = element_text(angle = 270, vjust = 10, hjust=0.5, size=8),
+#axis.text.x = element_blank(),
+#axis.text.y = element_blank(),
+axis.ticks.x = element_blank(),
+axis.title.x = element_blank(),
+axis.ticks.y = element_blank(),
+axis.title.y = element_blank(),
+legend.position="none")
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6670, res =900 )
+RiverTaiwan <- ggplot()+
+geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.65)+
+geom_sf(data=Tributary_shp, color="#9dffff",size=0.1)+
+geom_sf(data=River_shp, color="#00ffff", fill="#00ffff", size=0.5)+
+geom_text(mapping=aes(x=122, y=23, label="TAIWAN"), size=15)+
+annotation_north_arrow(location = "tr", which_north = "true",   #放置指北針
+pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"),
+height = unit(1.0, "cm"), width = unit(1.0, "cm") ,
+style = north_arrow_fancy_orienteering(text_col = 'grey10',
+line_col = 'grey10',
+fill = 'grey10'))+
+coord_sf(xlim = c(119.8, 122.8), ylim = c(21.8, 25.5), expand = FALSE, crs=4326)+
+theme(#panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+panel.background = element_rect(fill = "#003b4f"),
+panel.grid = element_blank(),
+plot.margin = margin(0, 0, -0.4, -0.4, "cm"),
+axis.text.x = element_text(vjust = 8, size=8),
+axis.text.y = element_text(angle = 270, vjust = 10, hjust=0.5, size=8),
+#axis.text.x = element_blank(),
+#axis.text.y = element_blank(),
+axis.ticks.x = element_blank(),
+axis.title.x = element_blank(),
+axis.ticks.y = element_blank(),
+axis.title.y = element_blank(),
+legend.position="none")
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6670, res =900 )
+RiverTaiwan <- ggplot()+
+geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.65)+
+geom_sf(data=Tributary_shp, color="#9dffff",size=0.1)+
+geom_sf(data=River_shp, color="#00ffff", fill="#00ffff", size=0.5)+
+geom_text(mapping=aes(x=122.1, y=23, label="TAIWAN"), size=14)+
+geom_text(mapping=aes(x=122.1, y=22.5, label="River Construct an Island"), size=8)+
+annotation_north_arrow(location = "tr", which_north = "true",   #放置指北針
+pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"),
+height = unit(1.0, "cm"), width = unit(1.0, "cm") ,
+style = north_arrow_fancy_orienteering(text_col = 'grey10',
+line_col = 'grey10',
+fill = 'grey10'))+
+coord_sf(xlim = c(119.8, 122.8), ylim = c(21.8, 25.5), expand = FALSE, crs=4326)+
+theme(#panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+panel.background = element_rect(fill = "#003b4f"),
+panel.grid = element_blank(),
+plot.margin = margin(0, 0, -0.4, -0.4, "cm"),
+axis.text.x = element_text(vjust = 8, size=8),
+axis.text.y = element_text(angle = 270, vjust = 10, hjust=0.5, size=8),
+#axis.text.x = element_blank(),
+#axis.text.y = element_blank(),
+axis.ticks.x = element_blank(),
+axis.title.x = element_blank(),
+axis.ticks.y = element_blank(),
+axis.title.y = element_blank(),
+legend.position="none")
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6670, res =900 )
+RiverTaiwan <- ggplot()+
+geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.65)+
+geom_sf(data=Tributary_shp, color="#9dffff",size=0.1)+
+geom_sf(data=River_shp, color="#00ffff", fill="#00ffff", size=0.5)+
+geom_text(mapping=aes(x=122.1, y=22.7, label="TAIWAN"), size=14)+
+geom_text(mapping=aes(x=122.1, y=22.3, label="River Construct an Island"), size=6)+
+annotation_north_arrow(location = "tr", which_north = "true",   #放置指北針
+pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"),
+height = unit(1.0, "cm"), width = unit(1.0, "cm") ,
+style = north_arrow_fancy_orienteering(text_col = 'grey10',
+line_col = 'grey10',
+fill = 'grey10'))+
+coord_sf(xlim = c(119.8, 122.8), ylim = c(21.8, 25.5), expand = FALSE, crs=4326)+
+theme(#panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+panel.background = element_rect(fill = "#003b4f"),
+panel.grid = element_blank(),
+plot.margin = margin(0, 0, -0.4, -0.4, "cm"),
+axis.text.x = element_text(vjust = 8, size=8),
+axis.text.y = element_text(angle = 270, vjust = 10, hjust=0.5, size=8),
+#axis.text.x = element_blank(),
+#axis.text.y = element_blank(),
+axis.ticks.x = element_blank(),
+axis.title.x = element_blank(),
+axis.ticks.y = element_blank(),
+axis.title.y = element_blank(),
+legend.position="none")
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6670, res =900 )
+RiverTaiwan <- ggplot()+
+geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.65)+
+geom_sf(data=Tributary_shp, color="#9dffff",size=0.1)+
+geom_sf(data=River_shp, color="#00ffff", fill="#00ffff", size=0.5)+
+geom_text(mapping=aes(x=122.1, y=22.7, label="TAIWAN"), size=14)+
+geom_text(mapping=aes(x=121.8, y=22.3, label="River Construct an Island"), size=6)+
+annotation_north_arrow(location = "tr", which_north = "true",   #放置指北針
+pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"),
+height = unit(1.0, "cm"), width = unit(1.0, "cm") ,
+style = north_arrow_fancy_orienteering(text_col = 'grey10',
+line_col = 'grey10',
+fill = 'grey10'))+
+coord_sf(xlim = c(119.8, 122.8), ylim = c(21.8, 25.5), expand = FALSE, crs=4326)+
+theme(#panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+panel.background = element_rect(fill = "#003b4f"),
+panel.grid = element_blank(),
+plot.margin = margin(0, 0, -0.4, -0.4, "cm"),
+axis.text.x = element_text(vjust = 8, size=8),
+axis.text.y = element_text(angle = 270, vjust = 10, hjust=0.5, size=8),
+#axis.text.x = element_blank(),
+#axis.text.y = element_blank(),
+axis.ticks.x = element_blank(),
+axis.title.x = element_blank(),
+axis.ticks.y = element_blank(),
+axis.title.y = element_blank(),
+legend.position="none")
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6670, res =900 )
+RiverTaiwan <- ggplot()+
+geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.65)+
+geom_sf(data=Tributary_shp, color="#9dffff",size=0.1)+
+geom_sf(data=River_shp, color="#00ffff", fill="#00ffff", size=0.5)+
+geom_text(mapping=aes(x=122.1, y=22.7, label="TAIWAN"), size=14)+
+geom_text(mapping=aes(x=122, y=22.3, label="River Construct an Island"), size=6)+
+annotation_north_arrow(location = "tr", which_north = "true",   #放置指北針
+pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"),
+height = unit(1.0, "cm"), width = unit(1.0, "cm") ,
+style = north_arrow_fancy_orienteering(text_col = 'grey10',
+line_col = 'grey10',
+fill = 'grey10'))+
+coord_sf(xlim = c(119.8, 122.8), ylim = c(21.8, 25.5), expand = FALSE, crs=4326)+
+theme(#panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+panel.background = element_rect(fill = "#003b4f"),
+panel.grid = element_blank(),
+plot.margin = margin(0, 0, -0.4, -0.4, "cm"),
+axis.text.x = element_text(vjust = 8, size=8),
+axis.text.y = element_text(angle = 270, vjust = 10, hjust=0.5, size=8),
+#axis.text.x = element_blank(),
+#axis.text.y = element_blank(),
+axis.ticks.x = element_blank(),
+axis.title.x = element_blank(),
+axis.ticks.y = element_blank(),
+axis.title.y = element_blank(),
+legend.position="none")
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6670, res =900 )
+RiverTaiwan <- ggplot()+
+geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.65)+
+geom_sf(data=Tributary_shp, color="#9dffff",size=0.1)+
+geom_sf(data=River_shp, color="#00ffff", fill="#00ffff", size=0.5)+
+geom_text(mapping=aes(x=122, y=22.7, label="TAIWAN"), size=14)+
+geom_text(mapping=aes(x=122, y=22.5, label="River Construct an Island"), size=6)+
+annotation_north_arrow(location = "tr", which_north = "true",   #放置指北針
+pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"),
+height = unit(1.0, "cm"), width = unit(1.0, "cm") ,
+style = north_arrow_fancy_orienteering(text_col = 'grey10',
+line_col = 'grey10',
+fill = 'grey10'))+
+coord_sf(xlim = c(119.8, 122.8), ylim = c(21.8, 25.5), expand = FALSE, crs=4326)+
+theme(#panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+panel.background = element_rect(fill = "#003b4f"),
+panel.grid = element_blank(),
+plot.margin = margin(0, 0, -0.4, -0.4, "cm"),
+axis.text.x = element_text(vjust = 8, size=8),
+axis.text.y = element_text(angle = 270, vjust = 10, hjust=0.5, size=8),
+#axis.text.x = element_blank(),
+#axis.text.y = element_blank(),
+axis.ticks.x = element_blank(),
+axis.title.x = element_blank(),
+axis.ticks.y = element_blank(),
+axis.title.y = element_blank(),
+legend.position="none")
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6670, res =900 )
+RiverTaiwan <- ggplot()+
+geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.65)+
+geom_sf(data=Tributary_shp, color="#9dffff",size=0.1)+
+geom_sf(data=River_shp, color="#00ffff", fill="#00ffff", size=0.5)+
+geom_text(mapping=aes(x=122, y=22.7, label="TAIWAN"),
+size=14, color="#c4ffff")+
+geom_text(mapping=aes(x=122, y=22.5, label="River Construct an Island"),
+size=6, color="#c4ffff")+
+annotation_north_arrow(location = "tr", which_north = "true",   #放置指北針
+pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"),
+height = unit(1.0, "cm"), width = unit(1.0, "cm") ,
+style = north_arrow_fancy_orienteering(text_col = 'grey10',
+line_col = 'grey10',
+fill = 'grey10'))+
+coord_sf(xlim = c(119.8, 122.8), ylim = c(21.8, 25.5), expand = FALSE, crs=4326)+
+theme(#panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+panel.background = element_rect(fill = "#003b4f"),
+panel.grid = element_blank(),
+plot.margin = margin(0, 0, -0.4, -0.4, "cm"),
+axis.text.x = element_text(vjust = 8, size=8),
+axis.text.y = element_text(angle = 270, vjust = 10, hjust=0.5, size=8),
+#axis.text.x = element_blank(),
+#axis.text.y = element_blank(),
+axis.ticks.x = element_blank(),
+axis.title.x = element_blank(),
+axis.ticks.y = element_blank(),
+axis.title.y = element_blank(),
+legend.position="none")
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6670, res =900 )

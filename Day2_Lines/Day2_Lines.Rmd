@@ -1,0 +1,75 @@
+---
+title: "Day2_Lines"
+author: "Chen-Chia Ku"
+date: "2023-11-02"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+```{r}
+library(ggplot2)
+library(dplyr)
+library(raster)
+library(sf)
+library(ggspatial) #annotation_north_arrow
+library(ggpubr)
+
+```
+
+```{r}
+River_shp <- sf::st_read(dsn = "D:/Drive/6_Rworld/30daysMapChallenge_2023/Day2_Lines/MainRiver", layer="riverpoly")
+
+Tributary_shp <- sf::st_read(dsn = "D:/Drive/6_Rworld/30daysMapChallenge_2023/Day2_Lines/Tributary", layer="riverlin")
+
+Ocean_DEM <- raster("D:/Drive/6_Rworld/30daysMapChallenge_2023/Day2_Lines/TaiwanOcean/gebco_2023_n26.0_s20.0_w119.0_e124.0.tif")
+
+```
+Data source of Ocean: https://www.gebco.net/
+
+
+```{r}
+x <- aggregate(Ocean_DEM, fact=10)
+
+
+Eledt <- rasterToPoints(x)
+Eledt2 <- as.data.frame(Eledt) %>%
+  rename(elevation="gebco_2023_n26.0_s20.0_w119.0_e124.0")
+
+
+```
+
+```{r}
+
+RiverTaiwan <- ggplot()+
+  geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.65)+
+  geom_sf(data=Tributary_shp, color="#9dffff",size=0.1)+
+  geom_sf(data=River_shp, color="#00ffff", fill="#00ffff", size=0.5)+
+  geom_text(mapping=aes(x=122, y=22.7, label="TAIWAN"), 
+            size=14, color="#c4ffff")+
+  geom_text(mapping=aes(x=122, y=22.5, label="River Construct an Island"), 
+            size=6, color="#c4ffff")+
+  annotation_north_arrow(location = "tl", which_north = "true",   #放置指北針
+                         pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"), 
+                         height = unit(1.0, "cm"), width = unit(1.0, "cm") , 
+                         style = north_arrow_fancy_orienteering(text_col = '#00b1b1', 
+                                                                line_col = '#00b1b1',
+                                                                fill = '#00b1b1'))+
+  coord_sf(xlim = c(119.8, 122.8), ylim = c(21.8, 25.5), expand = FALSE, crs=4326)+
+  theme(#panel.border = element_rect(colour = "black", fill=NA, size=1.0),
+        panel.background = element_rect(fill = "#003b4f"), 
+        panel.grid = element_blank(), 
+        plot.margin = margin(0, 0, -0.4, -0.4, "cm"),
+        axis.text.x = element_text(vjust = 8, size=8, color="#00b1b1"),
+        axis.text.y = element_text(angle = 270, vjust = 10, hjust=0.5, size=8, color="#00b1b1"),
+        #axis.text.x = element_blank(),
+        #axis.text.y = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(),
+        legend.position="none")
+
+ggexport(RiverTaiwan, filename = "Taiwan River map.png", width =5000, height =6670, res =900 )
+  
+
+```
