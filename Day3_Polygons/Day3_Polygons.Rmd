@@ -1,0 +1,108 @@
+---
+title: "Day3_Polygons"
+author: "Chen-Chia Ku"
+date: "2023-11-02"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(raster)
+library(sf)
+library(rgeos) #gunion
+library(viridis) #install.packages("viridis")  
+library(ggpubr)
+library(ggnewscale)
+library(ggrepel)
+
+```
+
+# Input data and shape-file
+```{r}
+TaiwanVg_shp <- sf::st_read(dsn = "D:/Drive/6_Rworld/30daysMapChallenge_2023/Day3_Polygons/TaiwanVillage", layer="VILLAGE_MOI_1081121")
+
+Population <- read.csv("D:/Drive/6_Rworld/30daysMapChallenge_2023/Day3_Polygons/opendata111Y051.csv")
+
+Ocean_DEM <- raster("D:/Drive/6_Rworld/30daysMapChallenge_2023/Day3_Polygons/TaiwanOCean/gebco_2023_n27.0_s20.0_w116.0_e125.0.tif")
+
+```
+
+**Data source:** 
+  * Taiwan Village shape file: <https://data.gov.tw/dataset/17219>
+  * Population data: <https://data.gov.tw/dataset/117988>
+  * Ocean DEM: <https://www.gebco.net/>
+
+# Population data combine with Village shapefile
+```{r}
+
+Population1 <- Population %>%
+  mutate(population=as.numeric(population)) %>%
+  filter(!is.na(population)) %>%
+  group_by(district_code, site_id, village) %>%
+  summarise(people=sum(population, na.rm = T)) %>%
+  ungroup() %>%
+  rename(VILLCODE="district_code")
+Population_low  <- Population1 %>%
+  filter(!people>10100)
+
+Population_high <-  Population1 %>%
+  filter(people>10100)
+
+TaiwanVglow_bind <- merge(TaiwanVg_shp, Population_low, by="VILLCODE")
+TaiwanVghigh_bind <- merge(TaiwanVg_shp, Population_high, by="VILLCODE")
+
+
+x <- aggregate(Ocean_DEM, fact=10)
+
+
+Eledt <- rasterToPoints(x)
+Eledt2 <- as.data.frame(Eledt) %>%
+  rename(elevation="gebco_2023_n27.0_s20.0_w116.0_e125.0")
+```
+
+#Plot the MAP YA
+
+```{r}
+mypal <- colorRampPalette(c("#153049","#443A83","#287D8E","#25AB82","#98CC48","#F0E51D","#f5ed67","#FAF6B3"))
+Taiwan <- ggplot()+
+  geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.33)+
+  scale_fill_continuous(guide = "none")+
+  new_scale("fill") +
+  geom_sf(data=TaiwanVghigh_bind ,fill="#fbf8c5", colour=NA)+
+  geom_sf(data=TaiwanVglow_bind ,mapping=aes(fill = people), colour=NA)+
+  coord_sf(xlim = c(116.1, 123.6), ylim = c(21.1, 25.9), expand = FALSE, crs=4326)+
+  scale_fill_gradientn(name="People live in \n the village",
+                       colours = mypal(20), 
+                       breaks=c(2500, 5000, 7500, 10000),
+                       labels=c(2500, 5000, 7500, "30000"))+
+  geom_text(mapping=aes(x=118.1, y=22.9, label="People"), 
+            size=16, color="#fbf8c5")+
+  geom_text(mapping=aes(x=118.1, y=22.5, label="Living in Taiwan"), 
+            size=7, color="#fbf8c5")+
+  geom_text_repel(mapping=aes(x=118.5, y=22.15, label="italic('Taiwan, with a total area of 36,000 square kilometers, \n is home to 23 million people. Where are you now?')"), 
+                  size=3, parse=T,color="#00A482", force = 0)+
+  theme(panel.background = element_rect(fill = "Black"), 
+        panel.grid = element_blank(), 
+        plot.margin = margin(0, 0, -0.4, -0.4, "cm"),
+        axis.text.x = element_text(vjust = 8, size=8, color="#00b1b1"),
+        axis.text.y = element_text(angle = 270, vjust = 7, hjust=0.5, size=8, color="#00b1b1"),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(), 
+        legend.position = c(0.85,0.2), 
+        legend.background = element_rect(fill = NA),
+        legend.key.size = unit(0.5, 'cm'), 
+        legend.text=element_text(size=5, color="#009d9d"), 
+        legend.title = element_text(size=7, color="#009d9d"), 
+        plot.title = element_text(vjust = -10))
+
+Taiwan
+
+#--output--
+ggexport(Taiwan, filename = "Taiwan Village map.png", width =7500, height =5248, res =900 )
+
+```
