@@ -57,7 +57,7 @@ RiverTaiwan <- ggplot()+
   geom_sf(data=River_shp, color="#00ffff", fill="#00ffff", linewidth=0.15)+
   geom_text(mapping=aes(x=122, y=22.6, label="TAIWAN"), 
             size=14, color="#c4ffff")+
-  geom_text(mapping=aes(x=122, y=22.4, label="An Islands Carved by Rivers"), 
+  geom_text(mapping=aes(x=122, y=22.4, label="An Island Carved by Rivers"), 
             size=5, color="#c4ffff")+
   annotation_north_arrow(location = "tl", which_north = "true",   #North
                          pad_x = unit(0.2, "cm"), pad_y = unit(0.6, "cm"), 

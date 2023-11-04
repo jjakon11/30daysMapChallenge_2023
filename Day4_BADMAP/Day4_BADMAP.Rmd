@@ -1,0 +1,187 @@
+---
+title: "Day4_Badmap"
+author: "Chen-Chia Ku"
+date: "2023-11-04"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(raster)
+library(sf)
+library(rgeos) #gunion
+library(ggpubr)
+```
+
+# Input data and shape-file
+```{r}
+taiwan_shp <-sf::st_read(dsn ="D:/Drive/6_Rworld/30daysMapChallenge_2023/MapDt/Taiwan", layer="gadm36_TWN_2")
+```
+
+**Data source:** 
+  * Taiwan county shape file: <https://data.gov.tw/dataset/17219>
+
+#Plot the MAP YA
+
+```{r}
+
+mypal <- colorRampPalette(c("#153049","#443A83","#287D8E","#25AB82","#98CC48","#F0E51D","#f5ed67","#FAF6B3"))
+Penhu <- ggplot()+
+  geom_sf(data=Taiwan2 ,fill="#D8EFE5", colour="#183e4f")+
+  coord_sf(xlim = c(119.05, 119.95), ylim = c(23.1, 24), expand = FALSE, crs=4326)+
+  theme(panel.background = element_rect(fill = "#2f7a9a"), 
+        panel.grid = element_blank(), 
+        plot.margin = margin(-0.8, 0, 0, 0, "cm"),
+        plot.background = element_rect(fill = "#2f7a9a", colour = "#2f7a9a"),  
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(), 
+        plot.title = element_text(vjust = -14, hjust = 0.5, color="#e4f4ed", size=18))+
+  ggtitle("Penghu")
+
+Kinmen<- ggplot()+
+  geom_sf(data=Taiwan2 ,fill="#D8EFE5", colour="#183e4f")+
+  coord_sf(xlim = c(118.2, 118.5), ylim = c(24.3, 24.6), expand = FALSE, crs=4326)+
+  theme(panel.background = element_rect(fill = "#2f7a9a"), 
+        panel.grid = element_blank(), 
+        plot.margin = margin(-0.8, 0, 0, 0, "cm"),
+        plot.background = element_rect(fill = "#2f7a9a", colour = "#2f7a9a"),  
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(), 
+        plot.title = element_text(vjust = -14, hjust = 0.5, color="#e4f4ed", size=18))+
+  ggtitle("Kinmen")
+
+Matsu<- ggplot()+
+  geom_sf(data=Taiwan2 ,fill="#D8EFE5", colour="#183e4f")+
+  coord_sf(xlim = c(119.7, 120.2), ylim = c(25.9, 26.4), expand = FALSE, crs=4326)+
+  theme(panel.background = element_rect(fill = "#2f7a9a"), 
+        panel.grid = element_blank(), 
+        plot.margin = margin(-0.8, 0, 0, 0, "cm"),
+        plot.background = element_rect(fill = "#2f7a9a", colour = "#2f7a9a"),  
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(), 
+        plot.title = element_text(vjust = -14, hjust = 0.5, color="#e4f4ed", size=18))+
+  ggtitle("Matsu Islands")
+
+Greenland<- ggplot()+
+  geom_sf(data=Taiwan2 ,fill="#D8EFE5", colour="#183e4f")+
+  coord_sf(xlim = c(121.42, 121.56), ylim = c(22.59, 22.73), expand = FALSE, crs=4326)+
+  theme(panel.background = element_rect(fill = "#2f7a9a"), 
+        panel.grid = element_blank(), 
+        plot.margin = margin(-0.8, 0, 0, 0, "cm"),
+        plot.background = element_rect(fill = "#2f7a9a", colour = "#2f7a9a"),  
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(), 
+        plot.title = element_text(vjust = -14, hjust = 0.5, color="#e4f4ed", size=18))+
+  ggtitle("Green Island")
+
+Lanyu <- ggplot()+
+  geom_sf(data=Taiwan2 ,fill="#D8EFE5", colour="#183e4f")+
+  coord_sf(xlim = c(121.45, 121.65), ylim = c(21.94, 22.14), expand = FALSE, crs=4326)+
+  theme(panel.background = element_rect(fill = "#2f7a9a"), 
+        panel.grid = element_blank(), 
+        plot.margin = margin(-0.8, 0, 0, 0, "cm"),
+        plot.background = element_rect(fill = "#2f7a9a", colour = "#2f7a9a"),  
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(), 
+        plot.title = element_text(vjust = -14, hjust = 0.5, color="#e4f4ed", size=18))+
+  ggtitle("Lanyu")
+
+Gland <- ggplot()+
+  geom_sf(data=Taiwan2 ,fill="#D8EFE5", colour="#183e4f")+
+  coord_sf(xlim = c(121.9, 122), ylim = c(24.8, 24.9), expand = FALSE, crs=4326)+
+  theme(panel.background = element_rect(fill = "#2f7a9a"), 
+        panel.grid = element_blank(), 
+        plot.margin = margin(-0.8, 0, 0, 0, "cm"),
+        plot.background = element_rect(fill = "#2f7a9a", colour = "#2f7a9a"), 
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(), 
+        plot.title = element_text(vjust = -14, hjust = 0.5, color="#e4f4ed", size=18))+
+  ggtitle("Guishan Island")
+
+Lambai <- ggplot()+
+  geom_sf(data=Taiwan2 ,fill="#D8EFE5", colour="#183e4f")+
+  coord_sf(xlim = c(120.32, 120.42), ylim = c(22.3, 22.4), expand = FALSE, crs=4326)+
+  theme(panel.background = element_rect(fill = "#2f7a9a"), 
+        panel.grid = element_blank(), 
+        plot.margin = margin(-0.8, 0, 0, 0, "cm"),
+        plot.background = element_rect(fill = "#2f7a9a", colour = "#2f7a9a"),  
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(), 
+        plot.title = element_text(vjust = -14, hjust = 0.5, color="#e4f4ed", size=18))+
+  ggtitle("Ryukyu Island")
+
+Diaoyutai <- ggplot()+
+  geom_sf(data=TaiwanVg_bind ,fill="#D8EFE5", colour=NA)+
+  coord_sf(xlim = c(123.52, 123.57), ylim = c(25.705, 25.755), expand = FALSE, crs=4326)+
+  theme(panel.background = element_rect( fill = "#2f7a9a"), 
+        panel.grid = element_blank(), 
+        plot.margin = margin(-0.8, 0, 0, 0, "cm"),
+        plot.background = element_rect(fill = "#2f7a9a", colour = "#2f7a9a"), 
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(), 
+        plot.title = element_text(vjust = -14, hjust = 0.5, color="#e4f4ed", size=18))+
+  ggtitle("Diaoyutai Islands")
+```
+
+# Combine all islands
+```{r}
+Island <- ggarrange(Diaoyutai, Matsu, Gland, Lambai,  Penhu, Greenland,Lanyu,  Kinmen,  
+          ncol=4, nrow = 2, heights = rep(4, 4), widths = rep(4, 4))+
+  bgcolor("#2f7a9a")
+
+#--get some title
+Island_title <- annotate_figure(Island, 
+                                top = text_grob("Island",
+                                                color = "#2f7a9a", 
+                                                face = "bold", 
+                                                size = 40), 
+                                bottom=text_grob("#30DayMapChallenge | Day4_Polygons | A Bad Map | @jjakon11",
+                                                color = "grey30", 
+                                                hjust = 1, 
+                                                x = 1,
+                                                size = 14))
+
+
+
+#--output--
+ggexport(Island_title, filename = "Island map.png", width =16800, height =9150, res =900 )
+
+```
+
+
