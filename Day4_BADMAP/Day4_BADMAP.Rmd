@@ -20,10 +20,23 @@ library(ggpubr)
 # Input data and shape-file
 ```{r}
 taiwan_shp <-sf::st_read(dsn ="D:/Drive/6_Rworld/30daysMapChallenge_2023/MapDt/Taiwan", layer="gadm36_TWN_2")
+
+TaiwanVg_shp <- sf::st_read(dsn = "D:/Drive/6_Rworld/30daysMapChallenge_2023/Day3_Polygons/TaiwanVillage", layer="VILLAGE_MOI_1081121")
+
+Taiwan2 <- st_combine(taiwan_shp)
 ```
 
 **Data source:** 
   * Taiwan county shape file: <https://data.gov.tw/dataset/7442>
+  * Taiwan Village shape file: <https://data.gov.tw/dataset/17219>
+```{r}
+
+TaiwanVg_bind <- merge(TaiwanVg_shp, Population1, by="VILLCODE")
+
+
+```
+
+
 
 #Plot the MAP YA
 
@@ -143,7 +156,7 @@ Lambai <- ggplot()+
   ggtitle("Ryukyu Island")
 
 Diaoyutai <- ggplot()+
-  geom_sf(data=TaiwanVg_bind ,fill="#D8EFE5", colour=NA)+
+  geom_sf(data=TaiwanVg_shp ,fill="#D8EFE5", colour="#183e4f")+
   coord_sf(xlim = c(123.52, 123.57), ylim = c(25.705, 25.755), expand = FALSE, crs=4326)+
   theme(panel.background = element_rect( fill = "#2f7a9a"), 
         panel.grid = element_blank(), 
@@ -167,7 +180,7 @@ Island <- ggarrange(Diaoyutai, Matsu, Gland, Lambai,  Penhu, Greenland,Lanyu,  K
 
 #--get some title
 Island_title <- annotate_figure(Island, 
-                                top = text_grob("Island",
+                                top = text_grob("Islands",
                                                 color = "#2f7a9a", 
                                                 face = "bold", 
                                                 size = 40), 
