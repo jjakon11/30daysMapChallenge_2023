@@ -13,15 +13,14 @@ library(tidyverse)
 library(ggplot2)
 library(raster)
 library(sf)
-library(rgeos) #gunion
 library(ggpubr)
 ```
 
 # Input data and shape-file
 ```{r}
-taiwan_shp <-sf::st_read(dsn ="D:/Drive/6_Rworld/30daysMapChallenge_2023/MapDt/Taiwan", layer="gadm36_TWN_2")
+taiwan_shp <-sf::st_read(dsn ="D:/6_Rworld/30daysMapChallenge_2023/MapDt/Taiwan", layer="gadm36_TWN_2")
 
-TaiwanVg_shp <- sf::st_read(dsn = "D:/Drive/6_Rworld/30daysMapChallenge_2023/Day3_Polygons/TaiwanVillage", layer="VILLAGE_MOI_1081121")
+TaiwanVg_shp <- sf::st_read(dsn = "D:/6_Rworld/30daysMapChallenge_2023/Day3_Polygons/TaiwanVillage", layer="VILLAGE_MOI_1081121")
 
 Taiwan2 <- st_combine(taiwan_shp)
 ```
@@ -77,7 +76,7 @@ Kinmen<- ggplot()+
 
 Matsu<- ggplot()+
   geom_sf(data=Taiwan2 ,fill="#D8EFE5", colour="#183e4f")+
-  coord_sf(xlim = c(119.7, 120.2), ylim = c(25.9, 26.4), expand = FALSE, crs=4326)+
+  coord_sf(xlim = c(119.77, 120.55), ylim = c(25.85, 26.63), expand = FALSE, crs=4326)+
   theme(panel.background = element_rect(fill = "#2f7a9a"), 
         panel.grid = element_blank(), 
         plot.margin = margin(-0.8, 0, 0, 0, "cm"),
@@ -153,7 +152,7 @@ Lambai <- ggplot()+
         axis.ticks.y = element_blank(),
         axis.title.y = element_blank(), 
         plot.title = element_text(vjust = -14, hjust = 0.5, color="#e4f4ed", size=18))+
-  ggtitle("Ryukyu Island")
+  ggtitle("Liuqiu Island")
 
 Diaoyutai <- ggplot()+
   geom_sf(data=TaiwanVg_shp ,fill="#D8EFE5", colour="#183e4f")+
@@ -193,7 +192,7 @@ Island_title <- annotate_figure(Island,
 
 
 #--output--
-ggexport(Island_title, filename = "Island map.png", width =16800, height =9150, res =900 )
+ggexport(Island_title, filename = "Island map.png", width =8400, height =4575, res =450 )
 
 ```
 

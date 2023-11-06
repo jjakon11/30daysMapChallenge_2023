@@ -1,0 +1,126 @@
+---
+title: "Day6_Asia"
+author: "Chen-Chia Ku"
+date: "2023-11-06"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(maps)
+
+library(dplyr)
+library(ggplot2)
+library(sf)
+library(ggpubr)
+library(rnaturalearth)
+library(rnaturalearthdata)
+
+library(ggtext)# remotes::install_github("clauswilke/ggtext")
+```
+
+
+```{r}
+#world_mapg <- map_data("world")
+
+world<- ne_countries(scale = 50, type = "countries", returnclass = "sf") %>%
+  select(iso_a3, iso_n3, admin, continent)
+Asia <- world %>% 
+  filter(continent=="Asia")
+taiwan_shp <-sf::st_read(dsn ="D:/Drive/6_Rworld/30daysMapChallenge_2023/MapDt/Taiwan", layer="gadm36_TWN_2")
+
+Taiwan2 <- st_combine(taiwan_shp)
+
+QAdt <- read.csv("D:/Drive/6_Rworld/30daysMapChallenge_2023/Day6_Asia/Mitrastemon.csv")
+
+```
+
+# speices distribution data
+```{r}
+head(QAdt)
+
+QAdt1 <- QAdt %>%
+  dplyr::select(species, family, genus, decimalLatitude, decimalLongitude, infraspecificEpithet) %>%
+  mutate(species=ifelse(infraspecificEpithet=="kanehirai",
+                        paste(genus,infraspecificEpithet, sep=" " ), species)) %>%
+  rename(Long="decimalLongitude", 
+         Lat="decimalLatitude")
+  
+
+
+```
+
+```{r}
+crs <- "+proj=laea +lat_0=22 +lon_0=122 +x_0=43321 +y_0=433210 +datum=WGS84 +units=m +no_defs"
+sphere <- st_graticule(ndiscr = 10000, margin = 10e-9) %>%
+  st_transform(crs = crs) %>%
+  st_convex_hull() %>%
+  summarise(geometry = st_union(geometry))
+
+```
+
+
+```{r}
+Earth_P <- ggplot(sphere )+
+  
+  geom_sf(data = world, alpha = 0.15, fill="#83b9d1", color="#83b9d1")+
+  geom_sf(data = Asia, alpha = 0.6, fill="#144D69",color="#1b658a", linewidth=0.0002)+
+  #geom_point(QAdt1, mapping=aes(x=Long, y=Lat), color="red", size=)+
+  geom_sf( fill = "#D8F4FF",color="black", size=2, alpha = 0.2)+
+  coord_sf(crs=crs)+
+  theme(panel.background = element_rect(fill = "#d9eaf1", colour = "#d9eaf1"), 
+        plot.margin = margin(0, 0, 0, 0, "cm"))
+
+
+Asia_noom <- ggplot()+
+  geom_sf(data = world, alpha = 0.15, fill="#83b9d1", color="#83b9d1")+
+  geom_sf(data = Asia,  fill="#144D69", color="#1b658a")+
+  coord_sf(xlim = c(91, 179), ylim = c(-11, 58), expand = FALSE, crs=4326)+
+  geom_point(QAdt1, mapping=aes(x=Long, y=Lat, 
+                                color=factor(species), 
+                                size=species),alpha=0.7 )+
+  scale_size_manual(name ="Species", 
+                     breaks = c("Mitrastemon yamamotoi", "Mitrastemon kanehirai"), 
+                     labels = c(expression(italic("Mitrastemon yamamotoi")),
+                                expression(paste(italic("Mitrastemon yamamotoi")," var. " ,italic("kanehirai")))),
+                     values=c(0.8,1.3))+
+  scale_color_manual(name ="Species", 
+                     breaks = c("Mitrastemon yamamotoi", "Mitrastemon kanehirai"), 
+                     labels = c(expression(italic("Mitrastemon yamamotoi")),
+                                expression(paste(italic("Mitrastemon yamamotoi")," var. " ,italic("kanehirai")))),
+                     values=c("#877832","yellow"))+
+  
+  theme(panel.background = element_rect(fill = "#d9eaf1", colour = "#144D69"), 
+        #panel.grid = element_blank(), 
+        plot.margin = margin(0, 0, -0.4, -0.4, "cm"),
+        axis.text.x = element_text(vjust = 8, size=8, color="#a0c9dc"),
+        axis.text.y = element_text(angle = 270, vjust = 5, hjust=0.5, size=8, color="#a0c9dc"),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(), 
+        legend.position = c(0.78,0.35), 
+        legend.background = element_rect(fill = NA),
+        legend.key = element_blank(),
+        legend.key.size = unit(0.6, 'cm'), 
+        legend.text=element_text(size=10, color="#144D69"), 
+        legend.title = element_text(size=12, color="#144D69"),
+        legend.text.align = 0)
+
+SpDis <- Asia_noom+annotation_custom(
+      grob = ggplotGrob(Earth_P),
+      xmin = 148, xmax = 178, ymin = 28, ymax = 58)
+
+SpDis2 <- annotate_figure(SpDis, top = text_grob(expression(paste("Distribution of ", italic( "Mitrastemon yamamotoi") ," and its variants")),color = "#2f7a9a",face = "bold",size = 20), 
+                  bottom=text_grob("#30DayMapChallenge | Day6_Asia | @jjakon11",
+                                                color = "grey30", 
+                                                hjust = 1, 
+                                                x = 1,
+                                                size = 14))
+  
+
+
+ggexport(SpDis2, filename = "Asia map.png", width =4500, height =4100, res =500 )
+
+```
