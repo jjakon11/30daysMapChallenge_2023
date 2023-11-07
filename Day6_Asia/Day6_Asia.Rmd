@@ -82,12 +82,12 @@ Asia_noom <- ggplot()+
                                 size=species),alpha=0.7 )+
   scale_size_manual(name ="Species", 
                      breaks = c("Mitrastemon yamamotoi", "Mitrastemon kanehirai"), 
-                     labels = c(expression(italic("Mitrastemon yamamotoi")),
+                     labels = c(expression(paste(italic("Mitrastemon yamamotoi")," var. " ,italic("yamamotoi"))),
                                 expression(paste(italic("Mitrastemon yamamotoi")," var. " ,italic("kanehirai")))),
                      values=c(0.8,1.3))+
   scale_color_manual(name ="Species", 
                      breaks = c("Mitrastemon yamamotoi", "Mitrastemon kanehirai"), 
-                     labels = c(expression(italic("Mitrastemon yamamotoi")),
+                     labels = c(expression(paste(italic("Mitrastemon yamamotoi")," var. " ,italic("yamamotoi"))),
                                 expression(paste(italic("Mitrastemon yamamotoi")," var. " ,italic("kanehirai")))),
                      values=c("#877832","yellow"))+
   
@@ -112,12 +112,12 @@ SpDis <- Asia_noom+annotation_custom(
       grob = ggplotGrob(Earth_P),
       xmin = 148, xmax = 178, ymin = 28, ymax = 58)
 
-SpDis2 <- annotate_figure(SpDis, top = text_grob(expression(paste("Distribution of ", italic( "Mitrastemon yamamotoi") ," and its variants")),color = "#2f7a9a",face = "bold",size = 20), 
+SpDis2 <- annotate_figure(SpDis, top = text_grob(expression(paste("Distribution of ", italic( "Mitrastemon yamamotoi") ," var. ", italic("yamamotoi")," and its variants")),color = "#2f7a9a",face = "bold",size = 18), 
                   bottom=text_grob("#30DayMapChallenge | Day6_Asia | @jjakon11",
                                                 color = "grey30", 
                                                 hjust = 1, 
                                                 x = 1,
-                                                size = 14))
+                                                size = 12))
   
 
 
