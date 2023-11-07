@@ -1,0 +1,684 @@
+﻿Time (EDT),Latitude,Longitude,Course,kts,mph,feet,Rate,Reporting Facility
+Fri 01:34:52 AM,25.2282,55.4096,↘ 121°,197,227,900, Level, FlightAware ADS-B (NHD / OMDM)
+Fri 01:35:10 AM,25.2192,55.4257,↘ 121°,198,228,"1,575","1,317 Climbing", FlightAware ADS-B (RKT / OMRK)
+Fri 01:35:33 AM,25.2069,55.4471,↘ 122°,228,262,"1,800",861 Climbing, FlightAware ADS-B (RKT / OMRK)
+Fri 01:36:04 AM,25.1887,55.4795,↘ 122°,260,299,"2,350","1,500 Climbing", FlightAware ADS-B (NHD / OMDM)
+Fri 01:36:35 AM,25.1681,55.5159,↘ 122°,274,315,"3,350","1,795 Climbing", FlightAware ADS-B (DXB / OMDB)
+Fri 01:37:05 AM,25.1484,55.5513,↘ 121°,274,315,"4,175","1,975 Climbing", FlightAware ADS-B (RKT / OMRK)
+Fri 01:37:35 AM,25.1283,55.5872,↘ 122°,275,316,"5,325","2,373 Climbing", FlightAware ADS-B (RKT / OMRK)
+Fri 01:38:00 AM,25.1097,55.6168,↘ 129°,277,319,"6,350","2,330 Climbing", FlightAware ADS-B (RKT / OMRK)
+Fri 01:38:22 AM,25.0894,55.6399,↘ 135°,282,325,"7,150","1,500 Climbing", FlightAware ADS-B (RKT / OMRK)
+Fri 01:38:53 AM,25.0604,55.6721,↘ 135°,312,359,"7,675","1,053 Climbing", FlightAware ADS-B (DXB / OMDB)
+Fri 01:39:09 AM,25.0437,55.6906,↘ 135°,325,374,"7,975","1,109 Climbing", FlightAware ADS-B (RKT / OMRK)
+Fri 01:39:39 AM,25.0089,55.7289,↘ 135°,351,404,"8,525","1,425 Climbing", FlightAware ADS-B (NHD / OMDM)
+Fri 01:40:09 AM,24.9732,55.7682,↘ 135°,367,422,"9,400","1,964 Climbing", FlightAware ADS-B (NHD / OMDM)
+Fri 01:40:34 AM,24.9415,55.7983,↘ 145°,370,426,"10,325","2,136 Climbing", FlightAware ADS-B (RKT / OMRK)
+Fri 01:41:15 AM,24.8785,55.8322,↓ 156°,385,443,"11,750","2,238 Climbing", FlightAware ADS-B (RKT / OMRK)
+Fri 01:41:35 AM,24.8444,55.854,↘ 143°,393,452,"12,600","2,580 Climbing", FlightAware ADS-B (RKT / OMRK)
+Fri 01:42:05 AM,24.8078,55.8989,↘ 129°,394,453,"13,900","2,298 Climbing", FlightAware ADS-B (RKT / OMRK)
+Fri 01:42:22 AM,24.7867,55.9193,↘ 146°,396,456,"14,400","2,053 Climbing", FlightAware ADS-B (AUH / OMAA)
+Fri 01:42:43 AM,24.7511,55.9348,↓ 169°,397,457,"15,200","2,203 Climbing", FlightAware ADS-B (MCT / OOMS)
+Fri 01:43:26 AM,24.6683,55.9359,↓ 182°,408,470,"16,750","2,034 Climbing", FlightAware ADS-B (RKT / OMRK)
+Fri 01:43:56 AM,24.6128,55.9286,↓ 196°,415,478,"17,675","1,811 Climbing", FlightAware ADS-B (RKT / OMRK)
+Fri 01:44:19 AM,24.5746,55.9079,↙ 213°,418,481,"18,350","1,953 Climbing", FlightAware ADS-B (DXB / OMDB)
+Fri 01:44:49 AM,24.5295,55.8661,↙ 221°,422,486,"19,400","2,066 Climbing", FlightAware ADS-B (RKT / OMRK)
+Fri 01:45:20 AM,24.4833,55.821,↙ 222°,426,490,"20,450","2,016 Climbing", FlightAware ADS-B (MCT / OOMS)
+Fri 01:45:50 AM,24.4387,55.7776,↙ 222°,429,494,"21,450","1,800 Climbing", FlightAware ADS-B (MCT / OOMS)
+Fri 01:46:20 AM,24.3958,55.7363,↙ 221°,434,499,"22,250","1,675 Climbing", FlightAware ADS-B (DXB / OMDB)
+Fri 01:46:50 AM,24.3487,55.6912,↙ 221°,439,505,"23,125","1,672 Climbing", FlightAware ADS-B (DXB / OMDB)
+Fri 01:47:21 AM,24.3012,55.6459,↙ 221°,435,501,"23,950","1,154 Climbing", FlightAware ADS-B (MCT / OOMS)
+Fri 01:47:42 AM,24.2662,55.617,↙ 212°,437,503,"24,125",892 Climbing, FlightAware ADS-B (RKT / OMRK)
+Fri 01:47:58 AM,24.2389,55.602,↙ 204°,442,509,"24,500","1,404 Climbing", FlightAware ADS-B (DXB / OMDB)
+Fri 01:48:29 AM,24.1776,55.5813,↓ 196°,452,520,"25,225","1,426 Climbing", FlightAware ADS-B (AUH / OMAA)
+Fri 01:48:59 AM,24.1168,55.5631,↓ 195°,456,525,"25,950","1,451 Climbing", FlightAware ADS-B (DXB / OMDB)
+Fri 01:49:30 AM,24.0526,55.5442,↓ 195°,460,529,"26,700","1,402 Climbing", FlightAware ADS-B (AUH / OMAA)
+Fri 01:50:00 AM,23.9903,55.5258,↓ 195°,464,534,"27,375","1,333 Climbing", FlightAware ADS-B (AUH / OMAA)
+Fri 01:50:33 AM,23.9207,55.5052,↓ 195°,470,541,"28,100","1,177 Climbing", FlightAware ADS-B (MCT / OOMS)
+Fri 01:51:05 AM,23.8533,55.4852,↓ 195°,477,549,"28,650","1,137 Climbing", FlightAware ADS-B (MCT / OOMS)
+Fri 01:51:35 AM,23.7894,55.4663,↓ 195°,480,552,"29,275","1,225 Climbing", FlightAware ADS-B (MCT / OOMS)
+Fri 01:52:05 AM,23.7257,55.4473,↓ 195°,483,556,"29,875","1,575 Climbing", FlightAware ADS-B (MCT / OOMS)
+Fri 01:52:35 AM,23.6592,55.4275,↓ 195°,478,550,"30,850","1,650 Climbing", FlightAware ADS-B (MCT / OOMS)
+Fri 01:53:05 AM,23.5956,55.4086,↓ 195°,474,545,"31,525","1,200 Climbing", FlightAware ADS-B (MCT / OOMS)
+Fri 01:53:25 AM,23.5533,55.3968,↓ 192°,475,547,"31,850",811 Climbing, FlightAware ADS-B (MCT / OOMS)
+Fri 01:53:42 AM,23.5149,55.3928,↓ 180°,488,562,"32,025",273 Climbing, FlightAware ADS-B (AUH / OMAA)
+Fri 01:53:58 AM,23.4787,55.3961,↓ 171°,496,571,"32,000",-26 Descending, FlightAware ADS-B (NHD / OMDM)
+Fri 01:54:40 AM,23.3854,55.4218,↓ 164°,500,575,"32,000", Level, FlightAware ADS-B (MCT / OOMS)
+Fri 01:55:11 AM,23.3191,55.4434,↓ 163°,501,577,"32,000", Level, FlightAware ADS-B (MCT / OOMS)
+Fri 01:55:41 AM,23.2507,55.4657,↓ 163°,502,578,"32,000", Level, FlightAware ADS-B (MCT / OOMS)
+Fri 01:56:11 AM,23.1835,55.4874,↓ 164°,504,580,"32,000", Level, FlightAware ADS-B (MCT / OOMS)
+Fri 01:56:41 AM,23.1151,55.5091,↓ 164°,504,580,"32,000", Level, FlightAware ADS-B (MCT / OOMS)
+Fri 01:57:17 AM,23.0357,55.5341,↓ 164°,503,579,"32,000", Level, FlightAware ADS-B (DXB / OMDB)
+Fri 01:57:56 AM,22.9482,55.5609,↓ 164°,501,577,"32,000", Level, FlightAware ADS-B (NHD / OMDM)
+Fri 01:58:35 AM,22.8611,55.5874,↓ 164°,501,577,"32,000", Level, FlightAware ADS-B (MCT / OOMS)
+Fri 01:59:05 AM,22.7945,55.6078,↓ 164°,502,578,"32,000", Level, FlightAware ADS-B (MCT / OOMS)
+Fri 01:59:35 AM,22.7266,55.6285,↓ 164°,503,579,"32,000", Level, FlightAware ADS-B (MCT / OOMS)
+Fri 02:00:05 AM,22.6574,55.6496,↓ 164°,504,580,"32,000", Level, FlightAware ADS-B (MCT / OOMS)
+Fri 02:00:42 AM,22.577,55.6741,↓ 164°,502,578,"32,000", Level, FlightAware ADS-B (RKT / OMRK)
+Fri 02:01:15 AM,22.502,55.6971,↓ 164°,499,574,"32,000", Level, FlightAware ADS-B (DXB / OMDB)
+Fri 02:01:46 AM,22.4344,55.7179,↓ 164°,498,573,"32,000", Level, FlightAware ADS-B (DXB / OMDB)
+Fri 02:02:26 AM,22.3407,55.7464,↓ 164°,499,574,"32,000", Level, FlightAware ADS-B (NHD / OMDM)
+Fri 02:03:13 AM,22.2392,55.7719,↓ 171°,492,566,"32,000", Level, FlightAware ADS-B (MCT / OOMS)
+Fri 02:03:56 AM,22.1415,55.783,↓ 175°,489,563,"32,000", Level, FlightAware ADS-B (NHD / OMDM)
+Fri 02:04:43 AM,22.0367,55.7935,↓ 175°,488,562,"32,000", Level, FlightAware ADS-B (NHD / OMDM)
+Fri 02:05:46 AM,21.8943,55.8076,↓ 175°,490,564,"32,000", Level, FlightAware ADS-B (NHD / OMDM)
+Fri 02:08:03 AM,21.6539,55.638,↙ 213°,,,, Level, Estimated
+Fri 02:09:03 AM,21.5485,55.5639,↙ 213°,,,, Level, Estimated
+Fri 02:10:08 AM,21.4344,55.4838,↙ 213°,,,, Level, Estimated
+Fri 02:11:08 AM,21.3289,55.4099,↙ 213°,,,, Level, Estimated
+Fri 02:13:07 AM,21.1198,55.2637,↙ 213°,,,, Level, Estimated
+Fri 02:14:09 AM,21.0107,55.1877,↙ 213°,,,, Level, Estimated
+Fri 02:15:10 AM,20.9034,55.113,↙ 213°,,,, Level, Estimated
+Fri 02:17:09 AM,20.694,54.9676,↙ 213°,,,, Level, Estimated
+Fri 02:18:55 AM,20.5073,54.8385,↙ 213°,,,, Level, Estimated
+Fri 02:20:05 AM,20.384,54.7534,↙ 213°,,,, Level, Estimated
+Fri 02:22:06 AM,20.1708,54.6066,↙ 213°,,,, Level, Estimated
+Fri 02:23:59 AM,19.9715,54.4699,↙ 213°,,,, Level, Estimated
+Fri 02:25:09 AM,19.848,54.3853,↙ 213°,,,, Level, Estimated
+Fri 02:26:10 AM,19.7404,54.3118,↙ 213°,,,, Level, Estimated
+Fri 02:27:59 AM,19.5479,54.1806,↙ 213°,,,, Level, Estimated
+Fri 02:29:04 AM,19.4331,54.1025,↙ 213°,,,, Level, Estimated
+Fri 02:30:08 AM,19.3201,54.0257,↙ 213°,,,, Level, Estimated
+Fri 02:31:46 AM,19.1469,53.9084,↙ 213°,,,, Level, Estimated
+Fri 02:33:09 AM,19.0002,53.8092,↙ 213°,,,, Level, Estimated
+Fri 02:35:01 AM,18.8021,53.6756,↙ 213°,,,, Level, Estimated
+Fri 02:37:03 AM,18.5862,53.5304,↙ 213°,,,, Level, Estimated
+Fri 02:38:09 AM,18.4693,53.452,↙ 212°,,,, Level, Estimated
+Fri 02:40:08 AM,18.2586,53.311,↙ 212°,,,, Level, Estimated
+Fri 02:42:06 AM,18.0495,53.1715,↙ 212°,,,, Level, Estimated
+Fri 02:44:08 AM,17.8332,53.0276,↙ 212°,,,, Level, Estimated
+Fri 02:46:08 AM,17.6204,52.8864,↙ 212°,,,, Level, Estimated
+Fri 02:47:59 AM,17.4235,52.7561,↙ 212°,,,, Level, Estimated
+Fri 02:49:10 AM,17.2975,52.6729,↙ 212°,,,, Level, Estimated
+Fri 02:51:06 AM,17.0915,52.5372,↙ 212°,,,, Level, Estimated
+Fri 02:53:06 AM,16.8783,52.3971,↙ 212°,,,, Level, Estimated
+Fri 02:54:07 AM,16.7699,52.3261,↙ 212°,,,, Level, Estimated
+Fri 02:56:10 AM,16.5513,52.183,↙ 212°,,,, Level, Estimated
+Fri 02:58:07 AM,16.3432,52.0472,↙ 212°,,,, Level, Estimated
+Fri 02:59:08 AM,16.2347,51.9765,↙ 212°,,,, Level, Estimated
+Fri 03:00:09 AM,16.1262,51.9059,↙ 212°,,,, Level, Estimated
+Fri 03:02:06 AM,15.9179,51.7707,↙ 212°,,,, Level, Estimated
+Fri 03:03:09 AM,15.8058,51.698,↙ 212°,,,, Level, Estimated
+Fri 03:05:01 AM,15.6063,51.569,↙ 212°,,,, Level, Estimated
+Fri 03:07:05 AM,15.3854,51.4265,↙ 212°,,,, Level, Estimated
+Fri 03:08:50 AM,15.1982,51.306,↙ 212°,,,, Level, Estimated
+Fri 03:10:07 AM,15.061,51.2178,↙ 212°,,,, Level, Estimated
+Fri 03:11:08 AM,14.9522,51.148,↙ 212°,,,, Level, Estimated
+Fri 03:12:50 AM,14.7703,51.0314,↙ 212°,,,, Level, Estimated
+Fri 03:14:04 AM,14.6382,50.947,↙ 212°,,,, Level, Estimated
+Fri 03:15:05 AM,14.5294,50.8775,↙ 212°,,,, Level, Estimated
+Fri 03:16:05 AM,14.4223,50.8091,↙ 212°,,,, Level, Estimated
+Fri 03:18:08 AM,14.2027,50.6693,↙ 212°,,,, Level, Estimated
+Fri 03:20:02 AM,13.9991,50.5399,↙ 212°,,,, Level, Estimated
+Fri 03:21:04 AM,13.8883,50.4696,↙ 212°,,,, Level, Estimated
+Fri 03:22:07 AM,13.7757,50.3983,↙ 212°,,,, Level, Estimated
+Fri 03:23:10 AM,13.6631,50.327,↙ 212°,,,, Level, Estimated
+Fri 03:25:07 AM,13.454,50.1949,↙ 212°,,,, Level, Estimated
+Fri 03:26:08 AM,13.3449,50.126,↙ 212°,,,, Level, Estimated
+Fri 03:27:49 AM,13.1643,50.0122,↙ 212°,,,, Level, Estimated
+Fri 03:29:03 AM,13.0319,49.929,↙ 212°,,,, Level, Estimated
+Fri 03:30:59 AM,12.8243,49.7986,↙ 211°,,,, Level, Estimated
+Fri 03:32:10 AM,12.6973,49.7189,↙ 211°,,,, Level, Estimated
+Fri 03:34:06 AM,12.4896,49.5889,↙ 211°,,,, Level, Estimated
+Fri 03:35:10 AM,12.375,49.5173,↙ 211°,,,, Level, Estimated
+Fri 03:37:03 AM,12.1726,49.3909,↙ 211°,,,, Level, Estimated
+Fri 03:39:09 AM,11.9469,49.2503,↙ 211°,,,, Level, Estimated
+Fri 03:40:47 AM,11.7712,49.141,↙ 211°,,,, Level, Estimated
+Fri 03:42:04 AM,11.6332,49.0553,↙ 211°,,,, Level, Estimated
+Fri 03:43:09 AM,11.5167,48.983,↙ 211°,,,, Level, Estimated
+Fri 03:45:09 AM,11.3015,48.8497,↙ 211°,,,, Level, Estimated
+Fri 03:47:03 AM,11.097,48.7232,↙ 211°,,,, Level, Estimated
+Fri 03:48:03 AM,10.9894,48.6567,↙ 211°,,,, Level, Estimated
+Fri 03:50:07 AM,10.7669,48.5195,↙ 211°,,,, Level, Estimated
+Fri 03:52:06 AM,10.5533,48.3879,↙ 211°,,,, Level, Estimated
+Fri 03:54:03 AM,10.3433,48.2588,↙ 211°,,,, Level, Estimated
+Fri 03:55:06 AM,10.2301,48.1893,↙ 211°,,,, Level, Estimated
+Fri 03:57:03 AM,10.02,48.0604,↙ 211°,,,, Level, Estimated
+Fri 03:58:59 AM,9.8116,47.9328,↙ 211°,,,, Level, Estimated
+Fri 04:00:02 AM,9.6984,47.8635,↙ 211°,,,, Level, Estimated
+Fri 04:01:05 AM,9.5852,47.7944,↙ 211°,,,, Level, Estimated
+Fri 04:02:10 AM,9.4684,47.723,↙ 211°,,,, Level, Estimated
+Fri 04:04:03 AM,9.2653,47.5991,↙ 211°,,,, Level, Estimated
+Fri 04:05:03 AM,9.1574,47.5333,↙ 211°,,,, Level, Estimated
+Fri 04:06:07 AM,9.0424,47.4633,↙ 211°,,,, Level, Estimated
+Fri 04:08:07 AM,8.8266,47.332,↙ 211°,,,, Level, Estimated
+Fri 04:09:09 AM,8.7151,47.2642,↙ 211°,,,, Level, Estimated
+Fri 04:10:10 AM,8.6054,47.1976,↙ 211°,,,, Level, Estimated
+Fri 04:12:04 AM,8.4003,47.0732,↙ 211°,,,, Level, Estimated
+Fri 04:13:08 AM,8.2851,47.0034,↙ 211°,,,, Level, Estimated
+Fri 04:15:09 AM,8.0674,46.8716,↙ 211°,,,, Level, Estimated
+Fri 04:17:03 AM,7.8622,46.7475,↙ 211°,,,, Level, Estimated
+Fri 04:19:09 AM,7.6354,46.6105,↙ 211°,,,, Level, Estimated
+Fri 04:21:10 AM,7.4175,46.4791,↙ 211°,,,, Level, Estimated
+Fri 04:23:10 AM,7.2014,46.3488,↙ 211°,,,, Level, Estimated
+Fri 04:24:53 AM,7.0159,46.2372,↙ 211°,,,, Level, Estimated
+Fri 04:26:08 AM,6.8808,46.1559,↙ 211°,,,, Level, Estimated
+Fri 04:27:08 AM,6.7727,46.0909,↙ 211°,,,, Level, Estimated
+Fri 04:28:46 AM,6.5961,45.9849,↙ 211°,,,, Level, Estimated
+Fri 04:30:09 AM,6.4466,45.8951,↙ 211°,,,, Level, Estimated
+Fri 04:31:59 AM,6.2483,45.7762,↙ 211°,,,, Level, Estimated
+Fri 04:34:07 AM,6.0176,45.638,↙ 211°,,,, Level, Estimated
+Fri 04:36:03 AM,5.8085,45.5129,↙ 211°,,,, Level, Estimated
+Fri 04:37:10 AM,5.6877,45.4406,↙ 211°,,,, Level, Estimated
+Fri 04:37:10 AM,3.8106,46.3741,↙ 211°,511,588,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:39:10 AM,3.5983,46.2385,↙ 213°,,,, Level, Estimated
+Fri 04:39:51 AM,3.4854,46.1789,↙ 211°,510,587,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:40:49 AM,3.3662,46.1075,↙ 211°,511,588,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:41:22 AM,3.2979,46.0665,↙ 211°,511,588,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:41:52 AM,3.2375,46.0303,↙ 211°,511,588,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:42:52 AM,3.1155,45.9571,↙ 211°,510,587,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:43:22 AM,3.0546,45.9206,↙ 211°,510,587,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:43:52 AM,2.9934,45.8839,↙ 211°,510,587,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:44:22 AM,2.9325,45.8475,↙ 211°,509,586,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:44:52 AM,2.8717,45.8111,↙ 211°,509,586,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:45:22 AM,2.8106,45.7744,↙ 211°,509,586,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:45:52 AM,2.7496,45.738,↙ 211°,510,587,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:46:22 AM,2.6891,45.7017,↙ 211°,511,588,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:46:52 AM,2.6279,45.665,↙ 211°,511,588,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:47:22 AM,2.5671,45.6287,↙ 211°,511,588,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:47:52 AM,2.5063,45.5922,↙ 211°,511,588,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:48:23 AM,2.4453,45.5557,↙ 211°,512,589,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:48:53 AM,2.3833,45.5186,↙ 211°,511,588,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:49:23 AM,2.3234,45.4827,↙ 211°,510,587,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:49:53 AM,2.2631,45.4467,↙ 211°,510,587,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:50:23 AM,2.2013,45.4098,↙ 211°,508,585,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:51:00 AM,2.1265,45.365,↙ 211°,506,582,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:51:30 AM,2.0664,45.329,↙ 211°,506,582,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:52:15 AM,1.9775,45.2735,↙ 213°,508,585,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:52:53 AM,1.9025,45.2229,↙ 214°,508,585,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:53:23 AM,1.8431,45.1829,↙ 214°,509,586,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:53:53 AM,1.7837,45.1429,↙ 214°,510,587,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:54:23 AM,1.7251,45.1034,↙ 214°,510,587,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:54:53 AM,1.6664,45.0638,↙ 214°,510,587,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:55:53 AM,1.5492,44.9847,↙ 214°,511,588,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:56:47 AM,1.4432,44.9133,↙ 214°,511,588,"32,000", Level, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:57:22 AM,1.3741,44.8668,↙ 214°,510,587,"32,000",36 Climbing, FlightAware ADS-B (MGQ / HCMM)
+Fri 04:59:09 AM,1.1847,44.7462,↙ 212°,,,, Level, Estimated
+Fri 05:01:11 AM,0.9688,44.6087,↙ 212°,,,, Level, Estimated
+Fri 05:03:10 AM,0.7582,44.4746,↙ 212°,,,, Level, Estimated
+Fri 05:05:01 AM,0.5618,44.3495,↙ 212°,,,, Level, Estimated
+Fri 05:06:05 AM,0.4485,44.2774,↙ 212°,,,, Level, Estimated
+Fri 05:07:10 AM,0.3335,44.2042,↙ 212°,,,, Level, Estimated
+Fri 05:09:09 AM,0.1229,44.0701,↙ 212°,,,, Level, Estimated
+Fri 05:11:03 AM,-0.0789,43.9417,↙ 212°,,,, Level, Estimated
+Fri 05:12:06 AM,-0.1904,43.8707,↙ 212°,,,, Level, Estimated
+Fri 05:14:09 AM,-0.4081,43.7322,↙ 212°,,,, Level, Estimated
+Fri 05:15:59 AM,-0.6028,43.6082,↙ 212°,,,, Level, Estimated
+Fri 05:17:09 AM,-0.7267,43.5294,↙ 212°,,,, Level, Estimated
+Fri 05:19:10 AM,-0.9408,43.393,↙ 212°,,,, Level, Estimated
+Fri 05:21:09 AM,-1.1514,43.2589,↙ 212°,,,, Level, Estimated
+Fri 05:23:03 AM,-1.3531,43.1304,↙ 212°,,,, Level, Estimated
+Fri 05:24:04 AM,-1.4611,43.0617,↙ 212°,,,, Level, Estimated
+Fri 05:25:07 AM,-1.5726,42.9906,↙ 212°,,,, Level, Estimated
+Fri 05:26:07 AM,-1.6787,42.923,↙ 212°,,,, Level, Estimated
+Fri 05:28:08 AM,-1.8928,42.7865,↙ 212°,,,, Level, Estimated
+Fri 05:30:08 AM,-2.1052,42.6512,↙ 212°,,,, Level, Estimated
+Fri 05:31:08 AM,-2.2113,42.5835,↙ 213°,,,, Level, Estimated
+Fri 05:33:00 AM,-2.4095,42.4571,↙ 213°,,,, Level, Estimated
+Fri 05:34:06 AM,-2.5263,42.3826,↙ 213°,,,, Level, Estimated
+Fri 05:36:10 AM,-2.7456,42.2426,↙ 213°,,,, Level, Estimated
+Fri 05:38:03 AM,-2.9455,42.115,↙ 213°,,,, Level, Estimated
+Fri 05:40:01 AM,-3.1542,41.9817,↙ 213°,,,, Level, Estimated
+Fri 05:41:04 AM,-3.2657,41.9105,↙ 213°,,,, Level, Estimated
+Fri 05:42:09 AM,-3.3806,41.837,↙ 213°,,,, Level, Estimated
+Fri 05:44:04 AM,-3.584,41.707,↙ 213°,,,, Level, Estimated
+Fri 05:45:10 AM,-3.7007,41.6323,↙ 213°,,,, Level, Estimated
+Fri 05:47:10 AM,-3.9129,41.4965,↙ 213°,,,, Level, Estimated
+Fri 05:48:10 AM,-4.019,41.4286,↙ 213°,,,, Level, Estimated
+Fri 05:50:10 AM,-4.2311,41.2927,↙ 213°,,,, Level, Estimated
+Fri 05:51:37 AM,-4.8799,40.5723,↙ 213°,552,635,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 05:52:18 AM,-4.9572,40.5115,↙ 218°,511,588,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 05:52:50 AM,-5.0147,40.4639,↙ 223°,513,590,"34,000",-16 Descending, FlightAware ADS-B (DAR / HTDA)
+Fri 05:53:53 AM,-5.1217,40.3589,↙ 225°,510,587,"33,975", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 05:55:11 AM,-5.2524,40.2301,↙ 225°,509,586,"34,000",4 Climbing, FlightAware ADS-B (DAR / HTDA)
+Fri 05:57:03 AM,-5.4513,40.1044,↙ 212°,,,, Level, Estimated
+Fri 05:58:06 AM,-5.5631,40.0337,↙ 212°,,,, Level, Estimated
+Fri 05:59:10 AM,-5.6768,39.9618,↙ 212°,,,, Level, Estimated
+Fri 05:59:37 AM,-5.7431,39.8342,↙ 215°,519,597,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:00:35 AM,-5.8572,39.7515,↙ 216°,521,600,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:01:05 AM,-5.9171,39.7081,↙ 216°,522,601,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:01:36 AM,-5.9755,39.6661,↙ 216°,522,601,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:02:06 AM,-6.0354,39.623,↙ 216°,522,601,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:02:36 AM,-6.0942,39.5809,↙ 216°,522,601,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:03:06 AM,-6.1533,39.5385,↙ 216°,521,600,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:03:36 AM,-6.2129,39.4957,↙ 216°,520,598,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:04:06 AM,-6.2705,39.4544,↙ 216°,518,596,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:04:36 AM,-6.3299,39.4117,↙ 216°,517,595,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:05:35 AM,-6.4448,39.3292,↙ 216°,516,594,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:06:05 AM,-6.5041,39.2867,↙ 216°,514,592,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:06:35 AM,-6.5623,39.2448,↙ 216°,514,592,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:07:06 AM,-6.6207,39.2028,↙ 216°,515,593,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:07:36 AM,-6.6787,39.1611,↙ 216°,515,593,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:08:32 AM,-6.7869,39.0833,↙ 216°,512,589,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:09:06 AM,-6.8517,39.0366,↙ 216°,512,589,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:09:36 AM,-6.91,38.9946,↙ 216°,511,588,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:10:06 AM,-6.9679,38.9529,↙ 216°,510,587,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:10:36 AM,-7.0262,38.9108,↙ 216°,507,583,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:11:36 AM,-7.1414,38.828,↙ 216°,508,585,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:12:06 AM,-7.198,38.787,↙ 216°,511,588,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:12:37 AM,-7.257,38.7444,↙ 216°,512,589,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:13:07 AM,-7.3152,38.7023,↙ 216°,514,592,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:13:37 AM,-7.3739,38.6599,↙ 216°,516,594,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:14:27 AM,-7.4704,38.5902,↙ 216°,517,595,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:16:02 AM,-7.6569,38.4554,↙ 216°,519,597,"34,000", Level, FlightAware ADS-B (DAR / HTDA)
+Fri 06:18:04 AM,-7.8738,38.3182,↙ 212°,,,, Level, Estimated
+Fri 06:19:09 AM,-7.9893,38.2451,↙ 212°,,,, Level, Estimated
+Fri 06:21:02 AM,-8.1901,38.1179,↙ 212°,,,, Level, Estimated
+Fri 06:22:06 AM,-8.3039,38.0457,↙ 212°,,,, Level, Estimated
+Fri 06:24:05 AM,-8.5153,37.9115,↙ 212°,,,, Level, Estimated
+Fri 06:26:10 AM,-8.7374,37.7704,↙ 212°,,,, Level, Estimated
+Fri 06:28:10 AM,-8.9505,37.6348,↙ 212°,,,, Level, Estimated
+Fri 06:30:07 AM,-9.1582,37.5024,↙ 212°,,,, Level, Estimated
+Fri 06:32:10 AM,-9.3766,37.363,↙ 212°,,,, Level, Estimated
+Fri 06:34:07 AM,-9.5842,37.2303,↙ 212°,,,, Level, Estimated
+Fri 06:36:10 AM,-9.8024,37.0906,↙ 212°,,,, Level, Estimated
+Fri 06:37:10 AM,-9.9089,37.0224,↙ 212°,,,, Level, Estimated
+Fri 06:38:10 AM,-10.0153,36.9541,↙ 212°,,,, Level, Estimated
+Fri 06:40:06 AM,-10.221,36.822,↙ 212°,,,, Level, Estimated
+Fri 06:41:10 AM,-10.3345,36.7491,↙ 212°,,,, Level, Estimated
+Fri 06:43:10 AM,-10.5472,36.6121,↙ 212°,,,, Level, Estimated
+Fri 06:45:07 AM,-10.7545,36.4784,↙ 212°,,,, Level, Estimated
+Fri 06:46:07 AM,-10.8608,36.4098,↙ 212°,,,, Level, Estimated
+Fri 06:47:10 AM,-10.9724,36.3377,↙ 212°,,,, Level, Estimated
+Fri 06:49:05 AM,-11.1761,36.2059,↙ 212°,,,, Level, Estimated
+Fri 06:50:54 AM,-11.3691,36.0808,↙ 212°,,,, Level, Estimated
+Fri 06:52:09 AM,-11.5019,35.9947,↙ 212°,,,, Level, Estimated
+Fri 06:54:07 AM,-11.7107,35.859,↙ 212°,,,, Level, Estimated
+Fri 06:55:59 AM,-11.9089,35.73,↙ 212°,,,, Level, Estimated
+Fri 06:57:03 AM,-12.0221,35.6561,↙ 213°,,,, Level, Estimated
+Fri 06:59:10 AM,-12.2467,35.5095,↙ 213°,,,, Level, Estimated
+Fri 07:01:03 AM,-12.4464,35.3788,↙ 213°,,,, Level, Estimated
+Fri 07:02:07 AM,-12.5595,35.3047,↙ 213°,,,, Level, Estimated
+Fri 07:03:41 AM,-12.9926,34.4582,↙ 217°,482,555,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:04:18 AM,-13.0588,34.4069,↙ 217°,482,555,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:05:19 AM,-13.1665,34.3232,↙ 217°,480,552,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:05:49 AM,-13.2193,34.2813,↙ 218°,480,552,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:06:20 AM,-13.2753,34.2363,↙ 218°,479,551,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:06:58 AM,-13.3411,34.1864,↙ 216°,481,554,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:07:28 AM,-13.3965,34.1468,↙ 215°,481,554,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:07:58 AM,-13.452,34.1084,↙ 214°,481,554,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:08:28 AM,-13.5075,34.0704,↙ 214°,482,555,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:08:58 AM,-13.563,34.0325,↙ 214°,480,552,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:09:28 AM,-13.6193,33.9941,↙ 214°,481,554,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:09:58 AM,-13.6739,33.9568,↙ 214°,480,552,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:10:28 AM,-13.7306,33.918,↙ 214°,479,551,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:11:28 AM,-13.8406,33.8424,↙ 214°,478,550,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:11:58 AM,-13.8968,33.8036,↙ 214°,478,550,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:12:28 AM,-13.9515,33.7659,↙ 214°,476,548,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:12:58 AM,-14.006,33.7283,↙ 214°,477,549,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:13:28 AM,-14.0615,33.6899,↙ 214°,476,548,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:13:58 AM,-14.1157,33.6525,↙ 214°,475,547,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:14:28 AM,-14.1712,33.6141,↙ 214°,475,547,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:15:28 AM,-14.282,33.5374,↙ 214°,475,547,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:16:28 AM,-14.3917,33.4614,↙ 214°,475,547,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:17:27 AM,-14.4989,33.3871,↙ 214°,475,547,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:17:59 AM,-14.5547,33.3483,↙ 214°,473,544,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:18:29 AM,-14.6092,33.3104,↙ 214°,472,543,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:18:59 AM,-14.6652,33.2716,↙ 214°,471,542,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:20:49 AM,-14.8611,33.1454,↙ 212°,,,, Level, Estimated
+Fri 07:22:04 AM,-14.9946,33.0592,↙ 212°,,,, Level, Estimated
+Fri 07:22:35 AM,-15.0638,33.0063,↙ 210°,477,549,"34,000", Level, FlightAware ADS-B (FWKK)
+Fri 07:25:01 AM,-15.3236,32.8381,↙ 212°,,,, Level, Estimated
+Fri 07:25:56 AM,-15.4523,32.776,↙ 210°,482,555,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:26:44 AM,-15.544,32.7212,↙ 211°,481,554,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:27:33 AM,-15.6369,32.6594,↙ 214°,478,550,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:28:03 AM,-15.692,32.6211,↙ 214°,478,550,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:28:33 AM,-15.7471,32.5826,↙ 214°,480,552,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:29:03 AM,-15.8033,32.5433,↙ 214°,481,554,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:29:33 AM,-15.8584,32.5047,↙ 214°,480,552,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:30:04 AM,-15.9141,32.4658,↙ 214°,480,552,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:30:34 AM,-15.9701,32.4267,↙ 214°,481,554,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:31:04 AM,-16.0258,32.3877,↙ 214°,482,555,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:31:34 AM,-16.0811,32.349,↙ 214°,481,554,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:32:04 AM,-16.1362,32.3102,↙ 214°,481,554,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:32:34 AM,-16.192,32.2711,↙ 214°,481,554,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:33:04 AM,-16.2477,32.232,↙ 214°,482,555,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:33:34 AM,-16.3039,32.1925,↙ 214°,482,555,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:34:04 AM,-16.359,32.1537,↙ 214°,483,556,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:34:48 AM,-16.4399,32.0933,↙ 218°,482,555,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:35:26 AM,-16.5043,32.0366,↙ 221°,481,554,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:35:58 AM,-16.558,31.9882,↙ 221°,480,552,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:36:37 AM,-16.6225,31.9299,↙ 221°,478,550,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:37:07 AM,-16.6736,31.8836,↙ 221°,480,552,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:37:38 AM,-16.7246,31.8376,↙ 221°,481,554,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:38:11 AM,-16.7801,31.7873,↙ 221°,481,554,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:38:41 AM,-16.8311,31.7412,↙ 221°,481,554,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:39:11 AM,-16.8817,31.6954,↙ 221°,481,554,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:39:41 AM,-16.9323,31.6495,↙ 221°,483,556,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:40:11 AM,-16.9823,31.6041,↙ 221°,483,556,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:40:41 AM,-17.0332,31.5579,↙ 221°,483,556,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:41:11 AM,-17.0843,31.5114,↙ 221°,485,558,"34,000",-25 Descending, FlightAware ADS-B (HRE / FVRG)
+Fri 07:41:41 AM,-17.1348,31.4655,↙ 221°,484,557,"33,975", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:42:11 AM,-17.1855,31.4193,↙ 221°,484,557,"34,000",25 Climbing, FlightAware ADS-B (HRE / FVRG)
+Fri 07:42:41 AM,-17.2362,31.3733,↙ 221°,483,556,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:43:11 AM,-17.2873,31.3267,↙ 221°,482,555,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:43:41 AM,-17.3371,31.2813,↙ 221°,480,552,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:44:11 AM,-17.3875,31.2353,↙ 221°,481,554,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:44:50 AM,-17.4527,31.1757,↙ 221°,482,555,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:45:20 AM,-17.5033,31.1293,↙ 221°,483,556,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:46:11 AM,-17.5882,31.0516,↙ 221°,483,556,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:46:41 AM,-17.6398,31.0043,↙ 221°,485,558,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:47:11 AM,-17.6913,30.9572,↙ 221°,485,558,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:47:42 AM,-17.7418,30.9108,↙ 221°,484,557,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:48:20 AM,-17.8072,30.8507,↙ 221°,484,557,"34,000",-22 Descending, FlightAware ADS-B (FVCP)
+Fri 07:48:51 AM,-17.8583,30.8037,↙ 221°,483,556,"33,975", Level, FlightAware ADS-B (FVCP)
+Fri 07:49:21 AM,-17.9082,30.7578,↙ 221°,483,556,"34,000",25 Climbing, FlightAware ADS-B (FVCP)
+Fri 07:49:51 AM,-17.9586,30.7114,↙ 221°,483,556,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:50:21 AM,-18.0085,30.6654,↙ 221°,483,556,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:50:51 AM,-18.0601,30.6178,↙ 221°,483,556,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:51:21 AM,-18.1105,30.5713,↙ 221°,483,556,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:52:12 AM,-18.1963,30.4919,↙ 222°,482,555,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:52:42 AM,-18.2463,30.4457,↙ 221°,481,554,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:53:12 AM,-18.2965,30.3992,↙ 221°,481,554,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:53:42 AM,-18.347,30.3524,↙ 222°,481,554,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:54:12 AM,-18.3968,30.3063,↙ 222°,481,554,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:54:42 AM,-18.4471,30.2596,↙ 222°,480,552,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:55:12 AM,-18.4969,30.2133,↙ 222°,480,552,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:55:42 AM,-18.5463,30.1674,↙ 222°,480,552,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:56:12 AM,-18.5964,30.1208,↙ 222°,480,552,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:56:42 AM,-18.6466,30.074,↙ 222°,479,551,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:57:12 AM,-18.6962,30.0278,↙ 222°,479,551,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:57:51 AM,-18.7627,29.9658,↙ 222°,479,551,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:58:21 AM,-18.8124,29.9194,↙ 222°,479,551,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 07:59:13 AM,-18.8961,29.8412,↙ 222°,480,552,"34,000", Level, FlightAware ADS-B (HRE / FVRG)
+Fri 07:59:58 AM,-18.9769,29.7718,↙ 217°,481,554,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 08:00:28 AM,-19.0305,29.7293,↙ 217°,481,554,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 08:00:59 AM,-19.0836,29.6873,↙ 217°,481,554,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 08:01:30 AM,-19.1379,29.6443,↙ 217°,481,554,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 08:02:00 AM,-19.1913,29.6021,↙ 217°,481,554,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 08:02:30 AM,-19.2452,29.5594,↙ 217°,480,552,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 08:03:00 AM,-19.2982,29.5173,↙ 217°,478,550,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 08:03:30 AM,-19.3517,29.4749,↙ 217°,477,549,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 08:04:25 AM,-19.4474,29.3988,↙ 217°,476,548,"34,000", Level, FlightAware ADS-B (FVCP)
+Fri 08:05:17 AM,-19.5404,29.3248,↙ 217°,476,548,"34,000",388 Climbing, FlightAware ADS-B (FVCP)
+Fri 08:05:50 AM,-19.5989,29.2784,↙ 217°,475,547,"34,550","1,429 Climbing", FlightAware ADS-B (FVCP)
+Fri 08:06:20 AM,-19.6517,29.2364,↙ 217°,469,540,"35,500","1,106 Climbing", FlightAware ADS-B (FVCP)
+Fri 08:07:10 AM,-19.7378,29.1677,↙ 217°,460,529,"36,025",370 Climbing, FlightAware ADS-B (FVCP)
+Fri 08:07:41 AM,-19.7894,29.1265,↙ 217°,458,527,"36,000",-17 Descending, FlightAware ADS-B (FVCP)
+Fri 08:08:39 AM,-19.8866,29.0489,↙ 217°,455,524,"36,000", Level, FlightAware ADS-B (FVCP)
+Fri 08:09:11 AM,-19.9418,29.0047,↙ 217°,456,525,"36,000", Level, FlightAware ADS-B (FVCP)
+Fri 08:10:10 AM,-20.0398,28.9263,↙ 217°,454,522,"36,000", Level, FlightAware ADS-B (FVCP)
+Fri 08:10:41 AM,-20.0921,28.8844,↙ 217°,454,522,"36,000", Level, FlightAware ADS-B (FVCP)
+Fri 08:12:58 AM,-20.3379,28.7255,↙ 211°,,,, Level, Estimated
+Fri 08:14:07 AM,-20.4616,28.6453,↙ 211°,,,, Level, Estimated
+Fri 08:15:08 AM,-20.5709,28.5743,↙ 211°,,,, Level, Estimated
+Fri 08:15:30 AM,-20.5761,28.4935,↙ 218°,452,520,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:16:00 AM,-20.6265,28.4526,↙ 217°,450,518,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:16:30 AM,-20.6756,28.4128,↙ 217°,450,518,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:17:01 AM,-20.7267,28.3713,↙ 218°,450,518,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:17:57 AM,-20.8196,28.2957,↙ 218°,454,522,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:18:30 AM,-20.8769,28.2489,↙ 218°,456,525,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:19:01 AM,-20.928,28.2072,↙ 217°,457,526,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:19:31 AM,-20.9787,28.1658,↙ 218°,456,525,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:20:01 AM,-21.0286,28.1251,↙ 217°,457,526,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:20:31 AM,-21.0793,28.0837,↙ 217°,457,526,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:21:01 AM,-21.1301,28.0423,↙ 218°,456,525,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:21:31 AM,-21.1804,28.0008,↙ 218°,456,525,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:22:01 AM,-21.2304,27.9598,↙ 218°,456,525,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:22:31 AM,-21.2815,27.918,↙ 217°,458,527,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:23:10 AM,-21.3486,27.8717,↙ 210°,460,529,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:23:40 AM,-21.4052,27.838,↙ 209°,460,529,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:24:10 AM,-21.4611,27.8049,↙ 209°,460,529,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:24:40 AM,-21.5174,27.7713,↙ 210°,459,528,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:25:26 AM,-21.602,27.7172,↙ 212°,462,532,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:25:56 AM,-21.6569,27.6804,↙ 212°,463,533,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:26:26 AM,-21.7109,27.6435,↙ 213°,465,535,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:26:56 AM,-21.7659,27.6054,↙ 213°,466,536,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:27:26 AM,-21.8193,27.5684,↙ 213°,468,539,"36,000",25 Climbing, FlightAware ADS-B (PKW / FBSP)
+Fri 08:27:57 AM,-21.8758,27.5294,↙ 213°,467,537,"36,025", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:28:27 AM,-21.9298,27.4922,↙ 213°,468,539,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:29:27 AM,-22.0409,27.4157,↙ 213°,472,543,"36,025", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:30:18 AM,-22.1365,27.3498,↙ 213°,473,544,"36,000",-18 Descending, FlightAware ADS-B (PTG / FAPP)
+Fri 08:30:52 AM,-22.1978,27.3075,↙ 213°,473,544,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:31:22 AM,-22.2538,27.2689,↙ 213°,473,544,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:31:55 AM,-22.3122,27.2285,↙ 213°,470,541,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:32:26 AM,-22.371,27.1878,↙ 213°,472,543,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:32:56 AM,-22.4254,27.1501,↙ 213°,472,543,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:33:26 AM,-22.4811,27.1116,↙ 213°,471,542,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:33:56 AM,-22.5375,27.0724,↙ 213°,472,543,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:34:27 AM,-22.5932,27.0336,↙ 213°,475,547,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:34:57 AM,-22.6492,26.9947,↙ 213°,477,549,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:35:27 AM,-22.7046,26.9562,↙ 213°,477,549,"36,000", Level, FlightAware ADS-B (PKW / FBSP)
+Fri 08:36:01 AM,-22.7695,26.9109,↙ 213°,478,550,"36,000", Level, FlightAware ADS-B (HLA / FALA)
+Fri 08:36:31 AM,-22.825,26.8723,↙ 213°,478,550,"36,000", Level, FlightAware ADS-B (HLA / FALA)
+Fri 08:37:01 AM,-22.8799,26.8338,↙ 213°,475,547,"36,000", Level, FlightAware ADS-B (HLA / FALA)
+Fri 08:37:31 AM,-22.9363,26.7944,↙ 213°,474,545,"36,000", Level, FlightAware ADS-B (HLA / FALA)
+Fri 08:38:01 AM,-22.9901,26.7568,↙ 213°,472,543,"36,000", Level, FlightAware ADS-B (HLA / FALA)
+Fri 08:38:31 AM,-23.0468,26.7171,↙ 213°,469,540,"36,000", Level, FlightAware ADS-B (HLA / FALA)
+Fri 08:39:01 AM,-23.101,26.6792,↙ 213°,469,540,"36,000", Level, FlightAware ADS-B (HLA / FALA)
+Fri 08:39:31 AM,-23.1558,26.6408,↙ 213°,470,541,"36,000", Level, FlightAware ADS-B (HLA / FALA)
+Fri 08:40:15 AM,-23.235,26.585,↙ 213°,472,543,"36,000", Level, FlightAware ADS-B (WKF / FAWK)
+Fri 08:41:01 AM,-23.3215,26.5242,↙ 213°,473,544,"36,000", Level, FlightAware ADS-B (HLA / FALA)
+Fri 08:41:45 AM,-23.4002,26.4687,↙ 213°,473,544,"36,000", Level, FlightAware ADS-B (WKF / FAWK)
+Fri 08:42:15 AM,-23.4554,26.4297,↙ 213°,473,544,"36,000", Level, FlightAware ADS-B (WKF / FAWK)
+Fri 08:42:46 AM,-23.5108,26.3906,↙ 213°,473,544,"36,000", Level, FlightAware ADS-B (WKF / FAWK)
+Fri 08:43:16 AM,-23.5657,26.3518,↙ 213°,471,542,"36,000", Level, FlightAware ADS-B (WKF / FAWK)
+Fri 08:43:46 AM,-23.6213,26.3125,↙ 213°,470,541,"36,000", Level, FlightAware ADS-B (WKF / FAWK)
+Fri 08:44:16 AM,-23.6762,26.2736,↙ 213°,470,541,"36,000", Level, FlightAware ADS-B (WKF / FAWK)
+Fri 08:44:46 AM,-23.7299,26.2355,↙ 213°,470,541,"36,000", Level, FlightAware ADS-B (WKF / FAWK)
+Fri 08:45:16 AM,-23.7863,26.1955,↙ 213°,469,540,"36,000", Level, FlightAware ADS-B (WKF / FAWK)
+Fri 08:46:01 AM,-23.8705,26.1357,↙ 213°,467,537,"36,000", Level, FlightAware ADS-B (HLA / FALA)
+Fri 08:46:31 AM,-23.9199,26.1005,↙ 213°,465,535,"36,000", Level, FlightAware ADS-B (WKF / FAWK)
+Fri 08:47:01 AM,-23.9751,26.0612,↙ 213°,463,533,"36,000", Level, FlightAware ADS-B (FAKR)
+Fri 08:47:36 AM,-24.0378,26.0164,↙ 213°,462,532,"36,000", Level, FlightAware ADS-B (FALI)
+Fri 08:48:12 AM,-24.1034,25.9695,↙ 213°,461,531,"36,000", Level, FlightAware ADS-B (FAKR)
+Fri 08:48:42 AM,-24.1571,25.9312,↙ 213°,461,531,"36,000", Level, FlightAware ADS-B (GBE / FBSK)
+Fri 08:49:12 AM,-24.2109,25.8928,↙ 213°,461,531,"36,000", Level, FlightAware ADS-B (GBE / FBSK)
+Fri 08:49:42 AM,-24.2646,25.8542,↙ 213°,461,531,"36,000", Level, FlightAware ADS-B (GBE / FBSK)
+Fri 08:50:12 AM,-24.318,25.816,↙ 213°,461,531,"36,000", Level, FlightAware ADS-B (GBE / FBSK)
+Fri 08:50:42 AM,-24.3718,25.7773,↙ 213°,461,531,"36,000", Level, FlightAware ADS-B (GBE / FBSK)
+Fri 08:51:12 AM,-24.4253,25.739,↙ 213°,461,531,"36,000", Level, FlightAware ADS-B (GBE / FBSK)
+Fri 08:51:42 AM,-24.4778,25.7012,↙ 213°,461,531,"36,000", Level, FlightAware ADS-B (GBE / FBSK)
+Fri 08:52:12 AM,-24.5314,25.6625,↙ 213°,461,531,"36,000", Level, FlightAware ADS-B (FAKR)
+Fri 08:52:43 AM,-24.5862,25.6231,↙ 213°,461,531,"36,000", Level, FlightAware ADS-B (GBE / FBSK)
+Fri 08:53:13 AM,-24.6402,25.5841,↙ 213°,461,531,"36,000", Level, FlightAware ADS-B (GBE / FBSK)
+Fri 08:53:43 AM,-24.6926,25.5463,↙ 214°,460,529,"36,000", Level, FlightAware ADS-B (GBE / FBSK)
+Fri 08:54:13 AM,-24.747,25.5069,↙ 214°,460,529,"36,000", Level, FlightAware ADS-B (GBE / FBSK)
+Fri 08:54:43 AM,-24.8001,25.4684,↙ 213°,459,528,"36,000", Level, FlightAware ADS-B (GBE / FBSK)
+Fri 08:55:13 AM,-24.8562,25.4279,↙ 214°,460,529,"36,000", Level, FlightAware ADS-B (FALI)
+Fri 08:55:43 AM,-24.9066,25.3912,↙ 214°,460,529,"36,000", Level, FlightAware ADS-B (GBE / FBSK)
+Fri 08:56:13 AM,-24.9606,25.3521,↙ 214°,460,529,"36,000", Level, FlightAware ADS-B (GBE / FBSK)
+Fri 08:56:59 AM,-25.0437,25.2917,↙ 214°,462,532,"36,000", Level, FlightAware ADS-B (HLA / FALA)
+Fri 08:57:27 AM,-25.0921,25.2564,↙ 215°,460,529,"36,000", Level, FlightAware ADS-B (JNB / FAOR)
+Fri 08:58:02 AM,-25.155,25.2106,↙ 214°,461,531,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 08:58:43 AM,-25.2277,25.1575,↙ 214°,461,531,"36,000", Level, FlightAware ADS-B (GBE / FBSK)
+Fri 08:59:32 AM,-25.3157,25.0932,↙ 214°,462,532,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:00:02 AM,-25.3704,25.0532,↙ 214°,462,532,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:00:32 AM,-25.424,25.0139,↙ 214°,463,533,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:01:02 AM,-25.4785,24.974,↙ 214°,462,532,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:01:33 AM,-25.5321,24.9345,↙ 214°,463,533,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:02:03 AM,-25.5857,24.8951,↙ 214°,463,533,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:02:33 AM,-25.6391,24.8559,↙ 214°,464,534,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:03:03 AM,-25.6934,24.8158,↙ 214°,465,535,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:03:33 AM,-25.7473,24.776,↙ 214°,467,537,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:04:03 AM,-25.8012,24.7359,↙ 215°,467,537,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:04:38 AM,-25.8608,24.6864,↙ 219°,463,533,"36,000", Level, FlightAware ADS-B (FATP)
+Fri 09:05:09 AM,-25.9108,24.6404,↙ 220°,464,534,"36,000", Level, FlightAware ADS-B (FATP)
+Fri 09:05:44 AM,-25.9687,24.5871,↙ 220°,462,532,"36,000", Level, FlightAware ADS-B (KIM / FAKM)
+Fri 09:06:14 AM,-26.0179,24.5416,↙ 220°,460,529,"36,000", Level, FlightAware ADS-B (KIM / FAKM)
+Fri 09:06:44 AM,-26.066,24.4972,↙ 220°,459,528,"36,000", Level, FlightAware ADS-B (KIM / FAKM)
+Fri 09:07:14 AM,-26.1153,24.4516,↙ 220°,459,528,"36,000", Level, FlightAware ADS-B (KIM / FAKM)
+Fri 09:07:44 AM,-26.1645,24.4059,↙ 220°,459,528,"36,000", Level, FlightAware ADS-B (KIM / FAKM)
+Fri 09:08:17 AM,-26.2192,24.3552,↙ 220°,461,531,"36,000", Level, FlightAware ADS-B (KIM / FAKM)
+Fri 09:08:50 AM,-26.2745,24.3039,↙ 220°,464,534,"36,000", Level, FlightAware ADS-B (FALI)
+Fri 09:09:20 AM,-26.3235,24.2584,↙ 220°,463,533,"36,000", Level, FlightAware ADS-B (FALI)
+Fri 09:09:50 AM,-26.3707,24.2146,↙ 220°,461,531,"36,000", Level, FlightAware ADS-B (FATP)
+Fri 09:10:20 AM,-26.4209,24.1679,↙ 220°,461,531,"36,000", Level, FlightAware ADS-B (FATP)
+Fri 09:10:50 AM,-26.4699,24.1221,↙ 220°,461,531,"36,000", Level, FlightAware ADS-B (FATP)
+Fri 09:11:20 AM,-26.5187,24.0765,↙ 220°,462,532,"36,000", Level, FlightAware ADS-B (FATP)
+Fri 09:11:54 AM,-26.5754,24.0236,↙ 220°,464,534,"36,000", Level, FlightAware ADS-B (KIM / FAKM)
+Fri 09:12:24 AM,-26.6245,23.9776,↙ 220°,463,533,"36,000", Level, FlightAware ADS-B (KIM / FAKM)
+Fri 09:12:54 AM,-26.672,23.9331,↙ 220°,461,531,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:13:24 AM,-26.7218,23.8864,↙ 220°,459,528,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:13:54 AM,-26.7708,23.8403,↙ 220°,459,528,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:14:24 AM,-26.8194,23.7946,↙ 220°,459,528,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:14:54 AM,-26.8681,23.7487,↙ 220°,458,527,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:15:24 AM,-26.9166,23.7031,↙ 220°,457,526,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:15:54 AM,-26.9657,23.6568,↙ 220°,456,525,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:16:24 AM,-27.0139,23.6112,↙ 220°,456,525,"36,000",-25 Descending, FlightAware ADS-B (UTN / FAUP)
+Fri 09:16:54 AM,-27.0621,23.5656,↙ 220°,456,525,"35,975",-25 Descending, FlightAware ADS-B (UTN / FAUP)
+Fri 09:17:25 AM,-27.1123,23.518,↙ 220°,456,525,"35,975",24 Climbing, FlightAware ADS-B (KMH / FAKU)
+Fri 09:17:56 AM,-27.1612,23.4717,↙ 220°,455,524,"36,000",49 Climbing, FlightAware ADS-B (KIM / FAKM)
+Fri 09:18:26 AM,-27.2095,23.4259,↙ 220°,454,522,"36,025", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:18:56 AM,-27.2583,23.3795,↙ 220°,453,521,"36,000",-25 Descending, FlightAware ADS-B (KIM / FAKM)
+Fri 09:19:26 AM,-27.3064,23.3337,↙ 220°,446,513,"36,000",-24 Descending, FlightAware ADS-B (KIM / FAKM)
+Fri 09:19:59 AM,-27.3566,23.2858,↙ 220°,443,510,"35,975", Level, FlightAware ADS-B (FATP)
+Fri 09:20:33 AM,-27.4097,23.2352,↙ 220°,441,507,"36,000",23 Climbing, FlightAware ADS-B (UTN / FAUP)
+Fri 09:21:03 AM,-27.4563,23.1906,↙ 221°,437,503,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:21:33 AM,-27.5024,23.1466,↙ 220°,435,501,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:22:08 AM,-27.5564,23.095,↙ 221°,433,498,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:22:38 AM,-27.6024,23.0509,↙ 221°,434,499,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:23:08 AM,-27.6482,23.0069,↙ 221°,432,497,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:23:54 AM,-27.7207,22.9419,↙ 218°,434,499,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:24:24 AM,-27.7693,22.8997,↙ 218°,433,498,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:24:57 AM,-27.8189,22.8562,↙ 218°,430,495,"36,000", Level, FlightAware ADS-B (FATP)
+Fri 09:25:26 AM,-27.8671,22.8149,↙ 214°,434,499,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:25:42 AM,-27.8962,22.7979,↙ 204°,444,511,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:26:23 AM,-27.9721,22.7637,↙ 202°,448,516,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:26:53 AM,-28.0297,22.7382,↙ 201°,449,517,"36,000", Level, FlightAware ADS-B (KIM / FAKM)
+Fri 09:27:23 AM,-28.089,22.712,↙ 201°,452,520,"36,000", Level, FlightAware ADS-B (KIM / FAKM)
+Fri 09:27:53 AM,-28.1481,22.686,↙ 201°,453,521,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:28:23 AM,-28.2055,22.6609,↙ 201°,453,521,"36,000", Level, FlightAware ADS-B (KIM / FAKM)
+Fri 09:28:53 AM,-28.2638,22.6328,↙ 206°,457,526,"36,000", Level, FlightAware ADS-B (FATP)
+Fri 09:29:31 AM,-28.3361,22.5916,↙ 207°,461,531,"36,000", Level, FlightAware ADS-B (KIM / FAKM)
+Fri 09:30:22 AM,-28.4349,22.534,↙ 208°,462,532,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:30:52 AM,-28.4935,22.4997,↙ 207°,462,532,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:31:22 AM,-28.5509,22.4669,↙ 206°,462,532,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:31:53 AM,-28.6083,22.4348,↙ 207°,460,529,"36,000", Level, FlightAware ADS-B (KIM / FAKM)
+Fri 09:32:23 AM,-28.6642,22.4021,↙ 207°,461,531,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:32:53 AM,-28.7232,22.3674,↙ 208°,459,528,"36,000",25 Climbing, FlightAware ADS-B (FATW)
+Fri 09:33:23 AM,-28.779,22.3341,↙ 207°,460,529,"36,025",-24 Descending, FlightAware ADS-B (KIM / FAKM)
+Fri 09:33:55 AM,-28.8406,22.2992,↙ 208°,458,527,"35,975",24 Climbing, FlightAware ADS-B (FATW)
+Fri 09:34:25 AM,-28.8963,22.2661,↙ 208°,461,531,"36,050",-28 Descending, FlightAware ADS-B (UTN / FAUP)
+Fri 09:34:49 AM,-28.9393,22.2364,↙ 214°,463,533,"35,950",-83 Descending, FlightAware ADS-B (KIM / FAKM)
+Fri 09:35:19 AM,-28.9879,22.1908,↙ 221°,456,525,"35,975",73 Climbing, FlightAware ADS-B (KIM / FAKM)
+Fri 09:35:51 AM,-29.0385,22.1351,↙ 229°,440,506,"36,025", Level, FlightAware ADS-B (FATW)
+Fri 09:36:34 AM,-29.0902,22.062,↙ 231°,441,507,"35,975",-19 Descending, FlightAware ADS-B (KIM / FAKM)
+Fri 09:37:08 AM,-29.1346,21.9997,↙ 231°,438,504,"36,000",23 Climbing, FlightAware ADS-B (UTN / FAUP)
+Fri 09:37:38 AM,-29.1731,21.9441,↙ 236°,429,494,"36,000", Level, FlightAware ADS-B (KIM / FAKM)
+Fri 09:37:57 AM,-29.192,21.9063,↙ 243°,420,483,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:38:33 AM,-29.2142,21.8332,← 251°,408,470,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:38:51 AM,-29.2273,21.7983,↙ 243°,414,476,"36,000", Level, FlightAware ADS-B (KIM / FAKM)
+Fri 09:39:14 AM,-29.2522,21.7541,↙ 233°,427,491,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:39:34 AM,-29.28,21.7195,↙ 224°,446,513,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:40:04 AM,-29.3258,21.6705,↙ 223°,449,517,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:40:34 AM,-29.3705,21.6232,↙ 223°,450,518,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:41:04 AM,-29.4167,21.5744,↙ 223°,449,517,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:41:35 AM,-29.4631,21.525,↙ 223°,448,516,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:42:05 AM,-29.5086,21.4763,↙ 223°,448,516,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:42:35 AM,-29.5539,21.4279,↙ 223°,448,516,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:43:05 AM,-29.5993,21.3792,↙ 223°,446,513,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:43:35 AM,-29.6455,21.3297,↙ 223°,446,513,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:44:05 AM,-29.6905,21.2815,↙ 223°,446,513,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:44:36 AM,-29.7357,21.2329,↙ 223°,447,514,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:45:06 AM,-29.7812,21.1841,↙ 223°,449,517,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:45:36 AM,-29.8279,21.1338,↙ 223°,451,519,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:46:06 AM,-29.8727,21.0855,↙ 223°,453,521,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:46:36 AM,-29.9194,21.0351,↙ 223°,454,522,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:47:06 AM,-29.9654,20.9854,↙ 223°,456,525,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:47:36 AM,-30.0111,20.936,↙ 223°,457,526,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:48:06 AM,-30.0588,20.8843,↙ 223°,458,527,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:48:37 AM,-30.1045,20.8348,↙ 223°,458,527,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:49:07 AM,-30.1521,20.7831,↙ 224°,458,527,"36,000", Level, FlightAware ADS-B (FATW)
+Fri 09:49:38 AM,-30.1987,20.7323,↙ 223°,457,526,"36,000", Level, FlightAware ADS-B (SDB / FALW)
+Fri 09:50:08 AM,-30.2441,20.6828,↙ 223°,454,522,"36,000", Level, FlightAware ADS-B (SDB / FALW)
+Fri 09:51:05 AM,-30.3319,20.5869,↙ 224°,459,528,"36,000", Level, FlightAware ADS-B (AGZ / FAAG)
+Fri 09:51:35 AM,-30.3789,20.5354,↙ 223°,461,531,"36,000", Level, FlightAware ADS-B (AGZ / FAAG)
+Fri 09:52:05 AM,-30.4255,20.4845,↙ 224°,463,533,"36,000", Level, FlightAware ADS-B (AGZ / FAAG)
+Fri 09:52:36 AM,-30.4719,20.4336,↙ 224°,461,531,"36,000", Level, FlightAware ADS-B (AGZ / FAAG)
+Fri 09:53:02 AM,-30.516,20.3897,↙ 216°,471,542,"36,000", Level, FlightAware ADS-B (AGZ / FAAG)
+Fri 09:53:22 AM,-30.554,20.3643,↙ 206°,488,562,"36,000", Level, FlightAware ADS-B (SDB / FALW)
+Fri 09:54:03 AM,-30.6424,20.3248,↓ 200°,497,572,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:54:33 AM,-30.7052,20.2981,↓ 200°,497,572,"36,000", Level, FlightAware ADS-B (SDB / FALW)
+Fri 09:55:03 AM,-30.77,20.2706,↓ 200°,497,572,"36,000", Level, FlightAware ADS-B (AGZ / FAAG)
+Fri 09:55:33 AM,-30.8355,20.2425,↓ 200°,496,571,"36,000", Level, FlightAware ADS-B (AGZ / FAAG)
+Fri 09:56:03 AM,-30.8998,20.2148,↓ 200°,493,567,"36,000", Level, FlightAware ADS-B (AGZ / FAAG)
+Fri 09:56:33 AM,-30.9626,20.1875,↙ 201°,487,560,"36,000", Level, FlightAware ADS-B (SDB / FALW)
+Fri 09:57:03 AM,-31.025,20.1604,↙ 201°,484,557,"36,000", Level, FlightAware ADS-B (SDB / FALW)
+Fri 09:57:33 AM,-31.0891,20.1324,↙ 201°,484,557,"36,000", Level, FlightAware ADS-B (UTN / FAUP)
+Fri 09:58:07 AM,-31.1616,20.101,↓ 200°,484,557,"36,000", Level, FlightAware ADS-B (AGZ / FAAG)
+Fri 09:58:37 AM,-31.2245,20.0737,↙ 201°,484,557,"36,000", Level, FlightAware ADS-B (AGZ / FAAG)
+Fri 09:59:07 AM,-31.2877,20.0462,↙ 201°,484,557,"36,000", Level, FlightAware ADS-B (AGZ / FAAG)
+Fri 09:59:37 AM,-31.3507,20.0187,↙ 201°,484,557,"36,000", Level, FlightAware ADS-B (AGZ / FAAG)
+Fri 10:00:08 AM,-31.4143,19.991,↙ 201°,485,558,"36,000", Level, FlightAware ADS-B (SDB / FALW)
+Fri 10:00:38 AM,-31.4777,19.9632,↙ 201°,486,559,"36,000", Level, FlightAware ADS-B (SDB / FALW)
+Fri 10:01:08 AM,-31.5418,19.9351,↙ 201°,484,557,"36,000", Level, FlightAware ADS-B (SDB / FALW)
+Fri 10:01:38 AM,-31.6045,19.9078,↙ 201°,481,554,"36,000", Level, FlightAware ADS-B (SDB / FALW)
+Fri 10:02:09 AM,-31.6676,19.8799,↙ 201°,481,554,"36,000", Level, FlightAware ADS-B (SDB / FALW)
+Fri 10:02:41 AM,-31.7325,19.8514,↙ 201°,483,556,"36,000", Level, FlightAware ADS-B (FAYP)
+Fri 10:03:17 AM,-31.8094,19.8175,↙ 201°,485,558,"36,000", Level, FlightAware ADS-B (FAFK)
+Fri 10:03:47 AM,-31.8729,19.7896,↙ 201°,484,557,"36,000", Level, FlightAware ADS-B (FAFK)
+Fri 10:04:38 AM,-31.9813,19.7416,↙ 201°,482,555,"36,000", Level, FlightAware ADS-B (AGZ / FAAG)
+Fri 10:04:57 AM,-32.0228,19.7233,↙ 202°,480,552,"36,000", Level, FlightAware ADS-B (FAFK)
+Fri 10:05:28 AM,-32.0856,19.6954,↙ 202°,476,548,"36,000",-25 Descending, FlightAware ADS-B (FAFK)
+Fri 10:05:56 AM,-32.1429,19.6699,↙ 202°,476,548,"35,975",-569 Descending, FlightAware ADS-B (FAFK)
+Fri 10:06:26 AM,-32.205,19.6422,↙ 202°,476,548,"35,450","-1,255 Descending", FlightAware ADS-B (FAFK)
+Fri 10:06:45 AM,-32.2458,19.6241,↙ 202°,475,547,"34,950","-1,346 Descending", FlightAware ADS-B (FAFK)
+Fri 10:07:05 AM,-32.2868,19.6059,↙ 202°,472,543,"34,575",-988 Descending, FlightAware ADS-B (FAFK)
+Fri 10:07:26 AM,-32.3246,19.5891,↙ 201°,468,539,"34,275",-788 Descending, FlightAware ADS-B (CPT / FACT)
+Fri 10:07:45 AM,-32.3671,19.5701,↙ 202°,463,533,"34,050",-280 Descending, FlightAware ADS-B (FAFK)
+Fri 10:08:25 AM,-32.4473,19.5347,↙ 201°,461,531,"34,000",-43 Descending, FlightAware ADS-B (FAFK)
+Fri 10:08:55 AM,-32.5089,19.508,↙ 201°,463,533,"34,000",-169 Descending, FlightAware ADS-B (FAFK)
+Fri 10:09:27 AM,-32.5704,19.4812,↓ 200°,464,534,"33,825","-1,065 Descending", FlightAware ADS-B (CPT / FACT)
+Fri 10:09:57 AM,-32.6305,19.4552,↓ 200°,460,529,"32,900","-2,275 Descending", FlightAware ADS-B (FAYP)
+Fri 10:10:27 AM,-32.6909,19.4288,↙ 201°,462,532,"31,550","-2,513 Descending", FlightAware ADS-B (SDB / FALW)
+Fri 10:11:17 AM,-32.7916,19.3876,↓ 193°,456,525,"29,550","-2,400 Descending", FlightAware ADS-B (FAYP)
+Fri 10:11:37 AM,-32.8333,19.3826,↓ 181°,461,531,"28,750","-2,700 Descending", FlightAware ADS-B (FAYP)
+Fri 10:12:07 AM,-32.8969,19.3892,↓ 174°,466,536,"27,300","-2,525 Descending", FlightAware ADS-B (FAYP)
+Fri 10:12:37 AM,-32.9601,19.3976,↓ 173°,451,519,"26,225","-1,893 Descending", FlightAware ADS-B (FAYP)
+Fri 10:13:08 AM,-33.0228,19.4065,↓ 173°,428,493,"25,375","-1,992 Descending", FlightAware ADS-B (FAFK)
+Fri 10:13:38 AM,-33.0809,19.4145,↓ 173°,422,486,"24,200","-2,450 Descending", FlightAware ADS-B (CPT / FACT)
+Fri 10:14:08 AM,-33.1395,19.4227,↓ 173°,423,487,"22,925","-2,150 Descending", FlightAware ADS-B (CPT / FACT)
+Fri 10:14:38 AM,-33.1974,19.4306,↓ 174°,415,478,"22,050","-1,745 Descending", FlightAware ADS-B (FAYP)
+Fri 10:14:57 AM,-33.2323,19.4271,↓ 193°,387,445,"21,500","-1,829 Descending", FlightAware ADS-B (FAFK)
+Fri 10:15:19 AM,-33.2657,19.4087,↙ 213°,355,409,"20,800","-1,902 Descending", FlightAware ADS-B (FAFK)
+Fri 10:15:38 AM,-33.2879,19.383,↙ 230°,329,379,"20,200","-1,824 Descending", FlightAware ADS-B (FAYP)
+Fri 10:16:10 AM,-33.317,19.3381,↙ 233°,319,367,"19,250","-1,673 Descending", FlightAware ADS-B (CPT / FACT)
+Fri 10:16:30 AM,-33.3356,19.3089,↙ 233°,316,364,"18,750","-1,390 Descending", FlightAware ADS-B (FASX)
+Fri 10:16:51 AM,-33.3529,19.2817,↙ 233°,315,362,"18,300","-1,353 Descending", FlightAware ADS-B (SDB / FALW)
+Fri 10:17:21 AM,-33.3793,19.2405,↙ 233°,314,361,"17,600","-1,400 Descending", FlightAware ADS-B (FAFK)
+Fri 10:17:51 AM,-33.4059,19.1995,↙ 231°,313,360,"16,900","-1,371 Descending", FlightAware ADS-B (CPT / FACT)
+Fri 10:18:31 AM,-33.4484,19.1513,↙ 221°,313,360,"16,000","-1,333 Descending", FlightAware ADS-B (FAFK)
+Fri 10:19:03 AM,-33.4826,19.1159,↙ 221°,311,358,"15,300","-1,316 Descending", FlightAware ADS-B (CPT / FACT)
+Fri 10:19:20 AM,-33.5019,19.0959,↙ 222°,309,356,"14,925","-1,277 Descending", FlightAware ADS-B (FAFK)
+Fri 10:19:50 AM,-33.5335,19.0633,↙ 222°,304,350,"14,300","-1,300 Descending", FlightAware ADS-B (FAFK)
+Fri 10:20:20 AM,-33.5666,19.0289,↙ 222°,302,348,"13,625","-1,325 Descending", FlightAware ADS-B (FAFK)
+Fri 10:20:50 AM,-33.5977,18.9967,↙ 222°,299,344,"12,975","-1,325 Descending", FlightAware ADS-B (FAFK)
+Fri 10:21:20 AM,-33.628,18.9649,↙ 222°,297,342,"12,300","-1,283 Descending", FlightAware ADS-B (CPT / FACT)
+Fri 10:21:59 AM,-33.6638,18.927,↙ 222°,294,338,"11,500","-1,261 Descending", FlightAware ADS-B (FAFK)
+Fri 10:22:29 AM,-33.6991,18.8901,↙ 222°,291,335,"10,850","-1,300 Descending", FlightAware ADS-B (FAFK)
+Fri 10:22:59 AM,-33.7293,18.8587,↙ 221°,287,330,"10,200",-972 Descending, FlightAware ADS-B (FASD)
+Fri 10:23:23 AM,-33.753,18.8338,↙ 221°,275,316,"9,975",-600 Descending, FlightAware ADS-B (SDB / FALW)
+Fri 10:23:39 AM,-33.7671,18.8189,↙ 222°,277,319,"9,800",-729 Descending, FlightAware ADS-B (SDB / FALW)
+Fri 10:23:58 AM,-33.7875,18.7973,↙ 221°,279,321,"9,550",-630 Descending, FlightAware ADS-B (ROD / FARS)
+Fri 10:24:29 AM,-33.815,18.7683,↙ 221°,264,304,"9,275",-479 Descending, FlightAware ADS-B (FAFK)
+Fri 10:24:45 AM,-33.8296,18.753,↙ 222°,252,290,"9,175",-443 Descending, FlightAware ADS-B (FAYP)
+Fri 10:25:13 AM,-33.8543,18.7269,↙ 223°,240,276,"8,950",-905 Descending, FlightAware ADS-B (FAFK)
+Fri 10:25:43 AM,-33.8788,18.7014,↙ 219°,246,283,"8,300","-1,188 Descending", FlightAware ADS-B (CPT / FACT)
+Fri 10:26:01 AM,-33.8981,18.6952,↓ 178°,255,293,"8,000","-1,000 Descending", FlightAware ADS-B (CPT / FACT)
+Fri 10:26:19 AM,-33.9197,18.7018,↓ 163°,262,302,"7,700",-926 Descending, FlightAware ADS-B (SDB / FALW)
+Fri 10:26:35 AM,-33.9391,18.7094,↓ 161°,265,305,"7,475",-652 Descending, FlightAware ADS-B (CPT / FACT)
+Fri 10:27:05 AM,-33.9728,18.7238,↓ 160°,262,302,"7,200",-650 Descending, FlightAware ADS-B (SDB / FALW)
+Fri 10:27:35 AM,-34.0065,18.7385,↓ 160°,254,292,"6,825",-825 Descending, FlightAware ADS-B (CPT / FACT)
+Fri 10:28:05 AM,-34.0396,18.7532,↓ 160°,253,291,"6,375",-762 Descending, FlightAware ADS-B (FAFK)
+Fri 10:28:36 AM,-34.0735,18.7681,↓ 160°,250,288,"6,050",-811 Descending, FlightAware ADS-B (CPT / FACT)
+Fri 10:29:06 AM,-34.1068,18.7823,↓ 161°,253,291,"5,550",-918 Descending, FlightAware ADS-B (FAFK)
+Fri 10:29:25 AM,-34.1281,18.7893,↓ 172°,249,287,"5,300",-692 Descending, FlightAware ADS-B (FAFK)
+Fri 10:29:45 AM,-34.1485,18.7833,↙ 213°,229,264,"5,100",-638 Descending, FlightAware ADS-B (FAFK)
+Fri 10:30:05 AM,-34.1602,18.7642,← 246°,203,234,"4,875",-583 Descending, FlightAware ADS-B (FAYP)
+Fri 10:30:21 AM,-34.1655,18.748,← 248°,201,231,"4,750",-714 Descending, FlightAware ADS-B (CPT / FACT)
+Fri 10:30:47 AM,-34.1746,18.7204,← 251°,198,228,"4,375",-821 Descending, FlightAware ADS-B (FAFK)
+Fri 10:31:03 AM,-34.1738,18.703,← 286°,184,212,"4,175",-875 Descending, FlightAware ADS-B (CPT / FACT)
+Fri 10:31:23 AM,-34.1662,18.6861,← 301°,180,207,"3,850",-964 Descending, FlightAware ADS-B (FAYP)
+Fri 10:31:45 AM,-34.1566,18.6667,← 302°,177,204,"3,500",-852 Descending, FlightAware ADS-B (CPT / FACT)
+Fri 10:32:07 AM,-34.1419,18.6579,↑ 345°,163,188,"3,225",-779 Descending, FlightAware ADS-B (FAYP)
+Fri 10:32:37 AM,-34.1212,18.6514,↑ 345°,150,173,"2,825",-783 Descending, FlightAware ADS-B (CPT / FACT)
+Fri 10:32:53 AM,-34.1112,18.6482,↑ 345°,146,168,"2,625",-783 Descending, FlightAware ADS-B (FAFK)
+Fri 10:33:23 AM,-34.0908,18.6416,↑ 345°,153,176,"2,225",-721 Descending, FlightAware ADS-B (FAFK)
+Fri 10:33:45 AM,-34.077,18.6372,↑ 345°,135,155,"2,000",-692 Descending, FlightAware ADS-B (CPT / FACT)
+Fri 10:34:15 AM,-34.0592,18.6316,↑ 345°,132,152,"1,625",-725 Descending, FlightAware ADS-B (FAFK)
+Fri 10:34:45 AM,-34.0404,18.6257,↑ 345°,143,165,"1,275",-692 Descending, FlightAware ADS-B (FAFK)
+Fri 10:34:54 AM,-34.0346,18.6238,↑ 345°,142,163,"1,175",-750 Descending, Surface and Near-Surface
+Fri 10:35:01 AM,-34.03,18.6223,↑ 345°,141,162,"1,075",-750 Descending, FlightAware ADS-B (CPT / FACT)
+Fri 10:35:18 AM,-34.02,18.6191,↑ 345°,141,162,875,-682 Descending, FlightAware ADS-B (FAYP)
+Fri 10:35:34 AM,-34.0103,18.6161,↑ 345°,139,160,700,-703 Descending, FlightAware ADS-B (FAFK)
+Fri 10:35:50 AM,-34.0012,18.6132,↑ 346°,139,160,500,-750 Descending, FlightAware ADS-B (FAFK)

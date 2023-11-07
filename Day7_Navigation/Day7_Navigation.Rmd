@@ -1,0 +1,98 @@
+---
+title: "Day7_Navigation"
+author: "Chen-Chia Ku"
+date: "2023-11-07"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# library
+```{r}
+library(ggplot2)
+library(dplyr)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(ggtext)
+library(emojifont)
+library(ggpubr)
+
+```
+
+# Data
+```{r}
+Africa1 <- read.csv("D:/6_Rworld/30daysMapChallenge_2023/Day7_Navigation/UAE367.csv")
+Africa2 <- read.csv("D:/6_Rworld/30daysMapChallenge_2023/Day7_Navigation/UAE770.csv")
+
+world<- ne_countries(scale = 50, type = "countries", returnclass = "sf") %>%
+  select(iso_a3, iso_n3, admin, continent)
+Asia <- world %>% 
+  filter(continent=="Asia")
+Africa_map <- world %>% 
+  filter(continent=="Africa")
+
+Africa1_1 <- Africa1 %>% 
+  mutate(row=as.numeric(rownames(.)))
+
+```
+**Data source:**
+* Flight route:< https://zh-tw.flightaware.com/live/airport/OMDB >
+  * Flight EK367
+  * Flight EK770
+```{r}
+
+
+
+
+Flyplot <- ggplot()+
+  # Map of world, Africa and Asia
+  geom_sf(data = world, alpha = 0.15, fill="#83b9d1", color="#83b9d1")+
+  geom_sf(data = Africa_map,  fill="#FFB548", color="#ffcd83")+
+  geom_sf(data = Asia,  fill="#144D69", color="#1b658a")+
+  
+  # Airline route
+  geom_line(Africa1_1, mapping=aes(x=Longitude, y=Latitude, group=1))+
+  geom_line(Africa2, mapping=aes(x=Longitude, y=Latitude, group=1), 
+            color="grey50", linetype="longdash")+
+  
+  # point of each airport
+  geom_point(Africa1_1[1,], mapping=aes(x=Longitude, y=Latitude), size=1.2, color="#FFB548")+
+  geom_text(Africa1_1[1,], mapping=aes(x=Longitude, y=Latitude, label="Taiwan"), 
+            hjust=-0.2,size=20)+
+  geom_point(Africa2[1,], mapping=aes(x=Longitude, y=Latitude), size=1.2, color="#FFB548")+
+  geom_text(Africa2[1,], mapping=aes(x=Longitude, y=Latitude, label="Dubai"), 
+            hjust=-0.4, vjust=1.2, size=20 )+
+  geom_text(mapping=aes(x=18.5966149, y=-33.969618, label="Cape Town"), 
+            hjust=1, vjust=1.2, size=40 )+
+  
+  #flight information
+  #geom_text(mapping=aes(x=83, y=-14, label="Flight EK367: Taiwan-Dubai"), size=22)+
+  #geom_text(mapping=aes(x=83, y=-16, label="Flight EK770: Dubai-Cape Town 09:10----9h35m----16:45"), size=22)+
+  
+  
+  geom_emoji(alias = 'small_airplane', x=80, y=70, size=280, color="#83b9d1")+
+  coord_sf(xlim = c(-11, 139), ylim = c(-39, 59), expand = T, crs=(4326))+
+  theme(panel.background = element_rect(fill = "#d9eaf1", colour = "#144D69"), 
+        #panel.grid = element_blank(), 
+        plot.margin = margin(0, -0.1,-0.8, -1, "cm"),
+        axis.text.x = element_text(vjust = 2, size=60, color="#a0c9dc"),
+        axis.text.y = element_text(angle = 270, vjust = 2, hjust=0.25, size=60, color="#a0c9dc"),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank())
+
+
+
+Flyplot2 <-  annotate_figure(Flyplot, 
+                             top = text_grob("Ready to explore Africa.",
+                                             color = "#144D69",
+                                             face = "bold",size = 140),
+                             bottom=text_grob("#30DayMapChallenge | Day7_Navigation | @jjakon11",
+                                                color = "grey30", 
+                                                hjust = 1, 
+                                                x = 1,
+                                                size =60))
+
+ggexport(Flyplot2, filename = "Flyplot.png", width =5300, height =3700, res =800 )
+
+```
