@@ -1,0 +1,178 @@
+---
+title: "Day8_Africa"
+author: "Chen-Chia Ku"
+date: "2023-11-08"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+```{r}
+library(ggplot2)
+library(dplyr)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(rgbif)
+library(sf)
+library(raster)
+library(ggpubr)
+library(ggrepel)
+```
+
+```{r}
+world<- ne_countries(scale = 50, type = "countries", returnclass = "sf") %>%
+  dplyr::select(iso_a3, iso_n3, admin, continent)
+Africa_map <- world %>% 
+  filter(continent=="Africa") %>%
+  mutate(cell=1:nrow(.))
+```
+
+
+
+```{r}
+spList <- c("Panthera pardus", "Berberis holstii","Lobelia gregoriana","Welwitschia", "Pachypodium")
+#genusList <- c("Welwitschia", "Pachypodium")
+myData<-occ_search(scientificName = spList)
+
+
+```
+
+```{r}
+QAdt1 <- myData[[4]]$data %>%
+  dplyr::select(species, family, genus, decimalLatitude, decimalLongitude, infraspecificEpithet) %>%
+  rename(Long="decimalLongitude", 
+         Lat="decimalLatitude")
+
+```
+
+
+```{r}
+crs <- "+proj=laea +lat_0=0 +lon_0=10 +x_0=4321000 +y_0=3210000 +datum=WGS84 +units=m +no_defs"
+sphere <- st_graticule(ndiscr = 100000, margin = 10e-6) %>%
+  st_transform(crs = crs) %>%
+  st_convex_hull() %>%
+  summarise(geometry = st_union(geometry))
+
+
+```
+
+```{r}
+
+for(i in 1:length(spList)){
+  QAdt1 <- myData[[i]]$data %>%
+    dplyr::select(species, family, genus, decimalLatitude, decimalLongitude) %>%
+    rename(Long="decimalLongitude", 
+           Lat="decimalLatitude")
+  
+  #Earth
+  Earth_P <- ggplot(sphere )+
+    geom_sf(data = world, alpha = 0.15, fill="#c6c2bc", color="#c6c2bc")+
+    geom_sf(data = Africa_map, alpha = 0.6, fill="#f99600", color="#ffcd83", linewidth=0.0002)+
+    geom_sf( fill = "#fefcf9",color="black", size=2.5, alpha = 0.2)+
+    coord_sf(crs=crs)+
+    theme(panel.background = element_rect(fill = "#F6F3F0", colour = "#F6F3F0"), 
+          plot.margin = margin(0, 0, 0, 0, "cm"))
+  
+  #Base map
+  Africa_zoom <- ggplot()+
+  
+  geom_sf(data = world, alpha = 0.15, fill="#c6c2bc", color="#c6c2bc")+
+  geom_sf(data = Africa_map,  fill="#f99600", color="#ffedd1",alpha=0.5 )+
+  coord_sf(xlim = c(-20, 65), ylim = c(-39, 69), expand = T, crs=(4326))+
+  geom_point(QAdt1, mapping=aes(x=Long, y=Lat),alpha=0.7 )+
+  
+  #geom_text_repel(mapping=aes(x=10, y=58, label=spList2[1]), 
+  #                size=3, color="grey50", parse = TRUE)
+  
+  theme(panel.background = element_rect(fill = "#fefcf9", colour = "#975b00"), 
+        #panel.grid = element_blank(), 
+        plot.margin = margin(0, 0, -0.4, 0, "cm"),
+        axis.text.x = element_text(vjust = 8, size=8, color="#ffce83"),
+        axis.text.y = element_text(angle = 270, vjust = 6, hjust=0.5, size=8, color="#ffce83"),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(), 
+        legend.position = c(0.78,0.35), 
+        legend.background = element_rect(fill = NA),
+        legend.key = element_blank(),
+        legend.key.size = unit(0.6, 'cm'), 
+        legend.text=element_text(size=10, color="#144D69"), 
+        legend.title = element_text(size=12, color="#144D69"),
+        legend.text.align = 0)
+  
+  SpDis <- Africa_zoom+
+  annotation_custom(
+      grob = ggplotGrob(Earth_P),
+      xmin = 34, xmax = 69, ymin = 39, ymax = 74)+
+  annotate("text", x=0, y=57, size=6.5, 
+           label=spList[i], 
+           fontface="italic", 
+           colour="#5c3800")
+
+SpDis2 <- annotate_figure(SpDis, top = text_grob("Species Distribution in Africa",
+                          color = "#975b00",face = "bold",size = 20), 
+                  bottom=text_grob("#30DayMapChallenge | Day8_Africa | @jjakon11",
+                                                color = "grey30", 
+                                                hjust = 1.1, 
+                                                x = 1,
+                                                size = 12))
+
+ggexport(SpDis2, filename = paste("Afica map_", spList[i],".png",sep=""), 
+         width =3100, height =4100, res =500 )
+  
+}
+
+```
+
+```{r}
+
+Earth_P <- ggplot(sphere )+
+  
+  geom_sf(data = world, alpha = 0.15, fill="#c6c2bc", color="#c6c2bc")+
+  geom_sf(data = Africa_map, alpha = 0.6, fill="#f99600", color="#ffcd83", linewidth=0.0002)+
+  #geom_sf(data = ctrys50m, fill="grey") +
+  #geom_point(QAdt1, mapping=aes(x=Long, y=Lat), color="red", size=)+
+  geom_sf( fill = "#fefcf9",color="black", size=2.5, alpha = 0.2)+
+  coord_sf(crs=crs)+
+  theme(panel.background = element_rect(fill = "transparent", colour = "transparent"), 
+        plot.margin = margin(0, 0, 0, 0, "cm"))
+
+
+Africa_zoom <- ggplot()+
+  
+  geom_sf(data = world, alpha = 0.15, fill="#c6c2bc", color="#c6c2bc")+
+  geom_sf(data = Africa_map,  fill="#f99600", color="#ffedd1",alpha=0.5 )+
+  coord_sf(xlim = c(-20, 65), ylim = c(-39, 69), expand = T, crs=(4326))+
+  geom_point(QAdt1, mapping=aes(x=Long, y=Lat, color=species),alpha=0.7 )+
+  
+  #geom_text_repel(mapping=aes(x=10, y=58, label=spList2[1]), 
+  #                size=3, color="grey50", parse = TRUE)
+  
+  theme(panel.background = element_rect(fill = "#fefcf9", colour = "#975b00"), 
+        #panel.grid = element_blank(), 
+        plot.margin = margin(0, 0, -0.4, 0, "cm"),
+        axis.text.x = element_text(vjust = 8, size=8, color="#ffce83"),
+        axis.text.y = element_text(angle = 270, vjust = 5, hjust=0.5, size=8, color="#ffce83"),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(), 
+        legend.position = "none")
+
+SpDis <- Africa_zoom+
+  annotation_custom(
+      grob = ggplotGrob(Earth_P),
+      xmin = 34, xmax = 69, ymin = 39, ymax = 74)+
+  annotate("text", x=10, y=58, size=6, 
+           label=spList[1], 
+           fontface="italic",)
+
+SpDis2 <- annotate_figure(SpDis, top = text_grob("Species Distribution in Africa",
+                          color = "#975b00",face = "bold",size = 20), 
+                  bottom=text_grob("#30DayMapChallenge | Day8_Africa | @jjakon11",
+                                                color = "grey30", 
+                                                hjust = 1.1, 
+                                                x = 1,
+                                                size = 12))
+ggexport(SpDis2, filename = "Afica map.png", width =3100, height =4100, res =500 )
+```
