@@ -21,6 +21,9 @@ Land_DEM <- raster("D:/6_Rworld/30daysMapChallenge_2023/MapDt/TaiwanMapDEM/tif f
 
 
 ```
+**Data source:**
+  * TaiwanDEM: < https://data.gov.tw/dataset/35430 >
+  * Ocean: < https://www.gebco.net/ >
 
 ```{r}
 x <- aggregate(Ocean_DEM, fact=10)
