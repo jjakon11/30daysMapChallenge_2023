@@ -1,0 +1,67 @@
+---
+title: "Day9_Hexagon"
+author: "Chen-Chia Ku"
+date: "2023-11-09"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(hexbin)# install.packages("hexbin")
+library(ggpubr)
+
+```
+
+```{r}
+Ocean_DEM <- raster("D:/6_Rworld/30daysMapChallenge_2023/Day2_Lines/TaiwanOcean/gebco_2023_n26.0_s20.0_w119.0_e124.0.tif")
+Land_DEM <- raster("D:/6_Rworld/30daysMapChallenge_2023/MapDt/TaiwanMapDEM/tif file/twdtm_asterV2_30m.tif")
+
+
+```
+
+```{r}
+x <- aggregate(Ocean_DEM, fact=10)
+
+
+Eledt <- rasterToPoints(x)
+Eledt2 <- as.data.frame(Eledt) %>%
+  rename(elevation="gebco_2023_n26.0_s20.0_w119.0_e124.0")
+
+land <- aggregate(Land_DEM, fact=10)
+Land_Eledt <- rasterToPoints(land)
+Land_Eledt2 <- as.data.frame(Land_Eledt) %>%
+  rename(elevation='Layer_1')
+```
+
+```{r}
+mypal <- colorRampPalette(c("#153049","#443A83","#287D8E","#25AB82","#98CC48","#F0E51D","#f5ed67","#FAF6B3"))
+
+stamp <- ggplot()+
+  stat_summary_hex(Eledt2, mapping=aes(x=x, y=y, z=(elevation)), bins=20)+
+  stat_summary_hex(Land_Eledt2, mapping=aes(x=x, y=y, z=(-(elevation))), bins=60)+
+  geom_text(mapping=aes(x=119.7, y=25.5, label="112"), color="#3F4885", size=15)+
+  coord_sf(crs=4326)+
+  scale_fill_gradientn(colours = mypal(20))+
+  theme(panel.background = element_rect(fill = "transparent"), 
+        panel.grid = element_blank(), 
+        plot.margin = margin(0, 0, 0, 0, "cm"),
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(), 
+        legend.position = "none")
+stamp2 <- annotate_figure(stamp, 
+                          bottom=text_grob("#30DayMapChallenge | Day9_Hexagons | @jjakon11",
+                                                color = "grey30", 
+                                                hjust = 1.1, 
+                                                x = 1,
+                                                size = 12))
+ggexport(stamp2,filename = "stamp.png", width=3300, height=4300, res=500)
+
+  
+```
