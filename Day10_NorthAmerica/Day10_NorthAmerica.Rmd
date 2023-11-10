@@ -1,0 +1,64 @@
+---
+title: "Day10_NorthAmerica"
+author: "Chen-Chia Ku"
+date: "2023-11-10"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+```{r}
+
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(sf)
+
+library(ggpubr)
+```
+
+
+```{r}
+RailUS <- sf::st_read(dsn = "D:/6_Rworld/30daysMapChallenge_2023/MapDt/North_American_Rail_Lines", layer="North_American_Rail_Network_Lines")
+
+
+oxygenLayer <- raster("D:/6_Rworld/30daysMapChallenge_2023/MapDt/LandMass/DissolvedMolecularOxygen.tif")
+oxygenLayer <- projectRaster(oxygenLayer, crs = 4326)
+oxygenLayer <- mask(oxygenLayer, as(bb, "Spatial"))
+oxygenLayer <- as.data.frame(oxygenLayer,xy=TRUE,na.rm=T)
+colnames(oxygenLayer) <- c("Lon","Lat","Val")
+oxygenLayer2 <- oxygenLayer %>%
+  filter(Lon>-180, Lon< -8) %>%
+  filter(Lat>-10, Lat<90)
+
+```
+
+```{r}
+
+
+Oxy <- ggplot()+
+  geom_sf(data=RailUS , colour="#244C70", linewidth=0.01)+
+  geom_tile(data = oxygenLayer2, aes(x=Lon,y=Lat,fill=Val))+
+  coord_sf(xlim = c(-165, -20), ylim = c(10, 90),  crs=(4326))+
+  theme(panel.background = element_rect(fill = "white", colour = "white"), 
+        #panel.grid = element_blank(), 
+        plot.margin = margin(0, 0, 0, -0.4, "cm"),
+        axis.text.x = element_text(vjust = 8, size=8, color="#A5B1BC"),
+        axis.text.y = element_text(angle = 270, vjust = 8, hjust=0.5, size=8, color="#A5B1BC"),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(), 
+        legend.position = "none")
+
+Oxy2 <- annotate_figure(Oxy, bottom=text_grob("#30DayMapChallenge | Day10_North America | @jjakon11",
+                                              color = "grey30",
+                                              hjust = 1.05,
+                                              x = 1,
+                                              size = 12))
+
+
+
+ggexport(Oxy2, filename = "NorthRailway.png", width=7200, height=6000, res=800)
+
+
+```
