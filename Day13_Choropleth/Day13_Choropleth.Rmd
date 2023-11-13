@@ -1,0 +1,169 @@
+---
+title: "Day13_Choropleth"
+author: "Chen-Chia Ku"
+date: "2023-11-11"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(raster)
+library(sf)
+library(ggpubr)
+library(magick)
+```
+
+```{r}
+speciesdata <- read.csv("D:/6_Rworld/30daysMapChallenge_2023/Day13_Choropleth/Data1950_19902.csv")
+speciesdata2 <- read.csv("D:/6_Rworld/30daysMapChallenge_2023/Day13_Choropleth/Data1900_1950.csv") %>%
+  mutate(dateIdentified=as.character(dateIdentified))
+speciesdata3 <- read.csv("D:/6_Rworld/30daysMapChallenge_2023/Day13_Choropleth/Data1991_2023.csv")
+
+Ocean_DEM <- raster("D:/6_Rworld/30daysMapChallenge_2023/Day3_Polygons/TaiwanOCean/gebco_2023_n27.0_s20.0_w116.0_e125.0.tif")
+
+taiwan_shp <-sf::st_read(dsn ="D:/6_Rworld/30daysMapChallenge_2023/MapDt/Taiwan", layer="gadm36_TWN_2")
+
+```
+
+```{r}
+x <- aggregate(Ocean_DEM, fact=10)
+
+
+Eledt <- rasterToPoints(x)
+Eledt2 <- as.data.frame(Eledt) %>%
+  rename(elevation="gebco_2023_n27.0_s20.0_w116.0_e125.0")
+
+Taiwan2 <- st_union(taiwan_shp)
+
+```
+
+```{r}
+spdata<- bind_rows(speciesdata, speciesdata2, speciesdata3) %>%
+  dplyr::select(scientificName, species, genus, family, decimalLatitude, decimalLongitude, elevation, year) %>%
+  filter(decimalLongitude>119) %>%
+  mutate(YCat=ifelse(year>=1900&year<1930, "1900-1930", NA), 
+         YCat=ifelse(year>=1930&year<1960, "1930-1960", YCat),
+         YCat=ifelse(year>=1960&year<1990, "1960-1990", YCat),
+         YCat=ifelse(year>=1990&year<2020, "1990-2020", YCat))
+
+```
+
+
+
+```{r}
+
+head(speciesdata)
+
+mypal <- colorRampPalette(c("#FFFFFF","#EAD6C6","#C6E0BE","#2EA858","#0F381D"))
+
+YY <- levels(as.factor(spdata$YCat))
+
+for (i in 1:length(YY)){
+  spdata2 <- spdata %>% 
+    filter(YCat==YY[i])
+  
+  spdata3 <- spdata2 %>%
+    filter(family!="", species!="") %>%
+    group_by(family, species) %>%
+    summarise(spFreq=n()) %>%
+    ungroup() %>%
+    mutate(n=1) %>%
+    group_by(family) %>%
+    summarise(SpN=sum(n), 
+              Individual=sum(spFreq)) %>%
+    ungroup() %>%
+    mutate(FamN=nrow(.),
+           sumN=sum(Individual)) %>%
+    arrange(desc(Individual)) 
+  
+  #Taiwan map
+  Map <- ggplot()+
+    geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.5)+
+    geom_sf(data=Taiwan2 ,fill="#D8EFE5", colour="#0F381D", alpha=0)+
+    geom_point(spdata2, mapping=aes(x=decimalLongitude, y=decimalLatitude),
+               color="#452485", alpha=0.1, size=0.8)+
+    scale_fill_gradientn(colours = mypal(20))+
+    geom_text(mapping=aes(x=118.5, y=26.3, label=YY[i]),
+              size=4.5, color="#17572d")+
+    geom_text(mapping=aes(x=119.1, y=22.4, label="Records"), 
+              size=12, color="#005185")+
+    geom_text(mapping=aes(x=119.1, y=22.1, label="of Specimens in the Wild"), 
+              size=4, color="#005185")+
+    
+    coord_sf(xlim = c(118, 122.5), ylim = c(21.5, 26.5),crs=4326)+
+    theme(panel.background = element_rect(fill = "#EAD6C6", color="#0F381D"), 
+          panel.grid = element_blank(), 
+          plot.margin = margin(0.3, -0.6, -0.4, -1, "cm"),
+          axis.text.x = element_text(vjust = 6, size=8, color="#248545"),
+          axis.text.y = element_text(angle = 270, vjust = 6, hjust=0.5, size=8, color="#248545"),
+          axis.ticks.x = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks.y = element_blank(),
+          axis.title.y = element_blank(),
+          legend.position="none")
+  
+  # Having a Bar
+  Familystat <- ggplot()+
+    geom_col(spdata3 %>%
+               top_n(5, Individual), 
+             mapping=aes(x=reorder(family, Individual), y= Individual), 
+             fill="#17572d", alpha=0.8, width = 0.8)+
+    
+    scale_y_continuous(expand = c(0,0))+
+    coord_flip()+
+    ylab("Frequency")+
+    xlab("")+
+    theme(panel.background = element_rect(fill = "transparent", color = "transparent"), 
+          panel.grid = element_blank(), 
+          plot.background = element_rect(fill = "transparent", color = "transparent"),
+          axis.line=element_line(color="#89B68A"),
+          axis.ticks=element_line(color="#89B68A"),
+          axis.text.y = element_text(size=6, color="#248545"),
+          axis.text.x = element_text(size=6.5, color="#248545"), 
+          axis.title.x=element_text(size=7.5, color="#248545"))
+  
+  
+  
+  
+  
+  # Make Taiwan and Bar CRASH
+  CMap <- Map+annotation_custom(
+        grob = ggplotGrob(Familystat),
+        xmin = 117.8, xmax = 120.9, ymin = 25, ymax = 26.3)
+  CMap_text <- annotate_figure(CMap,
+                    bottom=text_grob("#30DayMapChallenge | Day13_Choropleth | @jjakon11",
+                                                  color = "grey30", 
+                                                  hjust = 1.05, 
+                                                  x = 1,
+                                                  size = 8))
+  # Export---
+  ggexport(CMap_text , filename = paste("TCMap_",YY[i],".png", sep=""), width =4300, height =5248, res =900 )
+    
+}
+
+
+```
+
+# GIF file
+```{r}
+
+YYWD <- paste(getwd(),"/", "TCMap_", YY, ".png", sep="" )
+IRdt <- list()
+for (i in 1:length(YYWD)) {
+  IRdt[[i]] <- image_read(YYWD[i])
+}
+
+IRplot <- c(IRdt[[1]], IRdt[[2]], IRdt[[3]], IRdt[[4]])
+
+
+
+output_gif <- image_animate(IRplot, delay = 60)
+
+image_write(output_gif, "output.gif")
+
+```
+
