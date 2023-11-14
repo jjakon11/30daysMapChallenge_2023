@@ -1,0 +1,73 @@
+---
+title: "Day14_Europe"
+author: "Chen-Chia Ku"
+date: "2023-11-14"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+```{r}
+library(ggplot2)
+library(sf)
+library(dplyr)
+library(ggstar)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(ggpubr)
+```
+
+
+```{r}
+
+world<- ne_countries(scale = 50, type = "countries", returnclass = "sf") %>%
+  dplyr::select(iso_a3, iso_n3, admin, continent)
+
+EU_map <- world %>% 
+  filter(continent=="Europe")
+
+RailEU <- sf::st_read(dsn = "D:/6_Rworld/30daysMapChallenge_2023/MapDt/europe-railways-shape", layer="railways")
+
+RailEU2 <- RailEU %>%
+  filter(type=="rail")
+```
+
+```{r}
+EU_map <- ggplot()+
+  geom_sf(data=world, fill="#0b2915", color="#0b2915")+
+  geom_sf(data=EU_map, fill="#07190d", color="#07190d")+
+  geom_sf(data=RailEU2 , colour="#454E30", linewidth=0.2)+
+  geom_sf(data=RailEU2 , colour="#838455", linewidth=0.15)+
+  geom_sf(data=RailEU2 , colour="#C1BA79", linewidth=0.1)+
+  geom_sf(data=RailEU2 , colour="#ffdd27", linewidth=0.05)+
+  coord_sf(xlim = c(-20, 40), ylim = c(38, 77),  crs=(4326))+
+  geom_text(mapping=aes(x=-2, y=72, label="European"), 
+              size=12, color="#a7c0d0")+
+  geom_text(mapping=aes(x=-6.5, y=69.1, label="Railway Map"), 
+              size=6, color="#a7c0d0")+
+  theme(panel.background = element_rect(fill = "#0F381D", colour = "#0F381D"),
+        plot.background = element_blank(),
+        panel.grid = element_blank(), 
+        plot.margin = margin(0.3, 0, -0.4, -0.4, "cm"),
+        axis.text.x = element_text(vjust = 7, size=8, color="#A5B1BC"),
+        axis.text.y = element_text(angle = 270, vjust = 8, hjust=0.5, size=8, color="#A5B1BC"),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(), 
+        legend.position = "none")
+  
+
+EU_maptext <- annotate_figure(EU_map ,
+                    bottom=text_grob("#30DayMapChallenge | Day14_Europe | @jjakon11",
+                                                  color = "grey30", 
+                                                  hjust = 1.05, 
+                                                  x = 1,
+                                                  size = 8))
+
+
+
+
+ggexport(EU_maptext  , filename = "EU_map.png", width =4300, height =5248, res =900 )
+mypal <- colorRampPalette(c("#07190d","#fff09d"))
+mypal(5)
+```
