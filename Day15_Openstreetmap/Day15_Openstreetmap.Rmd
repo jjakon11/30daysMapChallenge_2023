@@ -65,10 +65,10 @@ Chia <- ggplot() +
   geom_rect(aes(xmin = 120.4001, xmax = 120.44, ymin = 23.50, ymax = 23.5098), 
             fill="#4C5E78", alpha=0.95)+
   geom_text(mapping=aes(x=120.42, y=23.506, label="Chiayi, Taiwan"), 
-            size=230,color="#fffffe" ,family = 'Ubuntu')+
+            size=140,color="#fffffe" ,family = 'Ubuntu')+
   geom_text(mapping=aes(x=120.42, y=23.503, 
                         label="#30DayMapChallenge | Day15_OpenStreetMap | @jjakon11"), 
-            size=53,color="#fffffe" ,family = 'Ubuntu')+
+            size=31,color="#fffffe" ,family = 'Ubuntu')+
   
   coord_sf(xlim = c(120.40, 120.48), ylim = c(23.45, 23.51), expand = FALSE, crs=4326)+
   theme(panel.background = element_rect(fill = "#4C5E78"), 
@@ -82,7 +82,7 @@ Chia <- ggplot() +
         axis.ticks.y = element_blank(),
         axis.title.y = element_blank(),
         legend.position="none")
-ggexport(Chia, filename = "Chia.png", width = 14600, height=12000, res=900)
+ggexport(Chia, filename = "Chia.png", width = 8760, height=7200, res=540)
   
   #34485b
   
