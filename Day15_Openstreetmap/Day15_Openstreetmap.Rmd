@@ -1,0 +1,90 @@
+---
+title: "Day15_Openstreetmap"
+author: "Chen-Chia Ku"
+date: "2023-11-15"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(sysfonts)
+library(showtext)
+library(osmdata)
+library(ggplot2)
+library(dplyr)
+library(ggpubr)
+
+```
+
+```{r}
+font_add_google(name = 'Ubuntu', family = 'Ubuntu')
+showtext_auto()
+
+```
+
+```{r}
+Cod <- c( 120.371026,23.447184,
+         120.497125,23.534036)
+
+roads_main <- opq(bbox = Cod ) %>%
+  add_osm_feature(key = 'highway') %>%
+  osmdata_sf()
+
+river <- opq(bbox = Cod) %>%
+  add_osm_feature(key = 'water') %>%
+  osmdata_sf()
+buildings <- opq(bbox = Cod) %>%
+  add_osm_feature(key = "building") %>%
+  osmdata_sf()
+
+leisure <- opq(bbox = Cod) %>%
+  add_osm_feature(key = 'leisure', value = c('garden','park')) %>%
+  osmdata_sf()
+
+water<- opq(bbox = Cod) %>%
+  add_osm_feature(key = 'natural', value = c('water', 'pond')) %>%
+  osmdata_sf()
+grass<- opq(bbox = Cod) %>%
+  add_osm_feature(key = 'natural', value = c('grassland')) %>%
+  osmdata_sf()
+
+railway <-opq(bbox = Cod) %>%
+  add_osm_feature(key = 'railway') %>%
+  osmdata_sf()
+
+
+```
+
+```{r}
+Chia <- ggplot() +
+  geom_sf(data = river$osm_polygons, color="#9dffff", fill="#9dffff") +
+  geom_sf(data=water$osm_polygons, color="#9dffff", fill="#9dffff")+
+  geom_sf(data = roads_main$osm_lines, color = "#fcfced", fill = "#fcfced") +
+  geom_sf(data=railway$osm_lines, color="#1f2530", linewidth=0.8)+
+  geom_rect(aes(xmin = 120.4001, xmax = 120.44, ymin = 23.50, ymax = 23.5098), 
+            fill="#4C5E78", alpha=0.95)+
+  geom_text(mapping=aes(x=120.42, y=23.506, label="Chiayi, Taiwan"), 
+            size=230,color="#fffffe" ,family = 'Ubuntu')+
+  geom_text(mapping=aes(x=120.42, y=23.503, 
+                        label="#30DayMapChallenge | Day15_OpenStreetMap | @jjakon11"), 
+            size=53,color="#fffffe" ,family = 'Ubuntu')+
+  
+  coord_sf(xlim = c(120.40, 120.48), ylim = c(23.45, 23.51), expand = FALSE, crs=4326)+
+  theme(panel.background = element_rect(fill = "#4C5E78"), 
+        plot.background = element_rect(fill = "#4C5E78"),
+        panel.grid = element_blank(), 
+        plot.margin = margin(0.2, 0.2,0.2,0.2, "cm"),
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(),
+        legend.position="none")
+ggexport(Chia, filename = "Chia.png", width = 14600, height=12000, res=900)
+  
+  #34485b
+  
+
+```
