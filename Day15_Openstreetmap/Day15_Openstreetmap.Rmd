@@ -34,20 +34,6 @@ roads_main <- opq(bbox = Cod ) %>%
 river <- opq(bbox = Cod) %>%
   add_osm_feature(key = 'water') %>%
   osmdata_sf()
-buildings <- opq(bbox = Cod) %>%
-  add_osm_feature(key = "building") %>%
-  osmdata_sf()
-
-leisure <- opq(bbox = Cod) %>%
-  add_osm_feature(key = 'leisure', value = c('garden','park')) %>%
-  osmdata_sf()
-
-water<- opq(bbox = Cod) %>%
-  add_osm_feature(key = 'natural', value = c('water', 'pond')) %>%
-  osmdata_sf()
-grass<- opq(bbox = Cod) %>%
-  add_osm_feature(key = 'natural', value = c('grassland')) %>%
-  osmdata_sf()
 
 railway <-opq(bbox = Cod) %>%
   add_osm_feature(key = 'railway') %>%
@@ -84,7 +70,6 @@ Chia <- ggplot() +
         legend.position="none")
 ggexport(Chia, filename = "Chia.png", width = 8760, height=7200, res=540)
   
-  #34485b
   
 
 ```
