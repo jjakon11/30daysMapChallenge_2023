@@ -1,0 +1,63 @@
+---
+title: "Day17_Flow"
+author: "Chen-Chia Ku"
+date: "2023-11-17"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(sysfonts)
+library(showtext)
+library(ggpubr)
+
+library(rnaturalearth)
+library(rnaturalearthdata)
+```
+
+
+```{r}
+font_add_google(name = 'Averia Serif Libre', family = 'Averia Serif Libre')
+showtext_auto()
+
+```
+
+
+```{r}
+indt4 <- read.csv("D:/6_Rworld/30daysMapChallenge_2023/Day17_Flow/indt4 .csv")
+
+world<- ne_countries(scale = "medium", returnclass = "sf") %>%
+  dplyr::select(iso_a3, iso_n3, admin, continent)
+
+
+```
+
+```{r}
+Invasive <- ggplot()+
+  geom_sf(data = world , aes(group = admin),fill = "#567087", color="#567087")+
+  geom_curve(data = indt4 , aes(x = longitude, y = latitude, xend = ToLong, yend = ToLat, linewidth=n, color=value2), 
+             alpha=0.3,curvature = -0.4)+
+  geom_text(mapping=aes(x=0, y=-60, label="Their Origins: Naturalized Species in Taiwan"), 
+            family="Averia Serif Libre", size=50, color="#97bdda")+
+  geom_text(mapping=aes(x=0, y=-50, 
+                        label="#30DayMapChallenge | Day17_Flow | @jjakon11"), 
+            size=20,color="#97bdda" ,family = 'Averia Serif Libre')+
+  theme(panel.background = element_rect(fill = "transparent", color="#1e405e"), 
+        plot.background=element_rect(fill = "#1e405e", color="#234A6D"),
+          panel.grid = element_blank(), 
+          plot.margin = margin(0.5, -0.6, 0, 0, "cm"),
+          axis.text.x = element_text(vjust = 8, size=40, color="#438BC4"),
+          axis.text.y = element_text(angle = 270, vjust = 8, hjust=0.5, size=40, color="#438BC4"),
+          axis.ticks.x = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks.y = element_blank(),
+          axis.title.y = element_blank(),
+          legend.position="none")
+
+ggexport(Invasive, filename = "Invasive.png", width = 8090, height=4100, res=500)
+
+```
