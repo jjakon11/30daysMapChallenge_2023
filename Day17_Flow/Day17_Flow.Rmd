@@ -41,7 +41,7 @@ Invasive <- ggplot()+
   geom_sf(data = world , aes(group = admin),fill = "#567087", color="#567087")+
   geom_curve(data = indt4 , aes(x = longitude, y = latitude, xend = ToLong, yend = ToLat, linewidth=n, color=value2), 
              alpha=0.3,curvature = -0.4)+
-  geom_text(mapping=aes(x=0, y=-60, label="Their Origins: Naturalized Species in Taiwan"), 
+  geom_text(mapping=aes(x=0, y=-60, label="Their Origins: Naturalized Flora in Taiwan"), 
             family="Averia Serif Libre", size=50, color="#97bdda")+
   geom_text(mapping=aes(x=0, y=-50, 
                         label="#30DayMapChallenge | Day17_Flow | @jjakon11"), 
