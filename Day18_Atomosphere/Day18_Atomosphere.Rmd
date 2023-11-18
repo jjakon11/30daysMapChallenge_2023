@@ -1,0 +1,118 @@
+---
+title: "Day18_Atomosphere"
+author: "Chen-Chia Ku"
+date: "2023-11-18"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(ggplot2)
+library(sf)
+library(dplyr)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(sysfonts)
+library(showtext)
+library(ggpubr)
+library(magick)
+```
+Raleway Dots
+
+
+
+```{r}
+font_add_google(name = 'Rajdhani', family = 'Rajdhani')
+showtext_auto()
+
+```
+
+
+
+```{r}
+getwd()
+TemJan <- read.csv("D:/Drive/6_Rworld/30daysMapChallenge_2023/Day18_Atomosphere/TempJan.csv") %>%
+  filter(Y>=1990)
+
+world<- ne_countries(scale = 50, type = "countries", returnclass = "sf") %>%
+  dplyr::select(iso_a3, iso_n3, admin, continent)
+
+```
+
+```{r}
+TemJan <- 
+
+```
+
+
+```{r}
+mypal <- colorRampPalette(c("#153049","#c8c4e5","#faf6b0","#ff7676"))
+
+YY <- levels(as.factor(TemJan$Y))
+
+for (i in 1:length(YY)) {
+  TemJan1 <- TemJan %>%
+    filter(Y %in% YY[i])
+  
+  GT <-ggplot()+
+    geom_tile(TemJan1, mapping=aes(x=Long,y=Lat, fill=Change), alpha=0.95)+
+    scale_fill_gradientn(colours = mypal(100))+
+    geom_text(mapping=aes(x=0, y=-88, 
+                        label="#30DayMapChallenge | Day18_Atomosphere | @jjakon11"),
+              size=30,color="#F2A28A" ,family = 'Rajdhani')+
+    theme(panel.background = element_rect(fill = "transparent", color="#1e405e"), 
+          plot.background=element_rect(fill = "#1e405e", color="#1e405e"),
+          panel.grid = element_blank(), 
+          plot.margin = margin(0.5, 0, 0, 0, "cm"),
+          plot.title = element_text(colour="#F2A28A", size=200,family="Rajdhani", hjust = 0.5),
+          plot.subtitle = element_text(colour="#F2A28A", 
+                                             size=150,family="Rajdhani", hjust = 0.5),
+          axis.text.x = element_text(vjust = 1, size=60, color="#438BC4"),
+          axis.text.y = element_text(angle = 270, vjust = 1, hjust=0.5, size=60, color="#438BC4"),
+          axis.ticks.x = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks.y = element_blank(),
+          axis.title.y = element_blank(),
+          legend.position = "none", 
+          legend.background = element_rect(fill = "transparent"))+
+    labs(title = "Change of the Global Temperature",
+         subtitle = paste("Year", YY[i]))
+  
+  ggexport(GT, filename = paste("GT_",YY[i], ".png", sep=""), width = 8090, height=4100, res=500)
+  
+}
+
+```
+
+# GIF file
+```{r}
+
+YYWD <- paste(getwd(),"/", "GT_", YY, ".png", sep="")
+IRdt <- list()
+for (i in 1:length(YYWD)) {
+  IRdt[[i]] <- image_read(YYWD[i])
+}
+
+IRplot <- c(IRdt[[1]], IRdt[[2]], IRdt[[3]], IRdt[[4]], IRdt[[5]], IRdt[[6]],
+            IRdt[[7]], IRdt[[8]], IRdt[[9]], IRdt[[10]], IRdt[[11]], IRdt[[12]],
+            IRdt[[13]], IRdt[[14]], IRdt[[15]], IRdt[[16]], IRdt[[17]], IRdt[[18]],
+            IRdt[[19]], IRdt[[20]], IRdt[[21]], IRdt[[22]], IRdt[[23]], IRdt[[24]],
+            IRdt[[25]], IRdt[[26]], IRdt[[27]], IRdt[[28]], IRdt[[29]], IRdt[[30]],
+            IRdt[[31]], IRdt[[32]], IRdt[[33]])
+
+
+
+output_gif <- image_animate(IRplot, delay = 40)
+
+image_write(output_gif, "ATM.gif")
+
+```
+
+
+
+```{r}
+
+
+
+```
