@@ -33,7 +33,7 @@ showtext_auto()
 ```{r}
 getwd()
 TemJan <- read.csv("D:/Drive/6_Rworld/30daysMapChallenge_2023/Day18_Atomosphere/TempJan.csv") %>%
-  filter(Y>=1990)
+  filter(Y>=1900)
 
 world<- ne_countries(scale = 50, type = "countries", returnclass = "sf") %>%
   dplyr::select(iso_a3, iso_n3, admin, continent)
@@ -102,10 +102,11 @@ IRplot <- c(IRdt[[1]], IRdt[[2]], IRdt[[3]], IRdt[[4]], IRdt[[5]], IRdt[[6]],
             IRdt[[31]], IRdt[[32]], IRdt[[33]])
 
 
+IRplot <-image_join(IRdt)
 
 output_gif <- image_animate(IRplot, delay = 40)
 
-image_write(output_gif, "ATM.gif")
+image_write(output_gif, "ATM2.gif")
 
 ```
 
