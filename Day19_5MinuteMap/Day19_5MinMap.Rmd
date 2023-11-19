@@ -1,0 +1,70 @@
+---
+title: "Day19_5MinMap"
+author: "Chen-Chia Ku"
+date: "2023-11-19"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(sysfonts)
+library(showtext)
+library(osmdata)
+library(ggplot2)
+library(dplyr)
+library(ggpubr)
+
+```
+
+```{r}
+font_add_google(name = 'Ubuntu', family = 'Ubuntu')
+showtext_auto()
+
+```
+
+```{r}
+Cod <- c( 121.490124,25.030549,
+         121.537426,25.063879)
+
+roads_main <- opq(bbox = Cod ) %>%
+  add_osm_feature(key = 'highway') %>%
+  osmdata_sf()
+
+river <- opq(bbox = Cod) %>%
+  add_osm_feature(key = 'water') %>%
+  osmdata_sf()
+
+railway <-opq(bbox = Cod) %>%
+  add_osm_feature(key = 'railway') %>%
+  osmdata_sf()
+
+
+```
+
+```{r}
+Taipei<- ggplot() +
+  geom_sf(data = river$osm_polygons, color="#9dffff", fill="#9dffff") +
+  geom_sf(data = roads_main$osm_lines, color = "#fcfced", fill = "#fcfced") +
+  geom_sf(data=railway$osm_lines, color="#1f2530", linewidth=0.8)+
+  geom_text(mapping=aes(x=121.53, y=25.059, 
+                       label="#30DayMapChallenge | Day16_5MinuteMap | @jjakon11"), 
+            size=31,color="black" ,family = 'Ubuntu')+
+  
+  coord_sf(xlim = c(121.50, 121.54), ylim = c(25.03, 25.06), expand = FALSE, crs=4326)+
+  theme(panel.background = element_rect(fill = "grey50"), 
+        plot.background = element_rect(fill = "grey50"),
+        panel.grid = element_blank(), 
+        plot.margin = margin(0.2, 0.2,0.2,0.2, "cm"),
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(),
+        legend.position="none")
+ggexport(Taipei, filename = "Taipei.png", width = 8760, height=7200, res=540)
+  
+  
+
+```
