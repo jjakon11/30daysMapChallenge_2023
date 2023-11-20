@@ -1,0 +1,205 @@
+---
+title: "Day20_Outdoor"
+author: "Chen-Chia Ku"
+date: "2023-11-19"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+```{r}
+library(ggplot2)
+library(raster)
+library(dplyr)
+library(sf)
+library(tidyverse)
+
+library(ggpubr)
+```
+
+```{r}
+
+
+taiwan_DEM <- raster("D:/Drive/6_Rworld/30daysMapChallenge_2023/MapDt/TaiwanMapDEM/tif file/twdtm_asterV2_30m.tif" )
+
+
+```
+
+```{r}
+
+land <- aggregate(taiwan_DEM, fact=10)
+Land_Eledt <- rasterToPoints(land)
+Land_Eledt2 <- as.data.frame(Land_Eledt) %>%
+  rename(elevation='Layer_1')
+```
+
+
+
+```{r}
+library(sysfonts)
+library(showtext)
+library(osmdata)
+library(ggplot2)
+library(dplyr)
+library(ggpubr)
+library(ggsflabel)
+library(metR)
+
+```
+
+```{r}
+font_add_google(name = 'Vollkorn', family = 'Vollkorn')
+showtext_auto()
+
+```
+
+```{r}
+Cod <- c( 120.39,23.44,
+         120.97,23.57)
+
+roads_main <- opq(bbox = Cod ) %>%
+  add_osm_feature(key = 'highway') %>%
+  osmdata_sf()
+
+railway <-opq(bbox = Cod) %>%
+  add_osm_feature(key = 'railway') %>%
+  osmdata_sf()
+
+railP <- railway$osm_points %>%
+  rename(nameEN="name:en") %>%
+  filter(nameEN!="<NA>") %>%
+  distinct(nameEN, .keep_all = T) %>%
+  filter(!nameEN %in% c("Jiabei", "Minxiong", "Shuishang"))
+
+Peak <- opq(bbox = Cod) %>%
+  add_osm_feature(key = 'natural', 
+                  value=c("peak")) %>%
+  osmdata_sf()
+PeakP <- Peak$osm_points %>%
+  rename(nameEN="name:en") %>%
+  filter(ref!="<NA>") %>%
+  distinct(nameEN, .keep_all = T)
+
+
+trail<- opq(bbox = Cod) %>%
+  add_osm_feature(key = 'sac_scale') %>%
+  osmdata_sf()
+trail$osm_lines
+
+trail2 <- opq(bbox = Cod) %>%
+  add_osm_feature(key = 'trail_visibility') %>%
+  osmdata_sf()
+
+```
+
+```{r}
+mypal <- colorRampPalette(c("#f5ebe3","#EAD6C6","#C6E0BE","#2EA858","#0F381D","#005185"))
+
+
+des <- "Alishan Forest Railway is an 86 km network of 2 ft 6 in of Alishan in Chiayi County, Taiwan. \nThe railway, originally constructed for logging, has become a tourist attraction with its rare \nZ-shaped switchbacks, and over 50 tunnels and 77 wooden bridges.Taiwan's Ministry of Culture \nhas listed the forest railway as a potential World Heritage Site."
+
+MtALi<- ggplot() +
+  geom_tile(data=Land_Eledt2 , mapping=aes(x=x, y=y, fill=elevation))+
+  geom_contour(data=Land_Eledt2 , mapping=aes(x=x, y=y, z=elevation), bins=10, color="#2EA858")+
+  geom_text_contour(data=Land_Eledt2 , mapping=aes(x=x, y=y, z=elevation), 
+                    stroke = 0.2, size=3,
+                    col="grey40", stroke.color="#C6E0BE")+
+  #Railway
+  geom_sf(data=railway$osm_lines, color="#1f2530", linewidth=1.5)+
+  geom_sf(data=railway$osm_lines, color="white", linewidth=0.5, linetype = "4A")+
+  geom_sf_text_repel(data=railP,aes(label=nameEN), 
+                     color="#00619f", size=12, nudge_y=0.01,
+                     family = 'Vollkorn')+
+  #Peak of the moutain nearby
+  geom_sf(data=PeakP, color="#00619f", fill="#b67373", shape=24 )+
+  geom_sf_text_repel(data=PeakP,aes(label=nameEN), 
+                     color="black", size=15, nudge_y=0.001,
+                     family = 'Vollkorn')+
+  geom_rect(aes(xmin = 120.405, xmax = 120.78, ymin = 23.445, ymax = 23.477), 
+            fill="#C6E0BE", alpha=0.80)+
+  geom_text(mapping=aes(x=120.464, y=23.465, label="Alishan Centennial Railway"), 
+            size=80, family="Vollkorn")+
+  geom_text(mapping=aes(x=120.474, y=23.45, 
+                       label="#30DayMapChallenge | Day20_Outdoor | @jjakon11"), 
+            size=20,color="black" ,family="Vollkorn")+
+  
+  geom_text(mapping=aes(x=120.609, y=23.46, 
+                       label=des), 
+            size=14,color="#0F381D" ,family="Vollkorn", 
+            lineheight = 0.2, 
+            hjust=0.0)+
+  coord_sf(xlim = c(120.43, 120.96), ylim = c(23.45, 23.56),crs=4326)+
+  scale_fill_gradientn(colours = mypal(20))+
+
+  #geom_text(mapping=aes(x=121.53, y=25.059, 
+  #                     label="#30DayMapChallenge | Day19_5MinuteMap | @jjakon11"), 
+  #          size=31,color="black" ,family = 'Ubuntu')+
+  
+  #coord_sf(xlim = c(121.50, 121.54), ylim = c(25.03, 25.06), expand = FALSE, crs=4326)+
+  theme(panel.background = element_rect(fill = "#EAD6C6", color="#EAD6C6"), 
+        plot.background = element_rect(fill = "#EAD6C6"),
+        panel.grid = element_blank(), 
+        plot.margin = margin(0, 0,0,0, "cm"),
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(),
+        legend.position="none")
+MtALi
+
+ggexport(MtALi, filename = "MtALi.png", width=8000, height=1900, res=600)
+
+```
+
+
+
+
+
+
+
+
+
+
+```{r}
+mypal <- colorRampPalette(c("#0F381D","#2EA858","#C6E0BE","#EAD6C6","#005185"))
+
+valid_geometries <- st_filter(WalkRoad, .predicate = function(geom) !st_is_empty(geom) & !any(is.na(st_coordinates(geom))))
+
+WalkRoad2 = WalkRoad[!st_is_empty(WalkRoad),,drop=FALSE]
+
+WalkRoad <- st_as_sfc(WalkRoad, crs=4326)
+
+WalkRoad3 <-st_coordinates(WalkRoad2$geometry) %>% 
+  tibble::as_tibble()
+
+
+Forest_area <- ggplot()+
+  geom_tile(data=Land_Eledt2 , aes(x=x, y=y, fill=elevation))+
+  geom_sf(data=ALiRail)+
+  coord_sf(xlim = c(120.40, 120.90), ylim = c(23.45, 23.56),crs=4326)+
+  scale_fill_gradientn(colours = mypal(20))+
+  theme(legend.position = "none")
+  #
+  geom_sf(data=Taiwan2 ,fill="#D8EFE5", colour="#0F381D", alpha=0)+
+  geom_sf(data=WalkRoad2, mapping=aes(color = Name, group=Name))+
+  geom_sf_text(mapping=aes(label=Name), size=2)+
+  #coord_sf(lims_method = "geometry_bbox", default_crs = NULL)+
+  coord_sf(xlim = c(120.5, 120.8), ylim = c(23.4, 23.6),crs=4326)+
+  
+  
+  geom_sf(data=River_shp, 
+          color = alpha("#00ffff", 0.1),
+          fill=alpha("#00ffff",1),
+           linewidth=0.15)+
+  #geom_tile(Eledt2, mapping=aes(x=x, y=y, fill=elevation), alpha=0.33)+
+  #scale_fill_continuous(guide = "none")+
+  #new_scale("fill") +
+  
+  geom_sf(data=ForArea2, fill="#005185", color="transparent", alpha=0.5)+
+  geom_sf(data=FRA_shp)+
+  
+  coord_sf(xlim = c(118, 122.5), ylim = c(21.5, 26.5),crs=4326)
+  
+ggexport(Forest_area , filename = paste("Forest_area.png", sep=""), width =4300, height =5248, res =900 )
+```
