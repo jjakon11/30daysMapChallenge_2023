@@ -1,0 +1,103 @@
+---
+title: "Day21_Raster"
+author: "Chen-Chia Ku"
+date: "2023-11-21"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(rgbif)
+library(spatstat)
+library(sf)
+library(ggnewscale)
+library(metR)
+library(ggpubr)
+library(sysfonts)
+library(showtext)
+```
+
+
+```{r}
+font_add_google(name = 'arial', family = 'Arial')
+showtext_auto()
+
+```
+
+
+```{r}
+
+
+speciesdata <- read.csv("D:/Drive/6_Rworld/30daysMapChallenge_2023/Day21_Raster/SpeciesObserve.csv", fileEncoding = "big5")
+taiwan_DEM <- raster("D:/Drive/6_Rworld/30daysMapChallenge_2023/MapDt/TaiwanMapDEM/tif file/twdtm_asterV2_30m.tif" )
+
+taiwan_shp <-sf::st_read(dsn ="D:/Drive/6_Rworld/30daysMapChallenge_2023/MapDt/Taiwan", layer="gadm36_TWN_2")
+```
+
+```{r}
+
+land <- aggregate(taiwan_DEM, fact=10)
+Land_Eledt <- rasterToPoints(land)
+Land_Eledt2 <- as.data.frame(Land_Eledt) %>%
+  rename(elevation='Layer_1')
+
+Taiwan2 <- st_union(taiwan_shp)
+```
+
+
+
+```{r}
+myData <- speciesdata %>%
+  dplyr::select(verbatimScientificName, decimalLongitude, decimalLatitude) %>%
+  filter(!is.na(decimalLongitude))
+
+#coordinates(myData) = ~decimalLongitude+decimalLatitude
+
+
+
+myData3 <- myData %>%
+  mutate(decimalLatitude1=round(decimalLatitude, 1), 
+         decimalLongitude1=round(decimalLongitude,1)) %>%
+  mutate(number=1) %>%
+  group_by(decimalLatitude1, decimalLongitude1) %>%
+  summarise(n=sum(number)) %>%
+  ungroup()
+
+```
+
+
+
+```{r}
+mypal <- colorRampPalette(c("#f5ebe3","#EAD6C6","#C6E0BE","#2EA858","#0F381D"))
+hotspot <- colorRampPalette(c("#d34e7a", "#bf3061","#822142"))
+
+ObservePlot <- ggplot(myData, aes(x=decimalLongitude, y=decimalLatitude))+
+  geom_tile(data=Land_Eledt2 , mapping=aes(x=x, y=y, fill=elevation))+
+  scale_fill_gradientn(colours = mypal(20))+
+  new_scale("fill") +
+  stat_density2d(aes(fill = after_stat(level)), alpha=0.4, geom="polygon")+
+
+  scale_fill_gradientn(colours = hotspot(20))+
+  #geom_text(mapping=aes(x=120.5, y=21.2, 
+  #                     label="#30DayMapChallenge | Day21_Raster | @jjakon11"), 
+  #          size=10,color="black" ,family="Vollkorn")+
+  coord_sf(xlim = c(119, 122), ylim = c(21.5, 26),crs=4326)+
+  theme(panel.background = element_rect(fill = "#e5ccb8", color="#0F381D"), 
+        plot.background = element_rect(fill = "#e5ccb8"),
+        panel.grid = element_blank(), 
+        plot.margin = margin(0, 0,0,0, "cm"),
+        axis.text.x = element_text(vjust = 8, size=35, color="#0F381D"),
+        axis.text.y = element_text(angle = 270, vjust = 8, hjust=0.5, size=35, color="#0F381D"),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(),
+        legend.position="none")
+
+ggexport(ObservePlot ,filename = "ObservePlot.png", width=2600, height=4300, res=500)
+
+
+```
