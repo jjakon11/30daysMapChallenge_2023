@@ -1,0 +1,99 @@
+---
+title: "Day22_NorthIsNotAlwaysUp"
+author: "Chen-Chia Ku"
+date: "2023-11-22"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+```{r}
+library(ggplot2)
+library(dplyr)
+library(sf)
+library(ggnewscale)
+library(ggsn) #annotation_north_arrow
+
+
+```
+
+
+
+```{r}
+Land_DEM <- raster("D:/Drive/6_Rworld/30daysMapChallenge_2023/MapDt/HYP_LR_SR_OB_DR/HYP_LR_SR_OB_DR.tif")
+
+taiwan_DEM <- raster("D:/Drive/6_Rworld/30daysMapChallenge_2023/MapDt/TaiwanMapDEM/tif file/twdtm_asterV2_30m.tif" )
+
+```
+
+
+```{r}
+x <- aggregate(Land_DEM, fact=10)
+Eledt <- rasterToPoints(x) 
+Eledt2 <- as.data.frame(Eledt) %>%
+  rename(elevation="HYP_LR_SR_OB_DR_1") %>%
+  mutate(x=-x)
+
+land <- aggregate(taiwan_DEM, fact=10)
+Land_Eledt <- rasterToPoints(land)
+Land_Eledt2 <- as.data.frame(Land_Eledt) %>%
+  rename(elevation='Layer_1') %>%
+  filter(x>119.5, y<25.3) %>%
+  mutate(x=-x)
+  
+
+```
+
+```{r}
+northarrow <- function(loc,size,bearing=0,cols,cex=1,...) {
+  # checking arguments
+  if(missing(loc)) stop("loc is missing")
+  if(missing(size)) stop("size is missing")
+  # default colors are white and black
+  if(missing(cols)) cols <- rep(c("white","black"),8)
+  # calculating coordinates of polygons
+  radii <- rep(size/c(1,4,2,4),4)
+  x <- radii[(0:15)+1]*cos((0:15)*pi/8+bearing)+loc[1]
+  y <- radii[(0:15)+1]*sin((0:15)*pi/8+bearing)+loc[2]
+  # drawing polygons
+  for (i in 1:15) {
+    x1 <- c(x[i],x[i+1],loc[1])
+    y1 <- c(y[i],y[i+1],loc[2])
+    polygon(x1,y1,col=cols[i])
+  }
+  # drawing the last polygon
+  polygon(c(x[16],x[1],loc[1]),c(y[16],y[1],loc[2]),col=cols[16])
+  # drawing letters
+  b <- c("E","N","W","S")
+  for (i in 0:3) text((size+par("cxy")[1])*cos(bearing+i*pi/2)+loc[1],
+                      (size+par("cxy")[2])*sin(bearing+i*pi/2)+loc[2],b[i+1],
+                      cex=cex)
+}
+```
+
+```{r}
+crs_string = "+proj=omerc +lat_0=20 +lonc=-150 +alpha=0 +k_0=.7 +datum=WGS84 +units=m +no_defs +gamma=90"
+
+st_crs(Eledt2) <- crs_string
+crs_string = +proj=omerc +lat_0=20 +lonc=150 +alpha=0 +k_0=.7 +datum=WGS84 +units=gamma=45
+
+mypal <- colorRampPalette(c("#224e77","#443A83","#287D8E","#3bb0c8","#9ad7e1" ))
+hotspot <-  colorRampPalette(c("#C6E0BE","#2EA858","#0F381D"))
+ggplot()+
+  geom_tile(data=Eledt2 , mapping=aes(x=y, y=x, fill=elevation))+
+  scale_fill_gradientn(colours = mypal(1000))+
+  new_scale("fill") +
+  geom_tile(data=Land_Eledt2 , mapping=aes(x=y, y=x, fill=elevation))+
+  scale_fill_gradientn(colours = hotspot(50))+
+  scale_x_continuous(limits = c(-18, 67))+
+  scale_y_continuous(limits = c(-170, -114))+
+  coord_sf(crs=crs_string)+
+  #north(.)
+  #northarrow(loc = c(20,-50), size = 10000)
+  annotation_north_arrow(location = "tl", which_north = "true",   #North
+                         pad_x = unit(14.5, "cm"), pad_y = unit(6, "cm"), 
+                         height = unit(5.0, "cm"), width = unit(5.0, "cm") , 
+                         style = north_arrow_nautical(text_col = '#00b1b1',
+                                                      line_col = '#00b1b1', 
+                                                      fill = c("grey80", "grey40")))
+
+```
