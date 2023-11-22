@@ -11,7 +11,6 @@ editor_options:
 library(ggplot2)
 library(dplyr)
 library(rgbif)
-library(spatstat)
 library(sf)
 library(ggnewscale)
 library(metR)
@@ -24,16 +23,11 @@ library(showtext)
 ```{r}
 font_add_google(name = 'arial', family = 'Arial')
 showtext_auto()
-
 ```
 
-
 ```{r}
-
-
 speciesdata <- read.csv("D:/Drive/6_Rworld/30daysMapChallenge_2023/Day21_Raster/SpeciesObserve.csv", fileEncoding = "big5")
 taiwan_DEM <- raster("D:/Drive/6_Rworld/30daysMapChallenge_2023/MapDt/TaiwanMapDEM/tif file/twdtm_asterV2_30m.tif" )
-
 taiwan_shp <-sf::st_read(dsn ="D:/Drive/6_Rworld/30daysMapChallenge_2023/MapDt/Taiwan", layer="gadm36_TWN_2")
 ```
 
@@ -48,15 +42,10 @@ Taiwan2 <- st_union(taiwan_shp)
 ```
 
 
-
 ```{r}
 myData <- speciesdata %>%
   dplyr::select(verbatimScientificName, decimalLongitude, decimalLatitude) %>%
   filter(!is.na(decimalLongitude))
-
-#coordinates(myData) = ~decimalLongitude+decimalLatitude
-
-
 
 myData3 <- myData %>%
   mutate(decimalLatitude1=round(decimalLatitude, 1), 
@@ -98,6 +87,5 @@ ObservePlot <- ggplot(myData, aes(x=decimalLongitude, y=decimalLatitude))+
         legend.position="none")
 
 ggexport(ObservePlot ,filename = "ObservePlot.png", width=2600, height=4300, res=500)
-
 
 ```
