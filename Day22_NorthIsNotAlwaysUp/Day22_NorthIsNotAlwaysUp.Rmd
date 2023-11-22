@@ -11,12 +11,20 @@ library(ggplot2)
 library(dplyr)
 library(sf)
 library(ggnewscale)
-library(ggsn) #annotation_north_arrow
-
+library(ggspatial) #annotation_north_arrow
+library(ggpubr)
+library(sysfonts)
+library(showtext)
 
 ```
 
 
+```{r}
+font_add_google(name = 'Berkshire Swash', family = 'Berkshire Swash')
+font_add_google(name = 'Philosopher', family = 'Philosopher')
+showtext_auto()
+
+```
 
 ```{r}
 Land_DEM <- raster("D:/Drive/6_Rworld/30daysMapChallenge_2023/MapDt/HYP_LR_SR_OB_DR/HYP_LR_SR_OB_DR.tif")
@@ -43,32 +51,6 @@ Land_Eledt2 <- as.data.frame(Land_Eledt) %>%
 
 ```
 
-```{r}
-northarrow <- function(loc,size,bearing=0,cols,cex=1,...) {
-  # checking arguments
-  if(missing(loc)) stop("loc is missing")
-  if(missing(size)) stop("size is missing")
-  # default colors are white and black
-  if(missing(cols)) cols <- rep(c("white","black"),8)
-  # calculating coordinates of polygons
-  radii <- rep(size/c(1,4,2,4),4)
-  x <- radii[(0:15)+1]*cos((0:15)*pi/8+bearing)+loc[1]
-  y <- radii[(0:15)+1]*sin((0:15)*pi/8+bearing)+loc[2]
-  # drawing polygons
-  for (i in 1:15) {
-    x1 <- c(x[i],x[i+1],loc[1])
-    y1 <- c(y[i],y[i+1],loc[2])
-    polygon(x1,y1,col=cols[i])
-  }
-  # drawing the last polygon
-  polygon(c(x[16],x[1],loc[1]),c(y[16],y[1],loc[2]),col=cols[16])
-  # drawing letters
-  b <- c("E","N","W","S")
-  for (i in 0:3) text((size+par("cxy")[1])*cos(bearing+i*pi/2)+loc[1],
-                      (size+par("cxy")[2])*sin(bearing+i*pi/2)+loc[2],b[i+1],
-                      cex=cex)
-}
-```
 
 ```{r}
 crs_string = "+proj=omerc +lat_0=20 +lonc=-150 +alpha=0 +k_0=.7 +datum=WGS84 +units=m +no_defs +gamma=90"
@@ -78,22 +60,41 @@ crs_string = +proj=omerc +lat_0=20 +lonc=150 +alpha=0 +k_0=.7 +datum=WGS84 +unit
 
 mypal <- colorRampPalette(c("#224e77","#443A83","#287D8E","#3bb0c8","#9ad7e1" ))
 hotspot <-  colorRampPalette(c("#C6E0BE","#2EA858","#0F381D"))
-ggplot()+
-  geom_tile(data=Eledt2 , mapping=aes(x=y, y=x, fill=elevation))+
+NN_plot <- ggplot()+
+  
+  geom_tile(data=Eledt2 , mapping=aes(x=y, y=x, fill=elevation), alpha=0.9)+
   scale_fill_gradientn(colours = mypal(1000))+
   new_scale("fill") +
   geom_tile(data=Land_Eledt2 , mapping=aes(x=y, y=x, fill=elevation))+
   scale_fill_gradientn(colours = hotspot(50))+
+  geom_text(mapping=aes(x=23, y=-147, label="North"), 
+            size=200, color="#97bdda", family='Berkshire Swash')+
+  geom_text(mapping=aes(x=23, y=-154, label="is not always up"), 
+            size=70, color="#97bdda", family='Philosopher')+
+  geom_text(mapping=aes(x=23, y=-162, 
+                       label="#30DayMapChallenge | Day22_North is not always up | @jjakon11"), 
+            size=16,color="#97bdda" ,family="Philosopher")+
   scale_x_continuous(limits = c(-18, 67))+
   scale_y_continuous(limits = c(-170, -114))+
   coord_sf(crs=crs_string)+
-  #north(.)
-  #northarrow(loc = c(20,-50), size = 10000)
   annotation_north_arrow(location = "tl", which_north = "true",   #North
-                         pad_x = unit(14.5, "cm"), pad_y = unit(6, "cm"), 
+                         pad_x = unit(15.5, "cm"), pad_y = unit(8.5, "cm"), 
                          height = unit(5.0, "cm"), width = unit(5.0, "cm") , 
                          style = north_arrow_nautical(text_col = '#00b1b1',
-                                                      line_col = '#00b1b1', 
-                                                      fill = c("grey80", "grey40")))
+                                                      line_col = '#6D6396', 
+                                                      fill = c("#6D6396", "4E4777")))+
+  theme(panel.background = element_rect(fill = "transparent", color="#234A6D"), 
+        plot.background=element_rect(fill = "#1e405e", color="#234A6D"),
+          panel.grid = element_blank(), 
+          plot.margin = margin(0, -0.5, 0, -0.5, "cm"),
+          axis.text.x = element_text(vjust = 8, size=40, color="#438BC4"),
+          axis.text.y = element_text(angle = 270, vjust = 8, hjust=0.5, size=40, color="#438BC4"),
+          axis.ticks.x = element_blank(),
+          axis.title.x = element_blank(),
+          axis.ticks.y = element_blank(),
+          axis.title.y = element_blank(),
+          legend.position="none")
+  
 
+ggexport(NN_plot, filename = "NNplot.png", width=7000, height=4750, res=500)
 ```
