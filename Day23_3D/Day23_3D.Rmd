@@ -1,0 +1,73 @@
+---
+title: "Day23_3D"
+output: html_document
+date: "2023-11-22"
+editor_options: 
+  chunk_output_type: console
+---
+```{r}
+library(raster)
+library(ggplot2)
+library(rayshader)
+library(dplyr)
+library(ggnewscale)
+
+```
+
+```{r}
+taiwan_DEM <- raster("D:/6_Rworld/30daysMapChallenge_2023/MapDt/TaiwanMapDEM/tif file/twdtm_asterV2_30m.tif" )
+Ocean_DEM <- raster("D:/6_Rworld/30daysMapChallenge_2023/Day2_Lines/TaiwanOcean/gebco_2023_n26.0_s20.0_w119.0_e124.0.tif")
+
+```
+
+
+```{r}
+x <- aggregate(Ocean_DEM, fact=10)
+
+
+OceanELE <- rasterToPoints(x)
+OceanELE2 <- as.data.frame(OceanELE) %>%
+  rename(elevation="gebco_2023_n26.0_s20.0_w119.0_e124.0")
+
+
+land <- aggregate(taiwan_DEM, fact=10)
+Land_Eledt <- rasterToPoints(land)
+Land_Eledt2 <- as.data.frame(Land_Eledt) %>%
+  rename(elevation='Layer_1')
+```
+
+```{r}
+mypal <- colorRampPalette(c("#C6E0BE","#5fd485","#28954c","#0F381D","#0b2915"))
+oceanpal <- colorRampPalette(c("#224e77","#443A83","#287D8E","#3bb0c8","#9ad7e1" ))
+
+TaiDMplot <- ggplot()+
+  geom_tile(data=Land_Eledt2 , mapping=aes(x=x, y=y, fill=elevation))+
+  scale_fill_gradientn(colours = mypal(20))+
+  new_scale("fill") +
+  geom_tile(data=OceanELE2 , mapping=aes(x=x, y=y, fill=elevation), alpha=0.5)+
+  scale_fill_gradientn(colours = oceanpal(20))+
+  geom_text(mapping=aes(x=120.4, y=21.7, label="Taiwan"), 
+            size=10,color="black")+
+  coord_sf(xlim = c(119.5, 122), ylim = c(21.5, 25.3),crs=4326)+
+  theme(panel.background = element_rect(fill = "black", color="black"), 
+        plot.background = element_rect(fill = "black", color="black"),
+        panel.grid = element_blank(), 
+        plot.margin = margin(0, 0,0,0, "cm"),
+        axis.text=element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank(),
+        legend.position="none")
+
+plot_gg(TaiDMplot,multicore=TRUE,width=3,height=4.9,scale=160, sunangle=135,
+        background = "black")
+
+
+```
+
+```{r}
+render_movie("img/movie_TaiDM5.mp4",frames = 720, fps=40,zoom=0.4,fov = 30)
+
+
+render_snapshot(filename = "3D_TaiDM5")
+
+```
