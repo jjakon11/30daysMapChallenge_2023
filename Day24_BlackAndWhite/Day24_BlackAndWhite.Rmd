@@ -1,0 +1,86 @@
+---
+title: "Day24_BlackAndWhite"
+output: html_document
+date: "2023-11-23"
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(sysfonts)
+library(showtext)
+library(osmdata)
+library(ggplot2)
+library(dplyr)
+library(ggpubr)
+
+```
+
+```{r}
+font_add_google(name = 'Ubuntu', family = 'Ubuntu')
+showtext_auto()
+
+```
+
+```{r}
+Cod <- c( 121.476023,24.567391,
+         122.011606,24.910386)
+
+roads_main <- opq(bbox = Cod ) %>%
+  add_osm_feature(key = 'highway', 
+                  value=c("primary", 
+                          "secondary", 
+                          "tertiary", 
+                          "primary_link", 
+                          "secondary_link", 
+                          "tertiary_link")) %>%
+  osmdata_sf()
+
+roads_All <- opq(bbox = Cod ) %>%
+  add_osm_feature(key = 'highway') %>%
+  osmdata_sf()
+
+#river <- opq(bbox = Cod) %>%
+#  add_osm_feature(key = 'water') %>%
+#  osmdata_sf()
+
+railway <-opq(bbox = Cod) %>%
+  add_osm_feature(key = 'railway') %>%
+  osmdata_sf()
+
+
+```
+
+```{r}
+ILan <- ggplot() +
+  geom_sf(data = roads_All$osm_lines, 
+          color = "#b8b8b8", fill = "#b8b8b8", 
+          linewidth=0.3) +
+  geom_sf(data = roads_main$osm_lines, color = "#f2f2f2", fill = "#f2f2f2") +
+  geom_sf(data=railway$osm_lines, color="#1f2530", linewidth=1)+
+  geom_sf(data=railway$osm_lines, color="#f2f2f2", 
+          linewidth=0.3, linetype = "4A")+
+  geom_text(mapping=aes(x=121.91, y=24.74, label="Yilan"), 
+            size=200, color="#f2f2f2", family = 'Ubuntu')+
+  geom_text(mapping=aes(x=121.91, y=24.72, 
+                        label="#30DayMapChallenge | Day24_Black and White | @jjakon11"), 
+            size=20, color="#f2f2f2", family = 'Ubuntu')+
+  coord_sf(xlim = c(121.48, 121.99), ylim = c(24.57, 24.90), expand = FALSE, crs=4326)+
+  theme(panel.background = element_rect(fill = "#2E2E2E"), 
+        plot.background = element_rect(fill = "#2E2E2E"),
+        panel.grid = element_blank(), 
+        plot.margin = margin(0, 0,0,0, "cm"),
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(),
+        legend.position="none")
+ILan
+
+ggexport(ILan, filename = "ILan.png", width = 8760, height=6260, res=540)
+  
+  
+
+```
