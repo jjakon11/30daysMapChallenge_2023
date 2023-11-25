@@ -1,0 +1,71 @@
+---
+title: "Day25_Antarctica"
+output: html_document
+date: "2023-11-24"
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(ggpubr)
+
+library(sysfonts)
+library(showtext)
+
+```
+
+```{r}
+font_add_google(name = 'Philosopher', family = 'Philosopher')
+showtext_auto()
+
+```
+
+```{r}
+world<- map_data("world") 
+  ne_countries(scale = 50, 
+                     type = "countries", returnclass = "sf") %>%
+  dplyr::select(iso_a3, iso_n3, admin, continent)
+```
+
+
+```{r}
+x_lines <- seq(-90, 360, by = 15)
+
+Antac <- ggplot()+
+  geom_polygon(data = world, aes(x = long, y = lat, group = group),
+               alpha = 0.8, fill="#AEB9BB")+
+  geom_segment(aes(y = -20, yend = -90, x = x_lines, xend = x_lines), 
+               color="#d8dddf", linewidth=0.2) +
+  scale_y_continuous(limits = c(-90, -20), 
+                     breaks = seq(-20, -90, by = -10),
+                     expand = c(0, 0)) +
+  geom_rect(aes(xmin = 0, xmax = 50, ymin =-20, ymax = -60), 
+            fill="#49524C", alpha=0.95)+
+  geom_text(mapping=aes(x = 280, y = seq(-65, -85, by = -10),label = paste0(seq(65, 85, by = 10), "°S")), size=30, color="#d8dddf") +
+  geom_text(mapping = aes(x=24, y=-46, label="Antarctica"), 
+            colour="#d8dddf", size=170, family="Philosopher")+
+  geom_text(mapping=aes(x=20, y=-50, 
+                        label="#30DayMapChallenge | Day25_Antarctica | @jjakon11"), 
+            size=32,color="#d8dddf" ,family = 'Philosopher')+
+  coord_map("ortho", orientation = c(-75, 360, 295), 
+            xlim = c(0, -360), ylim=c(-90, -40))+
+  
+  theme(panel.background = element_rect(fill="#49524C"),
+        panel.grid.major = element_line(linewidth = 0.25,
+                                        colour = "#d8dddf"),
+        panel.grid.minor = element_line(colour="black"),
+        axis.ticks = element_blank(), 
+        plot.margin = margin(-2, -4.5, -5, -1, "cm"),
+        axis.text = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(), 
+        legend.position = "none"
+  )
+ggexport(Antac, filename = "Antac.png", width = 7200, height=7200, res=540)
+```
