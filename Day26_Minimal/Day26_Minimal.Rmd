@@ -1,0 +1,79 @@
+---
+title: "Day26_Minimal"
+output: html_document
+date: "2023-11-26"
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(sysfonts)
+library(showtext)
+library(osmdata)
+library(ggplot2)
+library(dplyr)
+library(ggpubr)
+
+```
+
+
+```{r}
+font_add_google(name = 'Ubuntu', family = 'Ubuntu')
+showtext_auto()
+
+```
+
+```{r}
+world<- ne_countries(scale = "medium", returnclass = "sf") %>%
+  dplyr::select(iso_a3, iso_n3, admin, continent)
+Nauru_map <- world %>% 
+  filter(admin=="Nauru") 
+
+
+```
+
+
+```{r}
+Cod <- c( 166.902518,-0.557146,
+         166.963465,-0.496822)
+```
+
+
+```{r}
+roads_main <- opq(bbox = Cod ) %>%
+  add_osm_feature(key = 'highway') %>%
+  osmdata_sf()
+
+```
+
+
+
+```{r}
+mypal <- colorRampPalette(c("#1A4F89", "#6ebd98"))
+
+Naurumap <- ggplot() +
+  geom_sf(data = roads_main$osm_lines, color = "#fcfced", fill = "#fcfced", 
+          linewidth=0.05) +
+  geom_text(mapping=aes(x=167.8, y=-0.53, 
+                        label="Nauru: the minimal island country of the world"), 
+            size=40, color="#6ebd98")+
+  geom_text(mapping=aes(x=167.8, y=-0.558, 
+                        label="#30DayMapChallenge | Day26_Minimal | @jjakon11"), 
+            size=30, color="#3F7F8F")+
+  
+  coord_sf(xlim = c(166.468, 168.447), ylim = c(-1.369, 0.251541), expand = FALSE, crs=4326)+
+  theme(panel.background = element_rect(fill = "#1A4F89"), 
+        plot.background = element_rect(fill = "#1A4F89"),
+        panel.grid = element_blank(), 
+        plot.margin = margin(0, 0,0,0, "cm"),
+        axis.text.x = element_text(vjust = 6, size=70, color="#3F7F8F"),
+        axis.text.y = element_text(angle = 270, vjust = 6, hjust=0.5, size=70, color="#3F7F8F"),
+        axis.ticks = element_blank(),
+        axis.title.y = element_blank(),
+        legend.position="none")
+ggexport(Naurumap, filename = "Naurumap.png", width = 10000, height=8300, res=1000)
+
+
+```
