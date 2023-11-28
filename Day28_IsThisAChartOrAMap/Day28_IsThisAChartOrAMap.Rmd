@@ -1,0 +1,161 @@
+---
+title: "Day28_IsThisAChartOrAMap"
+author: "Chen-Chia Ku"
+date: "2023-11-28"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+```{r}
+library(ggplot2)
+library(dplyr)
+library(sf)
+library(rayshader)
+library(av)
+library(sysfonts)
+library(showtext)
+
+```
+
+```{r}
+font_add_google(name = 'Philosopher', family = 'Philosopher')
+showtext_auto()
+
+```
+
+```{r}
+Edt <- read.csv("D:/Drive/6_Rworld/30daysMapChallenge_2023/ElectricData.csv", fileEncoding = "big5")
+taiwan_shp <-sf::st_read(dsn ="D:/Drive/6_Rworld/30daysMapChallenge_2023/MapDt/Taiwan", layer="gadm36_TWN_2")
+```
+
+```{R}
+Podtx2 <- Podt %>%
+  rename(County="縣市",
+         District="行政區") %>%
+    mutate(County=ifelse(County=="臺北市", "台北市", County), 
+         County=ifelse(County=="臺中市", "台中", County), 
+         County=ifelse(County=="臺東縣", "台東縣", County),
+         County=ifelse(County=="臺南市", "台南", County),
+         County=ifelse(County=="連江縣", "馬祖列島", County)) %>%
+  group_by(County) %>%
+  summarise(n=n()) %>%
+  ungroup()
+
+Edt2 <- taiwan_shp%>% 
+  rename(County="NL_NAME_2") %>%
+  merge(., Podtx2, by='County')
+
+Edt2$centroids <- st_centroid(Edt2) %>% 
+  st_geometry() 
+
+Edt3 <- Edt2 %>%
+  mutate(CenLong=st_coordinates(Edt2$centroids)[,1], 
+         CenLat=st_coordinates(Edt2$centroids)[,2]) %>%
+  mutate(Area=st_area(geometry)) %>%
+  mutate(density=as.numeric(n/Area)*10000)
+
+
+
+```
+
+
+```{r}
+mypal <- colorRampPalette(c("#4E4D42", "#faf6b3"))
+
+"#faf6b3"
+
+
+
+EletricPlot <- ggplot()+
+  geom_sf(data=Edt3, aes(fill=density), color="transparent")+
+  #geom_text(Edt3, mapping=aes(x=CenLong,y=CenLat, label=NAME_2), size=1)+
+  scale_fill_gradientn(colours=mypal(20))+
+  scale_y_continuous(expand = c(0, 0))+
+  scale_x_continuous(expand=c(0,0))+
+  coord_sf(xlim = c(118, 123), ylim=c(21.5, 26.5),crs=4326)+
+  theme(panel.background = element_rect(fill = "#2E2E2E"), 
+        plot.background = element_rect(fill = "#2E2E2E", color="#2E2E2E"),
+        panel.grid = element_blank(), 
+        plot.margin = margin(0, 0,0,0, "cm"),
+        axis.text.x = element_text(vjust = 4, size=10, color="#7E7808"),
+        axis.text.y = element_text(angle = 270, vjust = 4, hjust=0.5, size=10, color="#7E7808"),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(),
+        legend.position="none")
+
+
+  
+EletricP <- plot_gg(EletricPlot,multicore=T,width=10,height=10,scale=80, sunangle=205,
+                    save_height_matrix = TRUE,windowsize = c(500, 500),
+        background = "#2E2E2E")
+
+
+render_label(EletricP, text = "Chiayi City", x =((120.47-118)*3000)/5, 
+             y =((26.5-23.55)*3000)/5, z=360,
+             textcolor = "#faf6b3", 
+             family = 'serif')
+
+render_label(EletricP, text = "Changhua", x =1492, 
+             y =1475, z=300, 
+             textcolor = "#C0BD8D", 
+             family = 'serif')
+
+render_label(EletricP, text = "Chiayi County", x =((120.6-118)*3000)/5, 
+             y =((26.5-23.48)*3000)/5, z=260, 
+             textcolor = "#C0BD8D", 
+             family = 'serif')
+
+render_label(EletricP, text = "Yulin County", x =((120.3906-118)*3000)/5, 
+             y =((26.5-23.68470)*3000)/5, z=220, 
+             textcolor = "#C0BD8D", 
+             family = 'serif')
+
+render_label(EletricP, text = "Hsinchu City", x =((120.9571-118)*3000)/5, 
+             y =((26.5-24.78084)*3000)/5, z=220, 
+             textcolor = "#C0BD8D", 
+             family = 'serif')
+
+render_label(EletricP, text = "Tainan", x =((120.3323-118)*3000)/5, 
+             y =((26.5-23.14861)*3000)/5, z=180, 
+             textcolor = "#C0BD8D", 
+             family = 'serif')
+
+render_label(EletricP, text = "Taoyuan", x =((121.2629-118)*3000)/5, 
+             y =((26.5-24.90034)*3000)/5, z=140, 
+             textcolor = "#C0BD8D", 
+             family = 'serif')
+
+render_label(EletricP, text = "Keelung", x =((121.65-118)*3000)/5, 
+             y =((26.5-25.11472)*3000)/5, z=100, 
+             textcolor = "#C0BD8D", 
+             family = 'serif')
+
+render_label(EletricP, text = "Kinmen", x =((118.60-118)*3000)/5, 
+             y =((26.5-24.45182)*3000)/5, z=60, 
+             textcolor = "#C0BD8D", 
+             family = 'serif')
+
+render_label(EletricP, text = "Taichung", x =((120.8976-118)*3000)/5, 
+             y =((26.5-24.23370)*3000)/5, z=60, 
+             textcolor = "#C0BD8D", 
+             family = 'serif')
+
+
+
+render_label(EletricP, text = "Top 10 Cities", x =600, 
+             y =600, z=30, linecolor = "#2E2E2E", textsize =3, 
+             textcolor = "#faf6b3",
+             family="serif")
+render_label(EletricP, text = "With the Densest Telegraph Poles", x =750, 
+             y =750, z=30, linecolor = "#2E2E2E", textsize =1.2, 
+             textcolor = "#faf6b3",
+             family="serif")
+
+```
+
+```{r}
+
+render_movie("img/movie_Pole5.mp5",frames = 1080, fps=60,zoom=0.2,fov = 0.1)
+```
