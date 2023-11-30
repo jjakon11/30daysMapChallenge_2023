@@ -1,0 +1,70 @@
+---
+title: "Day30_MyFavorite"
+author: "Chen-Chia Ku"
+date: "2023-11-29"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(ggplot2)
+library(raster)
+library(ggridges)# install.packages("ggridges")
+library(dplyr)
+library(sf)
+library(terra)
+library(ggpubr)
+library(sysfonts)
+library(showtext)
+```
+
+```{r}
+font_add_google(name = 'Vollkorn', family = 'Vollkorn')
+showtext_auto()
+```
+
+```{r}
+taiwan_DEM <- raster("D:/Drive/6_Rworld/30daysMapChallenge_2023/MapDt/TaiwanMapDEM/tif file/twdtm_asterV2_30m.tif" )
+```
+
+```{r}
+land <- aggregate(taiwan_DEM, fact=150)
+Land_Eledt <- rasterToPoints(land)
+Land_Eledt2 <- as.data.frame(Land_Eledt) %>%
+  rename(elevation='Layer_1') 
+```
+
+```{r}
+JoyP <- ggplot() +
+  geom_hline(data=Land_Eledt2, 
+             aes(yintercept=y+0.0005),linewidth = 0.4, 
+             color="grey50")+
+  geom_density_ridges(data = Land_Eledt2, 
+                      aes(x = x, y = y, group = y, height = elevation),
+                      stat = 'identity',
+                      fill="#2EA858",
+                      color="#0F381D", 
+                      scale = 6,size = 0.5, rel_min_height = 0.003, 
+                      alpha=0.5)+
+  geom_text(mapping=aes(x=120.85, y=21.499, 
+                       label="Taiwan"), 
+            size=180,color="black" ,family="Vollkorn")+
+  geom_text(mapping=aes(x=120.86, y=21.289, 
+                       label="#30DayMapChallenge | Day30_My favorate | @jjakon11"), 
+            size=22,color="black")+
+  coord_sf(xlim = c(119.3, 122.5), ylim = c(21, 25.6), crs=4326)+
+  theme(panel.background = element_rect(fill = "#dff6e7", color="#dff6e7"), 
+        plot.background = element_rect(fill = "#dff6e7"),
+        panel.grid = element_blank(), 
+        plot.margin = margin(0, 0,-2.1,-1, "cm"),
+        axis.text.x = element_text(vjust = 26, size=60, color="#2EA858"),
+        axis.text.y = element_text(angle = 359, hjust=-2.0, vjust=-0.7, size=60, color="#2EA858"),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(),
+        legend.position="none")
+
+ggexport(JoyP, filename = "JoyP.png", width=5300, height = 8000, res=500)
+```
